@@ -4,6 +4,16 @@
 <dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
+		<key>API_KEY</key>
+		<string>5355fcfc3bbbe8f50eaddcaa1c3a27b0</string>
+		<key>IMAGE_URL</key>
+		<string>https://image.tmdb.org/t/p/</string>
+		<key>BASE_URL</key>
+		<string>https://api.themoviedb.org</string>
+		<key>AUTH_TOKEN</key>
+		<string>Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MzU1ZmNmYzNiYmJlOGY1MGVhZGRjYWExYzNhMjdiMCIsInN1YiI6IjYzZTgwNDY5MTI3Nzc4MDA4MWEzODI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.272DqyQ2tyOqEYPUdyyhipj9zLfUZPwDRhHwasLuks0</string>
+		<key>CONTENT_TYPE</key>
+		<string>application/json;charset=utf-8</string>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>
