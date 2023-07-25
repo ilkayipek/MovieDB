@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA312BB62A6FEAEE007FFB98 /* Network.swift */; };
+		FA312BBA2A6FEBA6007FFB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA312BB92A6FEBA6007FFB98 /* Alamofire */; };
 		FA45EA5F2A684ADD0012791A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45EA5E2A684ADD0012791A /* BaseViewController.swift */; };
 		FA45EA612A684AF40012791A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA45EA602A684AF40012791A /* BaseViewModel.swift */; };
 		FA6E3EE62A63F16300C0BE91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E3EE52A63F16300C0BE91 /* AppDelegate.swift */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA312BB62A6FEAEE007FFB98 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FA45EA5E2A684ADD0012791A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FA45EA602A684AF40012791A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		FA6E3EE22A63F16300C0BE91 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA312BBA2A6FEBA6007FFB98 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +62,7 @@
 		FA45EA562A6843F30012791A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FA312BB62A6FEAEE007FFB98 /* Network.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -169,6 +174,9 @@
 			dependencies = (
 			);
 			name = MovieDB;
+			packageProductDependencies = (
+				FA312BB92A6FEBA6007FFB98 /* Alamofire */,
+			);
 			productName = MovieDB;
 			productReference = FA6E3EE22A63F16300C0BE91 /* MovieDB.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +205,9 @@
 				Base,
 			);
 			mainGroup = FA6E3ED92A63F16300C0BE91;
+			packageReferences = (
+				FA312BB82A6FEBA6007FFB98 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = FA6E3EE32A63F16300C0BE91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,6 +237,7 @@
 			files = (
 				FA6E3EEA2A63F16300C0BE91 /* ViewController.swift in Sources */,
 				FA45EA612A684AF40012791A /* BaseViewModel.swift in Sources */,
+				FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */,
 				FA45EA5F2A684ADD0012791A /* BaseViewController.swift in Sources */,
 				FA6E3EE62A63F16300C0BE91 /* AppDelegate.swift in Sources */,
 				FA6E3EE82A63F16300C0BE91 /* SceneDelegate.swift in Sources */,
@@ -444,6 +456,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA312BB82A6FEBA6007FFB98 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA312BB92A6FEBA6007FFB98 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA312BB82A6FEBA6007FFB98 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA6E3EDA2A63F16300C0BE91 /* Project object */;
 }
