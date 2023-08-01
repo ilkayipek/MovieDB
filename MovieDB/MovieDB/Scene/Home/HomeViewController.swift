@@ -1,0 +1,15 @@
+//
+//  HomeViewController.swift
+//  MovieDB
+//
+//  Created by MacBook on 1.08.2023.
+//
+
+import UIKit
+
+class HomeViewController: BaseViewController<HomeViewModel> {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
