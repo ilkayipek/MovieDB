@@ -8,6 +8,7 @@
 import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
+    @IBOutlet weak var movieCollectionListTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
