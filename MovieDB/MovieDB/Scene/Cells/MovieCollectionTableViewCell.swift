@@ -8,7 +8,7 @@
 import UIKit
 
 class MovieCollectionTableViewCell: UITableViewCell {
-    @IBOutlet weak var moviCollectionView: UICollectionView!
+    @IBOutlet weak var movieCollectionView: UICollectionView!
     @IBOutlet weak var collectionTitle: UILabel!
 
     override func awakeFromNib() {

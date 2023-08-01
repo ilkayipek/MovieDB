@@ -49,8 +49,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="GcG-r9-Q2j"/>
             <connections>
-                <outlet property="collectionTitle" destination="jdo-7R-C0n" id="fpi-02-nGI"/>
-                <outlet property="moviCollectionView" destination="Ca9-bQ-3Uj" id="sWx-vU-Tm8"/>
+                <outlet property="collectionTitle" destination="jdo-7R-C0n" id="bDK-La-T5d"/>
+                <outlet property="movieCollectionView" destination="Ca9-bQ-3Uj" id="kDI-W8-lmh"/>
             </connections>
             <point key="canvasLocation" x="-8" y="-78"/>
         </tableViewCell>
