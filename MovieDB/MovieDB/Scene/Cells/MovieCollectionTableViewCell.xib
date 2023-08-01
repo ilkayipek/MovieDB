@@ -50,7 +50,7 @@
             <viewLayoutGuide key="safeArea" id="GcG-r9-Q2j"/>
             <connections>
                 <outlet property="collectionTitle" destination="jdo-7R-C0n" id="bDK-La-T5d"/>
-                <outlet property="movieCollectionView" destination="Ca9-bQ-3Uj" id="kDI-W8-lmh"/>
+                <outlet property="movieListCollectionView" destination="Ca9-bQ-3Uj" id="bxW-2Q-CKs"/>
             </connections>
             <point key="canvasLocation" x="-8" y="-78"/>
         </tableViewCell>
