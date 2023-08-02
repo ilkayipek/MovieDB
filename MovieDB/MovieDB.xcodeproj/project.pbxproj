@@ -34,6 +34,7 @@
 		FAB99A6E2A7A59F400EB5307 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAB99A6D2A7A59F300EB5307 /* SDWebImageMapKit */; };
 		FAB99A712A7A5AAB00EB5307 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */; };
 		FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */; };
+		FAB99A752A7A665000EB5307 /* MovieTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		FAB99A682A79733000EB5307 /* Constant+RequestParthMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+RequestParthMovie.swift"; sourceTree = "<group>"; };
 		FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeSections.swift; sourceTree = "<group>"; };
+		FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB99A5D2A796CEE00EB5307 /* MovieModelProtocol.swift */,
+				FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */,
 				FAB99A712A7A5AAB00EB5307 /* UIImageView+Extension.swift in Sources */,
 				FA6E3EE82A63F16300C0BE91 /* SceneDelegate.swift in Sources */,
+				FAB99A752A7A665000EB5307 /* MovieTableViewCellDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
