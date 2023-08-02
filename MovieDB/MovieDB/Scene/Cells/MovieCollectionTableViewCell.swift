@@ -46,6 +46,13 @@ extension MovieCollectionTableViewCell: UICollectionViewDelegate, UICollectionVi
         cell.movieName.text = model[indexPath.row].title
         cell.movieDate.text = model[indexPath.row].releaseDate
         
+        if let imagePath = model[indexPath.row].posterPath {
+            if let url = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: imagePath) {
+                cell.posterImage.loadImage(url: url, placeHolderImage: nil){ _, _, _, _  in
+                    cell.posterIndicator.stopAnimating()
+                }
+            }
+        }
         return cell
     }
 }
