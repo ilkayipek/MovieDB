@@ -7,7 +7,7 @@
 
 class HomeViewModel: BaseViewModel {
     func getPopularMovies(resultClosure: @escaping(PopularMoviesModel?) -> Void) {
-        let path = ""
+        let path = Constant.RequestPathMovie.popularMoviesPath()
         Network.shared.getRequestV3(urlPath: path) { (result: Result<PopularMoviesModel, Error>) in
             switch result {
             case .success(let data):
@@ -21,7 +21,7 @@ class HomeViewModel: BaseViewModel {
     }
     
     func getTrendMovies(resultClosure: @escaping(TrendMoviesModel?) -> Void) {
-        let path = ""
+        let path = Constant.RequestPathMovie.trendDayMoviesPath()
         Network.shared.getRequestV3(urlPath: path) { (result: Result<TrendMoviesModel, Error>) in
             switch result {
             case .success(let data):
