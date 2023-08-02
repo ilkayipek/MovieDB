@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="MovieListCollectionViewCell" id="lC3-ds-cMW" customClass="MovieListCollectionViewCell" customModule="MovieDBDemo" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="MovieListCollectionViewCell" id="lC3-ds-cMW" customClass="MovieListCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="134" height="198"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -65,7 +65,7 @@
             <size key="customSize" width="408" height="364"/>
             <connections>
                 <outlet property="movieDate" destination="HQ4-Xs-0kb" id="llt-Lb-Cqw"/>
-                <outlet property="movieName" destination="8xd-3h-G51" id="cYu-k9-rZ9"/>
+                <outlet property="movieName" destination="8xd-3h-G51" id="4i7-Ft-OD7"/>
                 <outlet property="posterImage" destination="ViY-c8-mzc" id="1wK-Mh-bSC"/>
                 <outlet property="posterIndicator" destination="adp-J2-CKi" id="eJy-WQ-6jr"/>
             </connections>
