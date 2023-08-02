@@ -54,6 +54,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
 
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collectionModels.count
     }
@@ -64,5 +65,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.collectionTitle.text = collectionModels[indexPath.row].collectionTitle
         cell.model = collectionModels[indexPath.row].results
         return cell
+    }
+    
+}
+
+extension HomeViewController: MovieTableViewCellDelegate {
+    func selectedId(movieId: Int) {
+        print("seçilen id: \(movieId)")
     }
 }
