@@ -11,6 +11,7 @@ class MovieCollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var movieListCollectionView: UICollectionView!
     @IBOutlet weak var collectionTitle: UILabel!
     
+    weak var delegate: MovieTableViewCellDelegate?
     var model: [MovieResult]?
 
     override func awakeFromNib() {
@@ -54,5 +55,13 @@ extension MovieCollectionTableViewCell: UICollectionViewDelegate, UICollectionVi
             }
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let id = model?[indexPath.row].id {
+            delegate?.selectedId(movieId: id)
+        } else {
+            print("seçim yapılamadı")
+        }
     }
 }
