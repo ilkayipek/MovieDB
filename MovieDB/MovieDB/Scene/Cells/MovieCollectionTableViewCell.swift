@@ -36,15 +36,15 @@ class MovieCollectionTableViewCell: UITableViewCell {
 
 extension MovieCollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return model?.count ?? 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = movieListCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieListCollectionViewCell.self), for: indexPath) as! MovieListCollectionViewCell
         guard let model else {return cell}
         
-        cell.movieName.text = "trial name"
-        cell.movieDate.text = "trial date"
+        cell.movieName.text = model[indexPath.row].title
+        cell.movieDate.text = model[indexPath.row].releaseDate
         
         return cell
     }
