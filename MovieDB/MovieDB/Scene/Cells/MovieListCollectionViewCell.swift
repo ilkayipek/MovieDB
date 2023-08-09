@@ -8,7 +8,7 @@
 import UIKit
 
 class MovieListCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var posterImage: CustomUIImageView!
     @IBOutlet weak var posterIndicator: UIActivityIndicatorView!
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieDate: UILabel!
