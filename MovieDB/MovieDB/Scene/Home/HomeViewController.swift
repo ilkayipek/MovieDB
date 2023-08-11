@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         movieCollectionListTableView.dataSource = self
         
         let tableViewCell = String(describing: MovieCollectionTableViewCell.self)
-        movieCollectionListTableView.register(UINib(nibName: tableViewCell, bundle: nil), forCellReuseIdentifier: tableViewCell)
+        movieCollectionListTableView.register(UINib(nibName: tableViewCell, bundle: nil), forCellReuseIdentifier: tableViewCell) 
     }
     
     private func getCollectionMovies() {
