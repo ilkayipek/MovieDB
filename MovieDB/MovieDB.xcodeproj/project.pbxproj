@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0BADF12A8BDAAD0066EE40 /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADEF2A8BDAAD0066EE40 /* DetailMovieViewController.swift */; };
+		FA0BADF22A8BDAAD0066EE40 /* DetailMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0BADF02A8BDAAD0066EE40 /* DetailMovieViewController.xib */; };
+		FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADF32A8BDAD80066EE40 /* DetailMovieViewModel.swift */; };
 		FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA312BB62A6FEAEE007FFB98 /* Network.swift */; };
 		FA312BBA2A6FEBA6007FFB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA312BB92A6FEBA6007FFB98 /* Alamofire */; };
 		FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42FB8B2A79315A00076879 /* HomeViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0BADEF2A8BDAAD0066EE40 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
+		FA0BADF02A8BDAAD0066EE40 /* DetailMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMovieViewController.xib; sourceTree = "<group>"; };
+		FA0BADF32A8BDAD80066EE40 /* DetailMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewModel.swift; sourceTree = "<group>"; };
 		FA312BB62A6FEAEE007FFB98 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FA42FB8B2A79315A00076879 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA42FB8C2A79315A00076879 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -85,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0BADEE2A8BDA8E0066EE40 /* DetailMovie */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BADEF2A8BDAAD0066EE40 /* DetailMovieViewController.swift */,
+				FA0BADF02A8BDAAD0066EE40 /* DetailMovieViewController.xib */,
+				FA0BADF32A8BDAD80066EE40 /* DetailMovieViewModel.swift */,
+			);
+			path = DetailMovie;
+			sourceTree = "<group>";
+		};
 		FA42FB8A2A79314900076879 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +171,7 @@
 		FA45EA5B2A68443D0012791A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA0BADEE2A8BDA8E0066EE40 /* DetailMovie */,
 				FA9BA4B42A83A347006F6EFF /* CustomViews */,
 				FAB99A482A793FC900EB5307 /* Cells */,
 				FA42FB8A2A79314900076879 /* Home */,
@@ -324,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6E3EF22A63F16400C0BE91 /* LaunchScreen.storyboard in Resources */,
+				FA0BADF22A8BDAAD0066EE40 /* DetailMovieViewController.xib in Resources */,
 				FA6E3EEF2A63F16400C0BE91 /* Assets.xcassets in Resources */,
 				FAB99A512A7940B800EB5307 /* MovieCollectionTableViewCell.xib in Resources */,
 				FAB99A592A79436600EB5307 /* MovieListCollectionViewCell.xib in Resources */,
@@ -342,6 +360,7 @@
 				FAB99A692A79733000EB5307 /* Constant+RequestParthMovie.swift in Sources */,
 				FA9BA4B62A83A36E006F6EFF /* CustomUIViewContainer.swift in Sources */,
 				FAB99A652A796E6D00EB5307 /* TrendMoviesModel.swift in Sources */,
+				FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */,
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
 				FAB99A672A7972EC00EB5307 /* Constant.swift in Sources */,
 				FA6E3EEA2A63F16300C0BE91 /* ViewController.swift in Sources */,
@@ -349,6 +368,7 @@
 				FAB99A502A7940B800EB5307 /* MovieCollectionTableViewCell.swift in Sources */,
 				FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */,
 				FA45EA612A684AF40012791A /* BaseViewModel.swift in Sources */,
+				FA0BADF12A8BDAAD0066EE40 /* DetailMovieViewController.swift in Sources */,
 				FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */,
 				FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */,
 				FAB99A612A796D3E00EB5307 /* MovieResult.swift in Sources */,
