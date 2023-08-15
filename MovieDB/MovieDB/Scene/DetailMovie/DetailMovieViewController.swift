@@ -27,6 +27,8 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     @IBOutlet weak var scoreIndicatorView: ScoreIndicatorView!
     @IBOutlet weak var voteCountLabel: UILabel!
     @IBOutlet weak var overViewArrowButon: UIButton!
+    
+    var movieId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
