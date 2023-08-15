@@ -10,6 +10,7 @@
 		FA0BADF12A8BDAAD0066EE40 /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADEF2A8BDAAD0066EE40 /* DetailMovieViewController.swift */; };
 		FA0BADF22A8BDAAD0066EE40 /* DetailMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0BADF02A8BDAAD0066EE40 /* DetailMovieViewController.xib */; };
 		FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADF32A8BDAD80066EE40 /* DetailMovieViewModel.swift */; };
+		FA0BADF62A8BDCB60066EE40 /* ScoreIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADF52A8BDCB60066EE40 /* ScoreIndicatorView.swift */; };
 		FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA312BB62A6FEAEE007FFB98 /* Network.swift */; };
 		FA312BBA2A6FEBA6007FFB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA312BB92A6FEBA6007FFB98 /* Alamofire */; };
 		FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42FB8B2A79315A00076879 /* HomeViewController.swift */; };
@@ -46,6 +47,7 @@
 		FA0BADEF2A8BDAAD0066EE40 /* DetailMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 		FA0BADF02A8BDAAD0066EE40 /* DetailMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMovieViewController.xib; sourceTree = "<group>"; };
 		FA0BADF32A8BDAD80066EE40 /* DetailMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieViewModel.swift; sourceTree = "<group>"; };
+		FA0BADF52A8BDCB60066EE40 /* ScoreIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreIndicatorView.swift; sourceTree = "<group>"; };
 		FA312BB62A6FEAEE007FFB98 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FA42FB8B2A79315A00076879 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA42FB8C2A79315A00076879 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				FA9BA4B52A83A36E006F6EFF /* CustomUIViewContainer.swift */,
 				FA9BA4B72A83A3C9006F6EFF /* CustomUIImageView.swift */,
+				FA0BADF52A8BDCB60066EE40 /* ScoreIndicatorView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
 				FAB99A672A7972EC00EB5307 /* Constant.swift in Sources */,
 				FA6E3EEA2A63F16300C0BE91 /* ViewController.swift in Sources */,
+				FA0BADF62A8BDCB60066EE40 /* ScoreIndicatorView.swift in Sources */,
 				FAB99A582A79436600EB5307 /* MovieListCollectionViewCell.swift in Sources */,
 				FAB99A502A7940B800EB5307 /* MovieCollectionTableViewCell.swift in Sources */,
 				FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */,
