@@ -8,6 +8,9 @@
 import UIKit
 
 class TrailerCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var trailerImageView: UIImageView!
+    @IBOutlet weak var playButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
