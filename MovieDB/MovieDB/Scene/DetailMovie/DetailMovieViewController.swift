@@ -60,6 +60,7 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
                     if let date = data.releaseDate, let runtime = data.runtime {
                         self.runtimeLabel.isHidden = false
                         self.releaseDateLabel.isHidden = false
+                        self.setDateAndRuntimeLabel(date: date, runtime: runtime)
                     }
                     
                     self.movieName.text = data.title
@@ -118,6 +119,16 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
 
            return label
        }
+    private func setDateAndRuntimeLabel(date: String?, runtime: Int?) {
+        let dateWidth = (date?.count ?? 0) * 13
+        releaseDateLabel.layer.frame = CGRect(x: 0, y: 0, width: dateWidth, height: 25)
+        releaseDateLabel.setIcon(iconName: .calendar, colorName: .labelColor, scale: 0.7, startText: nil , andText: date)
+        
+        let stringRuntime = " \(runtime ?? 0)min"
+        let runtimeWidth = stringRuntime.count * 13
+        runtimeLabel.layer.frame = CGRect(x: dateWidth + 10, y: 0, width: runtimeWidth, height: 25)
+        runtimeLabel.setIcon(iconName: .clock, colorName: .labelColor, scale: 0.7, startText: nil, andText: stringRuntime)
+    }
     
     private func setupBackgroundImageViewWithGradient() {
         backgroundPoster.clipsToBounds = true
