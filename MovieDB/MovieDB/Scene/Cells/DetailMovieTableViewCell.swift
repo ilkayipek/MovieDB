@@ -8,6 +8,8 @@
 import UIKit
 
 class DetailMovieTableViewCell: UITableViewCell {
+    @IBOutlet weak var collectionViewTiltleLabel: UILabel!
+    @IBOutlet weak var  collectionView: UICollectionView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
