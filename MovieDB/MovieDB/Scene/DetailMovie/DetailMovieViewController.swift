@@ -67,6 +67,7 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
                     self.overViewTextView.text = data.overview
                     self.tagLineLabel.text = data.tagline
                     self.voteCountLabel.text = "\(data.voteCount ?? 0) votes"
+                    self.createLabelGenres(genres: data.genres)
                     
                 } else {
                     print("ERROR")
@@ -76,6 +77,47 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             print("ERROR")
         }
     }
+    
+    func createLabelGenres(genres: [Genre]?) {
+        var xPosition: CGFloat = 0.0
+        var yPosition: CGFloat = 0.0
+
+        let usableSpace = genreView.frame.width
+        if let genres {
+            for text in genres {
+                let label = createGenreNewLabel(text.name ?? "")
+
+                if xPosition + label.frame.width > usableSpace {
+                    genreViewyConstraint.constant += 30
+                    xPosition = 0.0
+                    yPosition += label.frame.height + 10.0
+                }
+                
+                label.frame.origin = CGPoint(x: xPosition, y: yPosition)
+                
+                genreView.addSubview(label)
+                
+                xPosition += label.frame.width + 10.0
+            }
+        }
+    }
+    
+    private func createGenreNewLabel(_ text: String) -> UILabel {
+        let label = UILabel()
+        label.font = genreExpampleLabel.font
+        label.textAlignment = .center
+        label.textColor = genreExpampleLabel.textColor
+        label.backgroundColor = genreExpampleLabel.backgroundColor
+        label.clipsToBounds = true
+        label.layer.cornerRadius = genreExpampleLabel.layer.cornerRadius
+        label.layer.borderWidth = genreExpampleLabel.layer.borderWidth
+        label.layer.borderColor = genreExpampleLabel.layer.borderColor
+        
+        label.text = text
+        label.layer.frame = CGRect(x: 5, y: 5, width: text.count * 11 , height: 25)
+
+           return label
+       }
     
     private func setupBackgroundImageViewWithGradient() {
         backgroundPoster.clipsToBounds = true
