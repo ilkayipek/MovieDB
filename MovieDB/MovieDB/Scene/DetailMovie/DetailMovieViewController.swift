@@ -29,12 +29,14 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     @IBOutlet weak var scoreIndicatorView: ScoreIndicatorView!
     
     var movieId: Int?
-
+    var isExpanded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = DetailMovieViewModel()
         getDetailInfo(movieId: movieId)
         setupBackgroundImageViewWithGradient()
+        setOverView()
     }
     
     private func getDetailInfo(movieId: Int?) {
@@ -82,12 +84,12 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     func createLabelGenres(genres: [Genre]?) {
         var xPosition: CGFloat = 0.0
         var yPosition: CGFloat = 0.0
-
+        
         let usableSpace = genreView.frame.width
         if let genres {
             for text in genres {
                 let label = createGenreNewLabel(text.name ?? "")
-
+                
                 if xPosition + label.frame.width > usableSpace {
                     genreViewyConstraint.constant += 30
                     xPosition = 0.0
@@ -117,9 +119,9 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         label.text = text
         let labelWidth = text.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: genreExpampleLabel.font.pointSize)]).width
         label.layer.frame = CGRect(x: 5, y: 5, width: labelWidth + 20 , height: 25)
-
-           return label
-       }
+        
+        return label
+    }
     private func setDateAndRuntimeLabel(date: String?, runtime: Int?) {
         let dateWidth = (date?.count ?? 0) * 13
         releaseDateLabel.layer.frame = CGRect(x: 0, y: 0, width: dateWidth, height: 25)
@@ -146,5 +148,31 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.7)
         gradientLayer.frame = CGRect(x: 0, y: 0.25 , width: view.frame.width, height: view.frame.height * 0.4 )
         return gradientLayer
+    }
+    
+    private func setOverView(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        overViewTextView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        overViewTextView.becomeFirstResponder()
+        let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
+        if !isExpanded {
+            let fixedWidth = overViewTextView.frame.size.width
+            let newSize = overViewTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+            
+            // Eğer yeni yükseklik farklı ise, TextView'ın yüksekliğini ve constraint'ini ayarlayın
+            if overViewContainerHeightConstraint.constant < newSize.height + 45 {
+                overViewContainerHeightConstraint.constant = newSize.height + 45
+                overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                
+            }
+        } else {
+            overViewContainerHeightConstraint.constant = 100
+            overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+        }
+        isExpanded = !isExpanded
+        
     }
 }
