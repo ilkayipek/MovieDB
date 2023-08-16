@@ -98,7 +98,7 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
                 
                 genreView.addSubview(label)
                 
-                xPosition += label.frame.width + 10.0
+                xPosition += label.frame.width + 2.0
             }
         }
     }
@@ -115,7 +115,8 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         label.layer.borderColor = genreExpampleLabel.layer.borderColor
         
         label.text = text
-        label.layer.frame = CGRect(x: 5, y: 5, width: text.count * 11 , height: 25)
+        let labelWidth = text.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: genreExpampleLabel.font.pointSize)]).width
+        label.layer.frame = CGRect(x: 5, y: 5, width: labelWidth + 20 , height: 25)
 
            return label
        }
