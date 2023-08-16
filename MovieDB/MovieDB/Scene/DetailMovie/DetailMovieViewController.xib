@@ -14,8 +14,8 @@
                 <outlet property="backgroundPoster" destination="YPC-IL-1Wu" id="nxd-sX-7F1"/>
                 <outlet property="favoriteButton" destination="hmE-Aw-5D5" id="pl1-X1-kQr"/>
                 <outlet property="genreExpampleLabel" destination="Wvv-g4-TOe" id="2Oj-fW-Clm"/>
-                <outlet property="genreView" destination="jDv-Jx-pzW" id="fgr-33-vSZ"/>
-                <outlet property="genreViewyConstraint" destination="VMU-6c-xtY" id="8sQ-Ln-n64"/>
+                <outlet property="genreView" destination="jDv-Jx-pzW" id="Q8R-KW-ySz"/>
+                <outlet property="genreViewyConstraint" destination="Bbh-9m-oLG" id="MuL-UD-CBq"/>
                 <outlet property="loadSpinner" destination="TB4-GN-Or2" id="NJR-k6-PMS"/>
                 <outlet property="movieName" destination="jzQ-RO-3jH" id="HqD-n9-Zci"/>
                 <outlet property="overViewArrowButon" destination="PNZ-Vl-8bg" id="dZM-ep-TLb"/>
@@ -53,7 +53,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HRq-Sz-LQA">
                                             <rect key="frame" x="100" y="0.0" width="269.66666666666669" height="115"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzQ-RO-3jH" customClass="CustomLabel" customModule="MovieDBDemo" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzQ-RO-3jH" customClass="CustomLabel" customModule="MovieDB" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="269.66666666666669" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="rdO-oD-gdT"/>
@@ -190,7 +190,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wp-Vw-uYJ">
                                     <rect key="frame" x="0.0" y="133" width="369.66666666666669" height="50"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41S-gq-CvB" customClass="ScoreIndicatorView" customModule="MovieDBDemo" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41S-gq-CvB" customClass="ScoreIndicatorView" customModule="MovieDB" customModuleProvider="target">
                                             <rect key="frame" x="100" y="0.0" width="50" height="50"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -240,7 +240,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="74C-w0-7sC">
                                             <rect key="frame" x="30" y="7" width="309.66666666666669" height="34.333333333333336"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCQ-po-2wM" customClass="CustomUIButton" customModule="MovieDBDemo" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCQ-po-2wM" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="38.333333333333336" height="34.333333333333336"/>
                                                     <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -257,7 +257,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmE-Aw-5D5" customClass="CustomUIButton" customModule="MovieDBDemo" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmE-Aw-5D5" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
                                                     <rect key="frame" x="90.333333333333343" y="0.0" width="38.666666666666657" height="34.333333333333336"/>
                                                     <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
                                                     <buttonConfiguration key="configuration" style="plain">
@@ -273,7 +273,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAN-Jg-HYd" customClass="CustomUIButton" customModule="MovieDBDemo" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAN-Jg-HYd" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
                                                     <rect key="frame" x="181" y="0.0" width="38.333333333333343" height="34.333333333333336"/>
                                                     <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
                                                     <buttonConfiguration key="configuration" style="plain">
@@ -289,7 +289,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5p-K4-w5h" customClass="CustomUIButton" customModule="MovieDBDemo" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5p-K4-w5h" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
                                                     <rect key="frame" x="271.33333333333331" y="0.0" width="38.333333333333314" height="34.333333333333336"/>
                                                     <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
                                                     <buttonConfiguration key="configuration" style="plain">
@@ -452,6 +452,9 @@
         </view>
     </objects>
     <designables>
+        <designable name="8N0-zZ-Ddk">
+            <size key="intrinsicContentSize" width="2200" height="1553"/>
+        </designable>
         <designable name="CIu-SF-qD9">
             <size key="intrinsicContentSize" width="62.333333333333336" height="18"/>
         </designable>
@@ -466,9 +469,6 @@
         </designable>
         <designable name="j5p-K4-w5h">
             <size key="intrinsicContentSize" width="52" height="34.333333333333336"/>
-        </designable>
-        <designable name="jzQ-RO-3jH">
-            <size key="intrinsicContentSize" width="115.66666666666667" height="24"/>
         </designable>
         <designable name="lAN-Jg-HYd">
             <size key="intrinsicContentSize" width="46.333333333333336" height="34.333333333333336"/>
