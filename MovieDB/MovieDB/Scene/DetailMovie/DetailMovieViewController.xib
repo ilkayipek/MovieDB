@@ -38,8 +38,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="1420"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istanbul" translatesAutoresizingMaskIntoConstraints="NO" id="YPC-IL-1Wu">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="653.33333333333337"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="YPC-IL-1Wu">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vat-0e-4nn">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="1420"/>
@@ -70,7 +70,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5J-nZ-Khl">
                                                     <rect key="frame" x="0.0" y="50" width="269.66666666666669" height="25"/>
                                                     <subviews>
-                                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-Rh-nKD" customClass="CustomLabel" customModule="MovieDBDemo" customModuleProvider="target">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-Rh-nKD" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
                                                             <rect key="frame" x="13" y="3" width="35.333333333333336" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" name="ContainerBackgroundColor"/>
@@ -90,7 +90,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-SF-qD9" customClass="CustomLabel" customModule="MovieDBDemo" customModuleProvider="target">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-SF-qD9" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
                                                             <rect key="frame" x="114" y="3" width="63" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" name="ContainerBackgroundColor"/>
@@ -119,7 +119,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-Jx-pzW">
                                                     <rect key="frame" x="0.0" y="85" width="269.66666666666669" height="30"/>
                                                     <subviews>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kjkhjgjhkjkhjj" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvv-g4-TOe" customClass="CustomLabel" customModule="MovieDBDemo" customModuleProvider="target">
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kjkhjgjhkjkhjj" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvv-g4-TOe" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
                                                             <rect key="frame" x="5" y="5" width="100.66666666666667" height="17"/>
                                                             <color key="backgroundColor" name="ContainerBackgroundColor"/>
                                                             <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
@@ -151,7 +151,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="jDv-Jx-pzW" secondAttribute="bottom" id="zQF-9h-z9r"/>
                                             </constraints>
                                         </stackView>
-                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istanbul" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-zZ-Ddk" customClass="CustomImageView" customModule="MovieDBDemo" customModuleProvider="target">
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istanbul" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-zZ-Ddk" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="90" id="EUl-bx-9r5"/>
@@ -352,6 +352,9 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
                                             <real key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="ContainerBorderColor"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzo-PL-J5j" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
@@ -407,7 +410,7 @@
                                             <real key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="DetailContentBorderColor"/>
+                                            <color key="value" name="ContainerBorderColor"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -434,7 +437,7 @@
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="YPC-IL-1Wu" secondAttribute="trailing" id="Fxr-yd-ZKe"/>
-                <constraint firstItem="YPC-IL-1Wu" firstAttribute="height" secondItem="nvf-tP-ZcV" secondAttribute="height" multiplier="0.46" id="H49-JL-cfP"/>
+                <constraint firstItem="YPC-IL-1Wu" firstAttribute="height" secondItem="nvf-tP-ZcV" secondAttribute="height" multiplier="0.5" id="H49-JL-cfP"/>
                 <constraint firstItem="Vat-0e-4nn" firstAttribute="leading" secondItem="nvf-tP-ZcV" secondAttribute="leading" id="Ljl-qH-THO"/>
                 <constraint firstItem="YPC-IL-1Wu" firstAttribute="leading" secondItem="nvf-tP-ZcV" secondAttribute="leading" id="Vn3-y7-1Fq"/>
                 <constraint firstItem="YPC-IL-1Wu" firstAttribute="top" secondItem="nvf-tP-ZcV" secondAttribute="top" id="XRq-Sk-sDK"/>
@@ -448,7 +451,34 @@
             <point key="canvasLocation" x="29.770992366412212" y="226.05633802816902"/>
         </view>
     </objects>
+    <designables>
+        <designable name="CIu-SF-qD9">
+            <size key="intrinsicContentSize" width="62.333333333333336" height="18"/>
+        </designable>
+        <designable name="Wvv-g4-TOe">
+            <size key="intrinsicContentSize" width="100.66666666666667" height="17"/>
+        </designable>
+        <designable name="hmE-Aw-5D5">
+            <size key="intrinsicContentSize" width="50.666666666666664" height="34.333333333333336"/>
+        </designable>
+        <designable name="iDT-Rh-nKD">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="18"/>
+        </designable>
+        <designable name="j5p-K4-w5h">
+            <size key="intrinsicContentSize" width="52" height="34.333333333333336"/>
+        </designable>
+        <designable name="jzQ-RO-3jH">
+            <size key="intrinsicContentSize" width="115.66666666666667" height="24"/>
+        </designable>
+        <designable name="lAN-Jg-HYd">
+            <size key="intrinsicContentSize" width="46.333333333333336" height="34.333333333333336"/>
+        </designable>
+        <designable name="nCQ-po-2wM">
+            <size key="intrinsicContentSize" width="51" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="Image" width="185.03999328613281" height="133.39999389648438"/>
         <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
@@ -460,6 +490,9 @@
         </namedColor>
         <namedColor name="ContainerBackgroundColor">
             <color red="0.13699999451637268" green="0.14100000262260437" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ContainerBorderColor">
+            <color red="0.2199999988079071" green="0.23499999940395355" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ContentTextColor">
             <color red="0.83899998664855957" green="0.84700000286102295" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
