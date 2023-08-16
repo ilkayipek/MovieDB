@@ -33,7 +33,48 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = DetailMovieViewModel()
+        getDetailInfo(movieId: movieId)
         setupBackgroundImageViewWithGradient()
+    }
+    
+    private func getDetailInfo(movieId: Int?) {
+        if movieId != nil {
+            viewModel?.getMovieDetailOriginal(movieId: movieId!) {[weak self] (data) in
+                guard let self else {return}
+                if let data {
+                    let defaultImage = UIImage(named: "default")
+                    let backgroundPosterUrl = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: data.backdropPath)
+                    let posterUrl = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: data.posterPath)
+                    
+                    if backgroundPosterUrl != nil {
+                        self.backgroundPoster.loadImage(url: backgroundPosterUrl!, placeHolderImage: defaultImage, nil)
+                    }
+                    
+                    if posterUrl != nil {
+                        self.posterImage.loadImage(url: posterUrl!, placeHolderImage: nil) { _, _, _, _ in
+                            self.posterImage.isHidden = false
+                            self.loadSpinner.stopAnimating()
+                        }
+                    }
+                    
+                    if let date = data.releaseDate, let runtime = data.runtime {
+                        self.runtimeLabel.isHidden = false
+                        self.releaseDateLabel.isHidden = false
+                    }
+                    
+                    self.movieName.text = data.title
+                    self.scoreIndicatorView.setScore(data.voteAverage ?? 0.0)
+                    self.overViewTextView.text = data.overview
+                    self.tagLineLabel.text = data.tagline
+                    self.voteCountLabel.text = "\(data.voteCount ?? 0) votes"
+                    
+                } else {
+                    print("ERROR")
+                }
+            }
+        } else {
+            print("ERROR")
+        }
     }
     
     private func setupBackgroundImageViewWithGradient() {
