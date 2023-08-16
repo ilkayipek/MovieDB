@@ -73,11 +73,11 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
                     self.createLabelGenres(genres: data.genres)
                     
                 } else {
-                    print("ERROR")
+                    self.detailError()
                 }
             }
         } else {
-            print("ERROR")
+            detailError()
         }
     }
     
@@ -162,7 +162,6 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             let fixedWidth = overViewTextView.frame.size.width
             let newSize = overViewTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
             
-            // Eğer yeni yükseklik farklı ise, TextView'ın yüksekliğini ve constraint'ini ayarlayın
             if overViewContainerHeightConstraint.constant < newSize.height + 45 {
                 overViewContainerHeightConstraint.constant = newSize.height + 45
                 overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
@@ -173,6 +172,13 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
         }
         isExpanded = !isExpanded
-        
+    }
+    
+    private func detailError() {
+        let errorMessage = NSLocalizedString("An Error Occurred While Loading Data.", comment: "")
+        viewModel?.errorHandlerCompletion?(errorMessage, .error, .okey) { [weak self] _ in
+            guard let self else {return}
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
