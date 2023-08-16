@@ -36,6 +36,8 @@
 		FAB226B02A8D697600E4F2DE /* TrailerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB226AE2A8D697600E4F2DE /* TrailerCollectionViewCell.xib */; };
 		FAB226B32A8D698B00E4F2DE /* ActorsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226B12A8D698B00E4F2DE /* ActorsCollectionViewCell.swift */; };
 		FAB226B42A8D698B00E4F2DE /* ActorsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB226B22A8D698B00E4F2DE /* ActorsCollectionViewCell.xib */; };
+		FAB226B72A8D718500E4F2DE /* DetailMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226B52A8D718500E4F2DE /* DetailMovieTableViewCell.swift */; };
+		FAB226B82A8D718500E4F2DE /* DetailMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB226B62A8D718500E4F2DE /* DetailMovieTableViewCell.xib */; };
 		FAB99A502A7940B800EB5307 /* MovieCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A4E2A7940B800EB5307 /* MovieCollectionTableViewCell.swift */; };
 		FAB99A512A7940B800EB5307 /* MovieCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB99A4F2A7940B800EB5307 /* MovieCollectionTableViewCell.xib */; };
 		FAB99A582A79436600EB5307 /* MovieListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A562A79436600EB5307 /* MovieListCollectionViewCell.swift */; };
@@ -93,6 +95,8 @@
 		FAB226AE2A8D697600E4F2DE /* TrailerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAB226B12A8D698B00E4F2DE /* ActorsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAB226B22A8D698B00E4F2DE /* ActorsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActorsCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAB226B52A8D718500E4F2DE /* DetailMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieTableViewCell.swift; sourceTree = "<group>"; };
+		FAB226B62A8D718500E4F2DE /* DetailMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMovieTableViewCell.xib; sourceTree = "<group>"; };
 		FAB99A4E2A7940B800EB5307 /* MovieCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		FAB99A4F2A7940B800EB5307 /* MovieCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		FAB99A562A79436600EB5307 /* MovieListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 				FAB226AE2A8D697600E4F2DE /* TrailerCollectionViewCell.xib */,
 				FAB226B12A8D698B00E4F2DE /* ActorsCollectionViewCell.swift */,
 				FAB226B22A8D698B00E4F2DE /* ActorsCollectionViewCell.xib */,
+				FAB226B52A8D718500E4F2DE /* DetailMovieTableViewCell.swift */,
+				FAB226B62A8D718500E4F2DE /* DetailMovieTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				FAB226B42A8D698B00E4F2DE /* ActorsCollectionViewCell.xib in Resources */,
 				FA0BADF22A8BDAAD0066EE40 /* DetailMovieViewController.xib in Resources */,
 				FA6E3EEF2A63F16400C0BE91 /* Assets.xcassets in Resources */,
+				FAB226B82A8D718500E4F2DE /* DetailMovieTableViewCell.xib in Resources */,
 				FAB99A512A7940B800EB5307 /* MovieCollectionTableViewCell.xib in Resources */,
 				FAB99A592A79436600EB5307 /* MovieListCollectionViewCell.xib in Resources */,
 				FA6E3EED2A63F16300C0BE91 /* Main.storyboard in Resources */,
@@ -448,6 +455,7 @@
 				FA0BADF82A8BDFAE0066EE40 /* UIViewController+Extension.swift in Sources */,
 				FAB226A42A8D4B5000E4F2DE /* UILabel+Extension.swift in Sources */,
 				FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */,
+				FAB226B72A8D718500E4F2DE /* DetailMovieTableViewCell.swift in Sources */,
 				FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */,
 				FAB99A612A796D3E00EB5307 /* MovieResult.swift in Sources */,
 				FAED83812A8BEE1000328E0F /* CustomContainerUIView.swift in Sources */,
