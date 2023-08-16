@@ -3,22 +3,80 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TrailerCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="159" height="111"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrailerCollectionViewCell" id="cpU-UM-cKE" customClass="TrailerCollectionViewCell" customModule="MovieDBDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="225" height="125"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="159" height="111"/>
+                <rect key="frame" x="0.0" y="0.0" width="225" height="125"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="oMu-x4-jXL" customClass="CustomImageView" customModule="MovieDBDemo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="225" height="125"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="225" id="ABs-8R-zFN"/>
+                            <constraint firstAttribute="height" constant="125" id="kGB-4b-T58"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmQ-U2-nAr">
+                        <rect key="frame" x="72.666666666666671" y="22.666666666666671" width="80.000000000000014" height="80"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="QtZ-Or-cts"/>
+                            <constraint firstAttribute="width" constant="80" id="diT-H3-N5c"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title=" " imagePadding="-3" cornerStyle="medium">
+                            <imageReference key="image" image="play.circle.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single" variableValue="0.0">
+                                <hierarchicalColors>
+                                    <color name="DetailLabelColor"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                            <backgroundConfiguration key="background"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="55" scale="large" weight="black"/>
+                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                    </button>
+                </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="159" height="111"/>
-            <point key="canvasLocation" x="190.07633587786259" y="8.8028169014084519"/>
+            <viewLayoutGuide key="safeArea" id="gHQ-bR-Q6H"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="oMu-x4-jXL" secondAttribute="bottom" id="Ccz-hY-wB2"/>
+                <constraint firstItem="oMu-x4-jXL" firstAttribute="leading" secondItem="cpU-UM-cKE" secondAttribute="leading" id="Dvz-MJ-Zqz"/>
+                <constraint firstItem="LmQ-U2-nAr" firstAttribute="centerX" secondItem="cpU-UM-cKE" secondAttribute="centerX" id="M6K-Qe-ooE"/>
+                <constraint firstItem="oMu-x4-jXL" firstAttribute="top" secondItem="cpU-UM-cKE" secondAttribute="top" id="cwO-JI-aU7"/>
+                <constraint firstAttribute="trailing" secondItem="oMu-x4-jXL" secondAttribute="trailing" id="eN1-ID-eV7"/>
+                <constraint firstItem="LmQ-U2-nAr" firstAttribute="centerY" secondItem="cpU-UM-cKE" secondAttribute="centerY" id="fxz-aY-1Ps"/>
+            </constraints>
+            <size key="customSize" width="225" height="125"/>
+            <connections>
+                <outlet property="playButton" destination="LmQ-U2-nAr" id="TgE-f5-g37"/>
+                <outlet property="trailerImageView" destination="oMu-x4-jXL" id="xDD-Ho-Dgm"/>
+            </connections>
+            <point key="canvasLocation" x="-109.16030534351144" y="-48.943661971830991"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="Image" width="185.03999328613281" height="133.39999389648438"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="DetailLabelColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
