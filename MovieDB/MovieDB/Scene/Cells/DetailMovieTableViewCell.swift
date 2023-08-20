@@ -41,7 +41,16 @@ class DetailMovieTableViewCell: UITableViewCell {
 
 extension DetailMovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        switch tableViewIndex {
+        case 0:
+            let data = collections as! MovieTrailerModel
+            return data.results?.count ?? 0
+        case 1:
+            let data = collections as! MovieActorsModel
+            return data.cast?.count ?? 0
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
