@@ -30,6 +30,8 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     
     var movieId: Int?
     var isExpanded = false
+    var tableModel = [(order: Int,data: DetailMovieCollectionModelProtocol)]()
+    let group = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,37 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         setupBackgroundImageViewWithGradient()
         setOverView()
         configureTableView()
+        getOtherList()
+    }
+    private func getOtherList() {
+        group.enter()
+        viewModel?.getTrailers(movieId: movieId ?? 0) { [weak self] (data) in
+            guard let self else {return}
+            if var result = data {
+                result.collectionTitle = NSLocalizedString("Trailers", comment: "")
+                self.tableModel.append((0,result))
+                self.group.leave()
+            }
+        }
+        
+        group.enter()
+        viewModel?.getActors(movieId: movieId ?? 0) { [weak self] (data) in
+            guard let self else {return}
+            if var result = data {
+                result.collectionTitle = NSLocalizedString("Actors", comment: "")
+                self.tableModel.append((1,result))
+                self.group.leave()
+            }
+        }
+        
+        
+        
+        group.notify(queue: .main) { [weak self] in
+            guard let self else {return}
+            self.tableModel.sort(by: { $0.order < $1.order })
+            self.tableView.reloadData()
+        }
+        
     }
     
     private func configureTableView() {
@@ -196,13 +229,16 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
 extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return tableModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieTableViewCell.self), for: indexPath) as! DetailMovieTableViewCell
+        let (_ ,data) = tableModel[indexPath.row]
         
-        cell.collectionViewTiltleLabel.text = "Trial"
+        cell.collectionViewTiltleLabel.text = data.collectionTitle
+        cell.collections = data
+        cell.tableViewIndex = indexPath.row
         cell.collectionView.reloadData()
         return cell
     }
