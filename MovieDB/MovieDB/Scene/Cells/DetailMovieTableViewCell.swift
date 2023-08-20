@@ -10,6 +10,9 @@ import UIKit
 class DetailMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionViewTiltleLabel: UILabel!
     @IBOutlet weak var  collectionView: UICollectionView!
+    
+    var collections: DetailMovieCollectionModelProtocol?
+    var tableViewIndex: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
