@@ -16,6 +16,8 @@ extension Constant {
         case translationMaviePath = "/3/movie"
         case languagePath = "&language="
         case apiKeyPath = "?api_key="
+        case credits = "/credits"
+
         
         static func popularMoviesPath() -> String {
             return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
@@ -39,6 +41,10 @@ extension Constant {
         static func translationMoviePath(movieId: Int, language: Language) -> String {
             let apiKey = Constant.shared.apiKey
             return "\(translationMaviePath.rawValue)/\(movieId)\(apiKeyPath.rawValue)\(apiKey)\(languagePath.rawValue)\(language.rawValue)"
+        }
+        
+        static func castPath(movieId: Int) -> String {
+            return "\(movieDetail.rawValue)\(movieId)\(credits.rawValue)"
         }
     }
 }
