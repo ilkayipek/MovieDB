@@ -58,4 +58,18 @@ class DetailMovieViewModel: BaseViewModel {
             }
         }
     }
+    
+    func getTrailers(movieId: Int, closure: @escaping(MovieTrailerModel?) -> Void) {
+        let path = Constant.RequestPathMovie.trailerPath(movieId: movieId)
+        Network.shared.getRequestV3(urlPath: path) { (result: Result<MovieTrailerModel?, Error>) in
+            switch result {
+            case .success(let data):
+                closure(data)
+            case .failure(let error):
+                closure(nil)
+                print("ERROR MESSAGE: \(error.localizedDescription)")
+            }
+        }
+        
+    }
 }
