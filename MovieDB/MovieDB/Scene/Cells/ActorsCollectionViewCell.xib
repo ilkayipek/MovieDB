@@ -9,14 +9,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActorsCollectionViewCell" id="VXi-nF-YAi" customClass="ActorsCollectionViewCell" customModule="MovieDBDemo" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActorsCollectionViewCell" id="VXi-nF-YAi" customClass="ActorsCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="80" height="145"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="80" height="145"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-Y0-KWS" customClass="CustomImageView" customModule="MovieDBDemo" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-Y0-KWS" customClass="CustomImageView" customModule="MovieDB" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="Qoo-4e-bLk"/>
@@ -37,6 +37,7 @@
                         <rect key="frame" x="-2.3333333333333357" y="130" width="84.666666666666686" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="6Y9-A5-ZgD"/>
+                            <constraint firstAttribute="width" constant="84.670000000000002" id="bUk-e8-IzE"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -44,17 +45,15 @@
                     </label>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="D4z-jr-6aF"/>
+            <viewLayoutGuide key="safeArea" id="vCb-De-PK8"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="MHm-oU-zSf" secondAttribute="bottom" id="15f-Oo-a4h"/>
                 <constraint firstItem="MHm-oU-zSf" firstAttribute="top" secondItem="480-vJ-Z3N" secondAttribute="bottom" id="2Fd-ww-XkA"/>
                 <constraint firstItem="wwz-Y0-KWS" firstAttribute="centerX" secondItem="MHm-oU-zSf" secondAttribute="centerX" id="8fd-LH-xxe"/>
-                <constraint firstItem="480-vJ-Z3N" firstAttribute="leading" secondItem="VXi-nF-YAi" secondAttribute="leading" id="Jsg-vz-4JV"/>
                 <constraint firstItem="wwz-Y0-KWS" firstAttribute="centerX" secondItem="480-vJ-Z3N" secondAttribute="centerX" id="Vf3-QQ-7o9"/>
                 <constraint firstItem="wwz-Y0-KWS" firstAttribute="top" secondItem="VXi-nF-YAi" secondAttribute="top" id="Vtq-6F-Qne"/>
                 <constraint firstItem="480-vJ-Z3N" firstAttribute="top" secondItem="wwz-Y0-KWS" secondAttribute="bottom" id="c12-GV-HPD"/>
-                <constraint firstAttribute="trailing" secondItem="480-vJ-Z3N" secondAttribute="trailing" id="t1n-Oq-P9z"/>
                 <constraint firstItem="wwz-Y0-KWS" firstAttribute="centerX" secondItem="VXi-nF-YAi" secondAttribute="centerX" id="vAF-53-VRx"/>
             </constraints>
             <size key="customSize" width="80" height="145"/>
@@ -63,7 +62,7 @@
                 <outlet property="actorImageView" destination="wwz-Y0-KWS" id="KUh-H9-2bh"/>
                 <outlet property="actorNameLabel" destination="480-vJ-Z3N" id="NTp-lt-OfP"/>
             </connections>
-            <point key="canvasLocation" x="-142" y="-96"/>
+            <point key="canvasLocation" x="-143.5114503816794" y="-96.126760563380287"/>
         </collectionViewCell>
     </objects>
     <resources>
