@@ -41,4 +41,21 @@ class DetailMovieViewModel: BaseViewModel {
             }
         }
     }
+    
+    func getActors(movieId: Int, closure: @escaping(MovieActorsModel?) -> Void) -> Void {
+        let path = Constant.RequestPathMovie.castPath(movieId: movieId)
+        Network.shared.getRequestV3(urlPath: path) { (result: Result<MovieActorsModel, Error>) in
+            switch result {
+            case .success(let data):
+                if data.success ?? true {
+                    closure(data)
+                } else {
+                    closure(nil)
+                }
+            case .failure(let error):
+                closure(nil)
+                print("ERROR MESSAGE: \(error.localizedDescription)")
+            }
+        }
+    }
 }
