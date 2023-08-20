@@ -37,6 +37,16 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         getDetailInfo(movieId: movieId)
         setupBackgroundImageViewWithGradient()
         setOverView()
+        configureTableView()
+    }
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let detailCell = String(describing: DetailMovieTableViewCell.self)
+        tableView.register(UINib(nibName: detailCell, bundle: nil), forCellReuseIdentifier: detailCell)
+        
     }
     
     private func getDetailInfo(movieId: Int?) {
@@ -182,3 +192,19 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         }
     }
 }
+
+extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieTableViewCell.self), for: indexPath) as! DetailMovieTableViewCell
+        
+        cell.collectionViewTiltleLabel.text = "Trial"
+        cell.collectionView.reloadData()
+        return cell
+    }
+}
+
