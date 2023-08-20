@@ -16,8 +16,10 @@ extension Constant {
         case translationMaviePath = "/3/movie"
         case languagePath = "&language="
         case apiKeyPath = "?api_key="
+        case trailerVieo = "https://www.youtube.com/watch?v="
         case credits = "/credits"
-
+        case thumbnailUrl = "https://img.youtube.com/vi/"
+        case vieos = "/videos"
         
         static func popularMoviesPath() -> String {
             return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
@@ -45,6 +47,22 @@ extension Constant {
         
         static func castPath(movieId: Int) -> String {
             return "\(movieDetail.rawValue)\(movieId)\(credits.rawValue)"
+        }
+        
+        static func trailerVideoUrl(key: String) -> String {
+            return "\(trailerVieo.rawValue+key)"
+        }
+        
+        static func trailerThumbnailUrl(key: String?) -> URL? {
+            if let url = URL(string: "\(thumbnailUrl.rawValue)\(key ?? "")/0.jpg") {
+                return url
+            } else {
+                return nil
+            }
+        }
+        
+        static func trailerPath(movieId: Int) -> String {
+            return "\(movieDetail.rawValue)\(movieId)\(vieos.rawValue)"
         }
     }
 }
