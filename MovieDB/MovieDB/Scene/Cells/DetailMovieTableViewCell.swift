@@ -17,8 +17,6 @@ class DetailMovieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCollectionView()
-        collectionView.reloadData()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,13 +52,51 @@ extension DetailMovieTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TrailerCollectionViewCell.self), for: indexPath) as! TrailerCollectionViewCell
-       
-        return cell
+        let emptyCell = UICollectionViewCell()
+        
+        switch tableViewIndex {
+        case 0:
+            if let trailers = (collections as? MovieTrailerModel) {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TrailerCollectionViewCell.self), for: indexPath) as! TrailerCollectionViewCell
+                
+                if let url = Constant.RequestPathMovie.trailerThumbnailUrl(key: trailers.results?[indexPath.row].key) {
+                    cell.trailerImageView.loadImage(url: url, placeHolderImage: nil) { _, _, _, _ in
+                        //stop animation
+                    }
+                }
+                
+                return cell
+                
+            } else { return emptyCell}
+        case 1:
+            if let actors = collections as? MovieActorsModel {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ActorsCollectionViewCell.self), for: indexPath) as! ActorsCollectionViewCell
+                
+                
+                cell.actorNameLabel.text = actors.cast?[indexPath.row].originalName
+                cell.actorDepartment.text = actors.cast?[indexPath.row].knownForDepartment
+                
+                if let imageUrl = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: actors.cast?[indexPath.row].profilePath) {
+                    cell.actorImageView.loadImage(url: imageUrl, placeHolderImage: nil) { _, _, _, _ in
+                        //animation stop
+                    }
+                }
+                return cell
+            }  else { return emptyCell}
+        default:
+            return UICollectionViewCell()
+        }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch tableViewIndex {
+        case 0:
             return CGSize(width: 225, height: 125)
+        case 1:
+            return CGSize(width: 80, height: 145)
+        default:
+            return CGSize(width: 80, height: 145)
+        }
     }
+
 }
 
