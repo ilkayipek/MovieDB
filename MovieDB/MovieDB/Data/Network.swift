@@ -53,8 +53,15 @@ class Network {
     }
     
     func getRequestV3<T: Decodable>(urlPath: String, completion: @escaping (Result<T, Error>) -> Void) {
+        let (authToken, contentType) = getAuthTokenAndContentType()
+        
+        guard let authToken else {return}
+        guard let contentType else {return}
         guard let url = getUrl(urlPath: urlPath) else {return}
+        
         var headers = HTTPHeaders()
+        headers.add(name: AuthV4Headers.contentType.rawValue, value: contentType)
+        headers.add(name: AuthV4Headers.authorization.rawValue, value: authToken)
             
         AF.request(url, headers: headers).response {  response  in
             debugPrint(response)
