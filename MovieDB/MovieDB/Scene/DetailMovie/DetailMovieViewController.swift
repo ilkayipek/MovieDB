@@ -186,10 +186,13 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     private func createVerticalGradientLayer() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
         
+        let aspectRatio = backgroundPoster.bounds.width / backgroundPoster.bounds.height
+        print(aspectRatio)
+        
         gradientLayer.colors = [UIColor.clear.cgColor, view.backgroundColor?.cgColor ?? UIColor.black.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.7)
-        gradientLayer.frame = CGRect(x: 0, y: 0.25 , width: view.frame.width, height: view.frame.height * 0.4 )
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: aspectRatio)
+        gradientLayer.frame = CGRect(x: 0, y: 0 , width: 500, height: view.frame.height * aspectRatio )
         return gradientLayer
     }
     
