@@ -19,6 +19,7 @@
 		FA333C982A929B2100A78968 /* MovieTrailerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C972A929B2100A78968 /* MovieTrailerModel.swift */; };
 		FA333C9A2A929B3C00A78968 /* MovieTrailerResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C992A929B3C00A78968 /* MovieTrailerResultModel.swift */; };
 		FA333C9C2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C9B2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift */; };
+		FA333C9E2A94E3BE00A78968 /* AuthV4Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */; };
 		FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42FB8B2A79315A00076879 /* HomeViewController.swift */; };
 		FA42FB8E2A79315A00076879 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA42FB8C2A79315A00076879 /* HomeViewController.xib */; };
 		FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42FB8F2A79316A00076879 /* HomeViewModel.swift */; };
@@ -81,6 +82,7 @@
 		FA333C972A929B2100A78968 /* MovieTrailerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerModel.swift; sourceTree = "<group>"; };
 		FA333C992A929B3C00A78968 /* MovieTrailerResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerResultModel.swift; sourceTree = "<group>"; };
 		FA333C9B2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieCollectionModelProtocol.swift; sourceTree = "<group>"; };
+		FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthV4Headers.swift; sourceTree = "<group>"; };
 		FA42FB8B2A79315A00076879 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA42FB8C2A79315A00076879 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		FA42FB8F2A79316A00076879 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				FAB226A72A8D4BBD00E4F2DE /* IconeName.swift */,
 				FAB226A92A8D65B600E4F2DE /* AlertTitle.swift */,
 				FAB226AB2A8D65E900E4F2DE /* ActionTitle.swift */,
+				FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				FA0BADF82A8BDFAE0066EE40 /* UIViewController+Extension.swift in Sources */,
 				FAB226A42A8D4B5000E4F2DE /* UILabel+Extension.swift in Sources */,
 				FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */,
+				FA333C9E2A94E3BE00A78968 /* AuthV4Headers.swift in Sources */,
 				FAB226B72A8D718500E4F2DE /* DetailMovieTableViewCell.swift in Sources */,
 				FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */,
 				FA333C982A929B2100A78968 /* MovieTrailerModel.swift in Sources */,
