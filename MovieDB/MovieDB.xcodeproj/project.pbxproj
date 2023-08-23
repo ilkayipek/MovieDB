@@ -20,6 +20,10 @@
 		FA333C9A2A929B3C00A78968 /* MovieTrailerResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C992A929B3C00A78968 /* MovieTrailerResultModel.swift */; };
 		FA333C9C2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C9B2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift */; };
 		FA333C9E2A94E3BE00A78968 /* AuthV4Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */; };
+		FA333CA02A956ED300A78968 /* TrailerVideoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C9F2A956ED300A78968 /* TrailerVideoDelegate.swift */; };
+		FA333CA42A9578F900A78968 /* TrailerWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333CA22A9578F900A78968 /* TrailerWebViewViewController.swift */; };
+		FA333CA52A9578F900A78968 /* TrailerWebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA333CA32A9578F900A78968 /* TrailerWebViewViewController.xib */; };
+		FA333CA72A957A7B00A78968 /* TrailerWebViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333CA62A957A7B00A78968 /* TrailerWebViewViewModel.swift */; };
 		FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42FB8B2A79315A00076879 /* HomeViewController.swift */; };
 		FA42FB8E2A79315A00076879 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA42FB8C2A79315A00076879 /* HomeViewController.xib */; };
 		FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42FB8F2A79316A00076879 /* HomeViewModel.swift */; };
@@ -83,6 +87,10 @@
 		FA333C992A929B3C00A78968 /* MovieTrailerResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerResultModel.swift; sourceTree = "<group>"; };
 		FA333C9B2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieCollectionModelProtocol.swift; sourceTree = "<group>"; };
 		FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthV4Headers.swift; sourceTree = "<group>"; };
+		FA333C9F2A956ED300A78968 /* TrailerVideoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerVideoDelegate.swift; sourceTree = "<group>"; };
+		FA333CA22A9578F900A78968 /* TrailerWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerWebViewViewController.swift; sourceTree = "<group>"; };
+		FA333CA32A9578F900A78968 /* TrailerWebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerWebViewViewController.xib; sourceTree = "<group>"; };
+		FA333CA62A957A7B00A78968 /* TrailerWebViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerWebViewViewModel.swift; sourceTree = "<group>"; };
 		FA42FB8B2A79315A00076879 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA42FB8C2A79315A00076879 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		FA42FB8F2A79316A00076879 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +165,16 @@
 			path = DetailMovie;
 			sourceTree = "<group>";
 		};
+		FA333CA12A95788200A78968 /* TrailerWebView */ = {
+			isa = PBXGroup;
+			children = (
+				FA333CA22A9578F900A78968 /* TrailerWebViewViewController.swift */,
+				FA333CA32A9578F900A78968 /* TrailerWebViewViewController.xib */,
+				FA333CA62A957A7B00A78968 /* TrailerWebViewViewModel.swift */,
+			);
+			path = TrailerWebView;
+			sourceTree = "<group>";
+		};
 		FA42FB8A2A79314900076879 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +223,7 @@
 				FAB99A5D2A796CEE00EB5307 /* MovieModelProtocol.swift */,
 				FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */,
 				FA333C9B2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift */,
+				FA333C9F2A956ED300A78968 /* TrailerVideoDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -234,6 +253,7 @@
 		FA45EA5B2A68443D0012791A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA333CA12A95788200A78968 /* TrailerWebView */,
 				FA0BADEE2A8BDA8E0066EE40 /* DetailMovie */,
 				FA9BA4B42A83A347006F6EFF /* CustomViews */,
 				FAB99A482A793FC900EB5307 /* Cells */,
@@ -432,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA333CA52A9578F900A78968 /* TrailerWebViewViewController.xib in Resources */,
 				FAB226B02A8D697600E4F2DE /* TrailerCollectionViewCell.xib in Resources */,
 				FA6E3EF22A63F16400C0BE91 /* LaunchScreen.storyboard in Resources */,
 				FAB226B42A8D698B00E4F2DE /* ActorsCollectionViewCell.xib in Resources */,
@@ -457,6 +478,7 @@
 				FAB99A652A796E6D00EB5307 /* TrendMoviesModel.swift in Sources */,
 				FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */,
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
+				FA333CA72A957A7B00A78968 /* TrailerWebViewViewModel.swift in Sources */,
 				FAB99A672A7972EC00EB5307 /* Constant.swift in Sources */,
 				FA6E3EEA2A63F16300C0BE91 /* ViewController.swift in Sources */,
 				FA0BADF62A8BDCB60066EE40 /* ScoreIndicatorView.swift in Sources */,
@@ -472,11 +494,13 @@
 				FA0BADF12A8BDAAD0066EE40 /* DetailMovieViewController.swift in Sources */,
 				FA333C962A929AED00A78968 /* CastModel.swift in Sources */,
 				FA0BADF82A8BDFAE0066EE40 /* UIViewController+Extension.swift in Sources */,
+				FA333CA02A956ED300A78968 /* TrailerVideoDelegate.swift in Sources */,
 				FAB226A42A8D4B5000E4F2DE /* UILabel+Extension.swift in Sources */,
 				FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */,
 				FA333C9E2A94E3BE00A78968 /* AuthV4Headers.swift in Sources */,
 				FAB226B72A8D718500E4F2DE /* DetailMovieTableViewCell.swift in Sources */,
 				FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */,
+				FA333CA42A9578F900A78968 /* TrailerWebViewViewController.swift in Sources */,
 				FA333C982A929B2100A78968 /* MovieTrailerModel.swift in Sources */,
 				FAB99A612A796D3E00EB5307 /* MovieResult.swift in Sources */,
 				FAED83812A8BEE1000328E0F /* CustomContainerUIView.swift in Sources */,
