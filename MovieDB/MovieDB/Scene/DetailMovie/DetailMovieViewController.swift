@@ -242,8 +242,24 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
         cell.collectionViewTiltleLabel.text = data.collectionTitle
         cell.collections = data
         cell.tableViewIndex = indexPath.row
+        cell.trailerCollectionDelegate = self
         cell.collectionView.reloadData()
         return cell
+    }
+}
+
+// MARK: Selected cells are processed with the help of delegate.
+extension DetailMovieViewController: TrailerVideoDelegate {
+    func selectedVideo(videoKey: String) {
+        let youtubeAppURLString = Constant.RequestPathMovie.trailerVideoUrlApp(key: videoKey)
+        
+        if let youtubeAppURL = URL(string: youtubeAppURLString), UIApplication.shared.canOpenURL(youtubeAppURL) {
+            UIApplication.shared.open(youtubeAppURL, options: [:], completionHandler: nil)
+        } else  {
+            let targetVc = TrailerWebViewViewController.loadFromNib()
+            targetVc.videoKey = videoKey
+            self.navigationController?.pushViewController(targetVc, animated: true)
+        }
     }
 }
 
