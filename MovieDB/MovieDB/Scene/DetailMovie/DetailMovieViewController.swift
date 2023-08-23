@@ -249,7 +249,11 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 // MARK: Selected cells are processed with the help of delegate.
-extension DetailMovieViewController: TrailerVideoDelegate {
+extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate {
+    func selectedCast(id: Int) {
+        //redirect to actor page
+    }
+    
     func selectedVideo(videoKey: String) {
         let youtubeAppURLString = Constant.RequestPathMovie.trailerVideoUrlApp(key: videoKey)
         
