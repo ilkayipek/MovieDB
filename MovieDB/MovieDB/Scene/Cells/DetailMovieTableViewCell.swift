@@ -12,6 +12,7 @@ class DetailMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var  collectionView: UICollectionView!
     
     var trailerCollectionDelegate: TrailerVideoDelegate?
+    var castColectionDelegate: CastDelegate?
     
     var collections: DetailMovieCollectionModelProtocol?
     var tableViewIndex: Int = 0
@@ -107,8 +108,11 @@ extension DetailMovieTableViewCell: UICollectionViewDelegate, UICollectionViewDa
                 guard let key = trailers.results?[indexPath.row].key else {return}
                 trailerCollectionDelegate?.selectedVideo(videoKey: key)
             }
-        case 1: break
-            //Cast Delegate
+        case 1:
+            if let actor = collections as? MovieActorsModel {
+                guard let id = actor.cast?[indexPath.row].id else {return}
+                castColectionDelegate?.selectedCast(id: id)
+            }
         default: break
             
         }
