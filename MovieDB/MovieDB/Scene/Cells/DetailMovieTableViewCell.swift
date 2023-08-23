@@ -11,6 +11,8 @@ class DetailMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionViewTiltleLabel: UILabel!
     @IBOutlet weak var  collectionView: UICollectionView!
     
+    var trailerCollectionDelegate: TrailerVideoDelegate?
+    
     var collections: DetailMovieCollectionModelProtocol?
     var tableViewIndex: Int = 0
 
@@ -64,7 +66,6 @@ extension DetailMovieTableViewCell: UICollectionViewDelegate, UICollectionViewDa
                         //stop animation
                     }
                 }
-                
                 return cell
                 
             } else { return emptyCell}
@@ -95,6 +96,21 @@ extension DetailMovieTableViewCell: UICollectionViewDelegate, UICollectionViewDa
             return CGSize(width: 80, height: 145)
         default:
             return CGSize(width: 80, height: 145)
+        }
+    }
+    
+    //MARK: the selected cell delegate is declared
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch tableViewIndex {
+        case 0:
+            if let trailers = (collections as? MovieTrailerModel) {
+                guard let key = trailers.results?[indexPath.row].key else {return}
+                trailerCollectionDelegate?.selectedVideo(videoKey: key)
+            }
+        case 1: break
+            //Cast Delegate
+        default: break
+            
         }
     }
 
