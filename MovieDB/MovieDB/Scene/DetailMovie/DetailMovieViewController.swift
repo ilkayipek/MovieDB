@@ -9,28 +9,11 @@ import UIKit
 
 class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var loadSpinner: UIActivityIndicatorView!
     @IBOutlet weak var backgroundPoster: UIImageView!
-    @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var favoriteButton: UIButton!
-    @IBOutlet weak var watchListButton: UIButton!
-    @IBOutlet weak var starButton: UIButton!
-    @IBOutlet weak var overViewArrowButon: UIButton!
-    @IBOutlet weak var runtimeLabel: CustomUILabel!
-    @IBOutlet weak var releaseDateLabel: CustomUILabel!
-    @IBOutlet weak var genreExpampleLabel: CustomUILabel!
-    @IBOutlet weak var tagLineLabel: UILabel!
-    @IBOutlet weak var movieName: UILabel!
-    @IBOutlet weak var voteCountLabel: UILabel!
-    @IBOutlet weak var overViewTextView: UITextView!
-    @IBOutlet weak var genreView: UIView!
-    @IBOutlet weak var genreViewyConstraint: NSLayoutConstraint!
-    @IBOutlet weak var overViewContainerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var scoreIndicatorView: ScoreIndicatorView!
     
     var movieId: Int?
-    var isExpanded = false
-    var tableModel = [(order: Int,data: DetailMovieCollectionModelProtocol)]()
+    var footerModel = [(order: Int,data: DetailMovieCollectionModelProtocol)]()
+    var detailMovieModel: DetailMovieModel?
     let group = DispatchGroup()
     
     override func viewDidLoad() {
@@ -38,17 +21,17 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         viewModel = DetailMovieViewModel()
         getDetailInfo(movieId: movieId)
         setupBackgroundImageViewWithGradient()
-        setOverView()
         configureTableView()
         getOtherList()
     }
+    
     private func getOtherList() {
         group.enter()
         viewModel?.getTrailers(movieId: movieId ?? 0) { [weak self] (data) in
             guard let self else {return}
             if var result = data {
                 result.collectionTitle = NSLocalizedString("Trailers", comment: "")
-                self.tableModel.append((0,result))
+                self.footerModel.append((0,result))
                 self.group.leave()
             }
         }
@@ -58,16 +41,14 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             guard let self else {return}
             if var result = data {
                 result.collectionTitle = NSLocalizedString("Actors", comment: "")
-                self.tableModel.append((1,result))
+                self.footerModel.append((1,result))
                 self.group.leave()
             }
         }
         
-        
-        
         group.notify(queue: .main) { [weak self] in
             guard let self else {return}
-            self.tableModel.sort(by: { $0.order < $1.order })
+            self.footerModel.sort(by: { $0.order < $1.order })
             self.tableView.reloadData()
         }
         
@@ -77,8 +58,14 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let detailCell = String(describing: DetailMovieTableViewCell.self)
-        tableView.register(UINib(nibName: detailCell, bundle: nil), forCellReuseIdentifier: detailCell)
+        let headerString = String(describing: DetailMovieHeaderTableViewCell.self)
+        tableView.register(UINib(nibName: headerString, bundle: nil), forCellReuseIdentifier: headerString)
+        
+        let contentString = String(describing: DetailMovieContentTableViewCell.self)
+        tableView.register(UINib(nibName: contentString, bundle: nil), forCellReuseIdentifier: contentString)
+        
+        let footerString = String(describing: DetailMovieFooterTableViewCell.self)
+        tableView.register(UINib(nibName: footerString, bundle: nil), forCellReuseIdentifier: footerString)
         
     }
     
@@ -87,34 +74,15 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             viewModel?.getMovieDetailOriginal(movieId: movieId!) {[weak self] (data) in
                 guard let self else {return}
                 if let data {
+                    self.detailMovieModel = data
+                    
                     let defaultImage = UIImage(named: "default")
                     let backgroundPosterUrl = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: data.backdropPath)
-                    let posterUrl = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: data.posterPath)
-                    
                     if backgroundPosterUrl != nil {
                         self.backgroundPoster.loadImage(url: backgroundPosterUrl!, placeHolderImage: defaultImage, nil)
                     }
                     
-                    if posterUrl != nil {
-                        self.posterImage.loadImage(url: posterUrl!, placeHolderImage: nil) { _, _, _, _ in
-                            self.posterImage.isHidden = false
-                            self.loadSpinner.stopAnimating()
-                        }
-                    }
-                    
-                    if let date = data.releaseDate, let runtime = data.runtime {
-                        self.runtimeLabel.isHidden = false
-                        self.releaseDateLabel.isHidden = false
-                        self.setDateAndRuntimeLabel(date: date, runtime: runtime)
-                    }
-                    
-                    self.movieName.text = data.title
-                    self.scoreIndicatorView.setScore(data.voteAverage ?? 0.0)
-                    self.overViewTextView.text = data.overview
-                    self.tagLineLabel.text = data.tagline
-                    self.voteCountLabel.text = "\(data.voteCount ?? 0) votes"
-                    self.createLabelGenres(genres: data.genres)
-                    
+                    self.tableView.reloadData()
                 } else {
                     self.detailError()
                 }
@@ -122,58 +90,6 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         } else {
             detailError()
         }
-    }
-    
-    func createLabelGenres(genres: [Genre]?) {
-        var xPosition: CGFloat = 0.0
-        var yPosition: CGFloat = 0.0
-        
-        let usableSpace = genreView.frame.width
-        if let genres {
-            for text in genres {
-                let label = createGenreNewLabel(text.name ?? "")
-                
-                if xPosition + label.frame.width > usableSpace {
-                    genreViewyConstraint.constant += 30
-                    xPosition = 0.0
-                    yPosition += label.frame.height + 10.0
-                }
-                
-                label.frame.origin = CGPoint(x: xPosition, y: yPosition)
-                
-                genreView.addSubview(label)
-                
-                xPosition += label.frame.width + 2.0
-            }
-        }
-    }
-    
-    private func createGenreNewLabel(_ text: String) -> UILabel {
-        let label = UILabel()
-        label.font = genreExpampleLabel.font
-        label.textAlignment = .center
-        label.textColor = genreExpampleLabel.textColor
-        label.backgroundColor = genreExpampleLabel.backgroundColor
-        label.clipsToBounds = true
-        label.layer.cornerRadius = genreExpampleLabel.layer.cornerRadius
-        label.layer.borderWidth = genreExpampleLabel.layer.borderWidth
-        label.layer.borderColor = genreExpampleLabel.layer.borderColor
-        
-        label.text = text
-        let labelWidth = text.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: genreExpampleLabel.font.pointSize)]).width
-        label.layer.frame = CGRect(x: 5, y: 5, width: labelWidth + 20 , height: 25)
-        
-        return label
-    }
-    private func setDateAndRuntimeLabel(date: String?, runtime: Int?) {
-        let dateWidth = (date?.count ?? 0) * 13
-        releaseDateLabel.layer.frame = CGRect(x: 0, y: 0, width: dateWidth, height: 25)
-        releaseDateLabel.setIcon(iconName: .calendar, colorName: .labelColor, scale: 0.7, startText: nil , andText: date)
-        
-        let stringRuntime = " \(runtime ?? 0)min"
-        let runtimeWidth = stringRuntime.count * 13
-        runtimeLabel.layer.frame = CGRect(x: dateWidth + 10, y: 0, width: runtimeWidth, height: 25)
-        runtimeLabel.setIcon(iconName: .clock, colorName: .labelColor, scale: 0.7, startText: nil, andText: stringRuntime)
     }
     
     private func setupBackgroundImageViewWithGradient() {
@@ -196,30 +112,6 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
         return gradientLayer
     }
     
-    private func setOverView(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        overViewTextView.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        overViewTextView.becomeFirstResponder()
-        let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
-        if !isExpanded {
-            let fixedWidth = overViewTextView.frame.size.width
-            let newSize = overViewTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-            
-            if overViewContainerHeightConstraint.constant < newSize.height + 45 {
-                overViewContainerHeightConstraint.constant = newSize.height + 45
-                overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
-                
-            }
-        } else {
-            overViewContainerHeightConstraint.constant = 100
-            overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
-        }
-        isExpanded = !isExpanded
-    }
-    
     private func detailError() {
         let errorMessage = NSLocalizedString("An Error Occurred While Loading Data.", comment: "")
         viewModel?.errorHandlerCompletion?(errorMessage, .error, .okey) { [weak self] _ in
@@ -229,23 +121,48 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     }
 }
 
+// MARK: Segmentation on stage using tableView
 extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableModel.count
+        return footerModel.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieTableViewCell.self), for: indexPath) as! DetailMovieTableViewCell
-        let (_ ,data) = tableModel[indexPath.row]
         
-        cell.collectionViewTiltleLabel.text = data.collectionTitle
-        cell.collections = data
-        cell.tableViewIndex = indexPath.row
-        cell.trailerCollectionDelegate = self
-        cell.collectionView.reloadData()
-        return cell
+        switch indexPath.row {
+        case 0:
+             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieHeaderTableViewCell.self), for: indexPath) as! DetailMovieHeaderTableViewCell
+            cell.detailMovieModel = self.detailMovieModel
+            cell.setLoadContent()
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieContentTableViewCell.self), for: indexPath) as! DetailMovieContentTableViewCell
+            cell.overViewTextView.text = detailMovieModel?.overview
+            return cell
+        case 2,3:
+           let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieFooterTableViewCell.self), for: indexPath) as! DetailMovieFooterTableViewCell
+            
+            cell.trailerCollectionDelegate = self
+            cell.castColectionDelegate = self
+            
+            cell.tableViewIndex = indexPath.row
+          
+            let (_ ,data) = footerModel[indexPath.row - 2]
+            cell.collections = data
+            cell.collectionTitle.text = data.collectionTitle
+            
+            cell.collectionView.reloadData()
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
 }
 
 // MARK: Selected cells are processed with the help of delegate.
