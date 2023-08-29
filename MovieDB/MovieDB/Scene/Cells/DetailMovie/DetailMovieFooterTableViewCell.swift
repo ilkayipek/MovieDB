@@ -50,14 +50,14 @@ extension DetailMovieFooterTableViewCell: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch tableViewIndex {
         case 2:
-            let data = collections as! MovieTrailerModel
-            return data.results?.count ?? 0
+            let data = collections as? MovieTrailerModel
+            return data?.results?.count ?? 0
         case 3:
-            let data = collections as! MovieActorsModel
-            return data.cast?.count ?? 0
+            let data = collections as? MovieActorsModel
+            return data?.cast?.count ?? 0
         case 4:
-            let data = collections as! SimilarMovieModel
-            return data.results?.count ?? 0
+            let data = collections as? SimilarMovieModel
+            return data?.results?.count ?? 0
         default:
             return 0
         }
