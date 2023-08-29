@@ -4,7 +4,6 @@
 //
 //  Created by MacBook on 1.08.2023.
 //
-
 import Foundation
 
 extension Constant {
@@ -21,6 +20,7 @@ extension Constant {
         case credits = "/credits"
         case thumbnailUrl = "https://img.youtube.com/vi/"
         case vieos = "/videos"
+        case similar = "/similar"
         
         static func popularMoviesPath() -> String {
             return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
@@ -68,6 +68,10 @@ extension Constant {
         
         static func trailerPath(movieId: Int) -> String {
             return "\(movieDetail.rawValue)\(movieId)\(vieos.rawValue)"
+        }
+        
+        static func similarMovies(movieId: Int) -> String {
+            return "\(movieDetail.rawValue)\(movieId)\(similar.rawValue)"
         }
     }
 }
