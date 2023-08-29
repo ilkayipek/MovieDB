@@ -30,7 +30,7 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             guard let self else {return}
             if var result = data {
                 result.collectionTitle = NSLocalizedString("Trailers", comment: "")
-                self.footerModel.append((0,nil))
+                self.footerModel.append((0,result))
                 
             }
         }
@@ -40,6 +40,14 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
             if var result = data {
                 result.collectionTitle = NSLocalizedString("Actors", comment: "")
                 self.footerModel.append((1,result))
+            }
+        }
+        
+        viewModel?.getSimilarMovie(movieId: movieId ?? 0) { [weak self] (data) in
+            guard let self else {return}
+            if var result = data {
+                result.collectionTitle = NSLocalizedString("Similar Movies", comment: "")
+                self.footerModel.append((2,result))
             }
         }
         
@@ -128,7 +136,7 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
         
         switch indexPath.row {
         case 0:
-             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieHeaderTableViewCell.self), for: indexPath) as! DetailMovieHeaderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieHeaderTableViewCell.self), for: indexPath) as! DetailMovieHeaderTableViewCell
             cell.detailMovieModel = detailMovieModel
             cell.setLoadContent()
             return cell
@@ -136,23 +144,24 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieContentTableViewCell.self), for: indexPath) as! DetailMovieContentTableViewCell
             cell.overViewTextView.text = detailMovieModel?.overview
             return cell
-        case 2,3:
-           
+        case 2,3,4:
+            
             let (_ ,data) = footerModel[indexPath.row - 2]
             if data != nil {
                 let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieFooterTableViewCell.self), for: indexPath) as! DetailMovieFooterTableViewCell
-                 
-                 cell.trailerCollectionDelegate = self
-                 cell.castColectionDelegate = self
-                 
-                 cell.tableViewIndex = indexPath.row
-               
-                 
-                 cell.collections = data
-                 cell.collectionTitle.text = data?.collectionTitle
-                 
-                 cell.collectionView.reloadData()
-                 return cell
+                
+                cell.trailerCollectionDelegate = self
+                cell.castColectionDelegate = self
+                cell.similarCollectionDelegate = self
+                
+                cell.tableViewIndex = indexPath.row
+                
+                
+                cell.collections = data
+                cell.collectionTitle.text = data?.collectionTitle
+                
+                cell.collectionView.reloadData()
+                return cell
             } else {
                 return UITableViewCell()
             }
@@ -161,7 +170,6 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
-    //MARK: Data from nil in footerModel will take 0 size in tableView, others will be automatic
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0,1:
@@ -180,7 +188,13 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 // MARK: Selected cells are processed with the help of delegate.
-extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate {
+extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate, SimilarMovieDelegate {
+    func selectedMovie(movieId: Int) {
+        let targetVc = DetailMovieViewController.loadFromNib()
+        targetVc.movieId = movieId
+        self.navigationController?.pushViewController(targetVc, animated: true)
+    }
+    
     func selectedCast(id: Int) {
         //redirect to actor page
     }
@@ -196,5 +210,6 @@ extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate {
             self.navigationController?.pushViewController(targetVc, animated: true)
         }
     }
+    
 }
 
