@@ -12,9 +12,8 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     @IBOutlet weak var backgroundPoster: UIImageView!
     
     var movieId: Int?
-    var footerModel = [(order: Int,data: DetailMovieCollectionModelProtocol)]()
+    var footerModel = [(order: Int,data: DetailMovieCollectionModelProtocol?)]()
     var detailMovieModel: DetailMovieModel?
-    let group = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,32 +25,29 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     }
     
     private func getOtherList() {
-        group.enter()
+        
         viewModel?.getTrailers(movieId: movieId ?? 0) { [weak self] (data) in
             guard let self else {return}
             if var result = data {
                 result.collectionTitle = NSLocalizedString("Trailers", comment: "")
-                self.footerModel.append((0,result))
-                self.group.leave()
+                self.footerModel.append((0,nil))
+                
             }
         }
         
-        group.enter()
         viewModel?.getActors(movieId: movieId ?? 0) { [weak self] (data) in
             guard let self else {return}
             if var result = data {
                 result.collectionTitle = NSLocalizedString("Actors", comment: "")
                 self.footerModel.append((1,result))
-                self.group.leave()
             }
         }
         
-        group.notify(queue: .main) { [weak self] in
+        viewModel?.closeDispatchGroup { [weak self] in
             guard let self else {return}
             self.footerModel.sort(by: { $0.order < $1.order })
             self.tableView.reloadData()
         }
-        
     }
     
     private func configureTableView() {
@@ -133,7 +129,7 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.row {
         case 0:
              let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieHeaderTableViewCell.self), for: indexPath) as! DetailMovieHeaderTableViewCell
-            cell.detailMovieModel = self.detailMovieModel
+            cell.detailMovieModel = detailMovieModel
             cell.setLoadContent()
             return cell
         case 1:
@@ -141,28 +137,46 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
             cell.overViewTextView.text = detailMovieModel?.overview
             return cell
         case 2,3:
-           let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieFooterTableViewCell.self), for: indexPath) as! DetailMovieFooterTableViewCell
-            
-            cell.trailerCollectionDelegate = self
-            cell.castColectionDelegate = self
-            
-            cell.tableViewIndex = indexPath.row
-          
+           
             let (_ ,data) = footerModel[indexPath.row - 2]
-            cell.collections = data
-            cell.collectionTitle.text = data.collectionTitle
-            
-            cell.collectionView.reloadData()
-            return cell
+            if data != nil {
+                let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieFooterTableViewCell.self), for: indexPath) as! DetailMovieFooterTableViewCell
+                 
+                 cell.trailerCollectionDelegate = self
+                 cell.castColectionDelegate = self
+                 
+                 cell.tableViewIndex = indexPath.row
+               
+                 
+                 cell.collections = data
+                 cell.collectionTitle.text = data?.collectionTitle
+                 
+                 cell.collectionView.reloadData()
+                 return cell
+            } else {
+                return UITableViewCell()
+            }
         default:
             return UITableViewCell()
         }
     }
     
+    //MARK: Data from nil in footerModel will take 0 size in tableView, others will be automatic
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch indexPath.row {
+        case 0,1:
+            return UITableView.automaticDimension
+        case 2, 3, 4:
+            let (_, data) = footerModel[indexPath.row - 2]
+            if data != nil {
+                return UITableView.automaticDimension
+            } else {
+                return 0
+            }
+        default:
+            return 0
+        }
     }
-
 }
 
 // MARK: Selected cells are processed with the help of delegate.
