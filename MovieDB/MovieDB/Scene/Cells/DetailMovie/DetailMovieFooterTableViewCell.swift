@@ -13,6 +13,7 @@ class DetailMovieFooterTableViewCell: UITableViewCell {
     
     var trailerCollectionDelegate: TrailerVideoDelegate?
     var castColectionDelegate: CastDelegate?
+    var similarCollectionDelegate: SimilarMovieDelegate?
     
     var collections: DetailMovieCollectionModelProtocol?
     var tableViewIndex = 0
@@ -36,6 +37,9 @@ class DetailMovieFooterTableViewCell: UITableViewCell {
         
         let trailer = String(describing: TrailerCollectionViewCell.self)
         collectionView.register(UINib(nibName: trailer, bundle: nil), forCellWithReuseIdentifier: trailer)
+        
+        let similar = String(describing: SimilarCollectionViewCell.self)
+        collectionView.register(UINib(nibName: similar, bundle: nil), forCellWithReuseIdentifier: similar)
     }
     
 }
@@ -51,6 +55,9 @@ extension DetailMovieFooterTableViewCell: UICollectionViewDelegate, UICollection
         case 3:
             let data = collections as! MovieActorsModel
             return data.cast?.count ?? 0
+        case 4:
+            let data = collections as! SimilarMovieModel
+            return data.results?.count ?? 0
         default:
             return 0
         }
@@ -87,6 +94,25 @@ extension DetailMovieFooterTableViewCell: UICollectionViewDelegate, UICollection
                 }
                 return cell
             }  else { return emptyCell}
+        case 4:
+            
+            if let movies = collections as? SimilarMovieModel {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SimilarCollectionViewCell.self), for: indexPath) as! SimilarCollectionViewCell
+                
+                let result = movies.results?[indexPath.row]
+                
+                cell.movieName.text = result?.originalTitle
+                cell.movieDate.text = result?.releaseDate
+                
+                if let imageUrl = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: result?.posterPath) {
+                    cell.posterImage.loadImage(url: imageUrl, placeHolderImage: nil) { _, _, _, _ in
+                        //animation stop
+                    }
+                }
+                
+                return cell
+            } else { return emptyCell}
+            
         default:
             return UICollectionViewCell()
         }
@@ -99,6 +125,8 @@ extension DetailMovieFooterTableViewCell: UICollectionViewDelegate, UICollection
        case 2:
            return CGSize(width: 225, height: 125)
        case 3:
+           return CGSize(width: 80, height: 150)
+       case 4:
            return CGSize(width: 80, height: 150)
        default:
            return CGSize(width: 80, height: 145)
@@ -117,6 +145,11 @@ extension DetailMovieFooterTableViewCell: UICollectionViewDelegate, UICollection
             if let actor = collections as? MovieActorsModel {
                 guard let id = actor.cast?[indexPath.row].id else {return}
                 castColectionDelegate?.selectedCast(id: id)
+            }
+        case 4:
+            if let similar = collections as? SimilarMovieModel {
+                guard let id = similar.results?[indexPath.row].id else {return}
+                        similarCollectionDelegate?.selectedMovie(movieId: id)
             }
         default: break
             
