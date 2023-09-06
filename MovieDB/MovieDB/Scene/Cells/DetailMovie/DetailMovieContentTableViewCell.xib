@@ -82,7 +82,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1NZ-mI-S7x">
                                         <rect key="frame" x="5" y="30.33333333333335" width="624" height="125.66666666666669"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="g1Q-Iu-rVb" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="g1Q-Iu-rVb" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="6J2-mH-Fgg"/>
@@ -221,15 +221,15 @@
             <size key="intrinsicContentSize" width="43.666666666666664" height="34.333333333333336"/>
         </designable>
         <designable name="g1Q-Iu-rVb">
-            <size key="intrinsicContentSize" width="185" height="133"/>
+            <size key="intrinsicContentSize" width="94" height="94"/>
         </designable>
         <designable name="iUj-3X-XEZ">
             <size key="intrinsicContentSize" width="126" height="29"/>
         </designable>
     </designables>
     <resources>
-        <image name="Image" width="185.03999328613281" height="133.39999389648438"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <image name="person" width="94" height="94"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="ContainerBackgroundColor">
             <color red="0.13699999451637268" green="0.14100000262260437" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
