@@ -48,20 +48,22 @@ class DetailMovieViewModel: BaseViewModel {
         group.enter()
         let path = Constant.RequestPathMovie.castPath(movieId: movieId)
         
-        Network.shared.getRequestV3(urlPath: path) { (result: Result<MovieActorsModel, Error>) in
+        Network.shared.getRequestV3(urlPath: path) { [weak self] (result: Result<MovieActorsModel, Error>) in
+            guard let self else {return}
+            
             switch result {
             case .success(let data):
-                if data.success ?? true {
+                if data.success ?? true, !(data.cast?.isEmpty ?? true) {
                     closure(data)
-                    self.group.leave()
                 } else {
                     closure(nil)
-                    self.group.leave()
                 }
             case .failure(let error):
                 closure(nil)
+                
                 print("ERROR MESSAGE: \(error.localizedDescription)")
             }
+            self.group.leave()
         }
     }
     
@@ -71,15 +73,19 @@ class DetailMovieViewModel: BaseViewModel {
         
         Network.shared.getRequestV3(urlPath: path) { [weak self] (result: Result<MovieTrailerModel?, Error>) in
             guard let self else {return}
+            
             switch result {
             case .success(let data):
-                closure(data)
-                self.group.leave()
+                if data?.results?.isEmpty ?? true {
+                    closure(nil)
+                } else {
+                    closure(data)
+                }
             case .failure(let error):
                 closure(nil)
-                self.group.leave()
                 print("ERROR MESSAGE: \(error.localizedDescription)")
             }
+            self.group.leave()
         }
         
     }
@@ -90,15 +96,41 @@ class DetailMovieViewModel: BaseViewModel {
         
         Network.shared.getRequestV3(urlPath: path) { [weak self] (result: Result<SimilarMovieModel, Error>) in
             guard let self else {return}
+            
             switch result {
             case .success(let data):
-                closure(data)
-                self.group.leave()
+                if data.results?.isEmpty ?? true {
+                    closure(nil)
+                } else {
+                   closure(data)
+                }
             case .failure(let error):
                 closure(nil)
-                self.group.leave()
                 print("ERROR MESSAGE: \(error.localizedDescription)")
             }
+            self.group.leave()
+        }
+    }
+    
+    func getReviewsMovie(movieId: Int,_ closure: @escaping(ReviewModel?) -> Void) -> Void {
+        group.enter()
+        let path = Constant.RequestPathMovie.reviewsMoviePath(movieId: movieId)
+        
+        Network.shared.getRequestV3(urlPath: path) { [weak self] (result: Result<ReviewModel, Error>) in
+            guard let self else {return}
+            
+            switch result {
+            case .success(let data):
+                if data.results?.isEmpty ?? true {
+                    closure(nil)
+                } else {
+                   closure(data)
+                }
+            case .failure(let error):
+                closure(nil)
+                print("ERROR MESSAGE: \(error.localizedDescription)")
+            }
+            self.group.leave()
         }
     }
     
