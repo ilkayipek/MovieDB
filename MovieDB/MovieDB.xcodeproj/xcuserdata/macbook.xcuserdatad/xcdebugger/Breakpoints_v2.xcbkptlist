@@ -231,260 +231,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "993B6E5B-DE59-4AD4-AEBF-AE2478951D72"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieDB/Data/Network.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "getRequestV3(urlPath:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "34357962-FFF6-4394-88F0-C988FFDA997C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieDB/Data/Network.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "getRequestV3(urlPath:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "34357962-FFF6-4394-88F0-C988FFDA997C - 3bd8db7229c517cd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "34357962-FFF6-4394-88F0-C988FFDA997C - 17e47c1258dbb9a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8E52B4CE-85A7-470B-BA08-685397DDE36C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieDB/Data/Network.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "getRequestV3(urlPath:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B40287B3-C63D-41D8-8EF2-A7B09BAA3C5E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieDB/Data/Network.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "getRequestV3(urlPath:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B40287B3-C63D-41D8-8EF2-A7B09BAA3C5E - 3bd8db7229c517cd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "B40287B3-C63D-41D8-8EF2-A7B09BAA3C5E - 17e47c1258dbb9a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "80083C0E-4B4A-4B5B-BA19-18A5D90868F8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieDB/Data/Network.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getRequestV3(urlPath:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "80083C0E-4B4A-4B5B-BA19-18A5D90868F8 - 3bd8db7229c517ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  uuid = "80083C0E-4B4A-4B5B-BA19-18A5D90868F8 - 3bd8db7229c517ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "292">
-               </Location>
-               <Location
-                  uuid = "80083C0E-4B4A-4B5B-BA19-18A5D90868F8 - 3bd8db7229c517ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "976">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "924B2466-03BD-4E0E-9964-2D371B3676E4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MovieDB/Data/Network.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "getRequestV3(urlPath:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "924B2466-03BD-4E0E-9964-2D371B3676E4 - 3bd8db7229c51673"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "628">
-               </Location>
-               <Location
-                  uuid = "924B2466-03BD-4E0E-9964-2D371B3676E4 - 17e47c1258dbb9c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Optional&lt;Foundation.Data&gt;, Alamofire.AFError&gt;) -&gt; () in MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "924B2466-03BD-4E0E-9964-2D371B3676E4 - 2bdcffde36839adb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in MovieDB.Network.getRequestV3&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(urlPath: Swift.String, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "MovieDB"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macbook/Documents/GitHub/MovieDB/MovieDB/MovieDB/Data/Network.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "384">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F34D39F7-FF72-4D59-A172-81B5E84B3662"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -549,16 +295,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5827F974-0727-4BD8-AD22-462B20D97AB2"
+            uuid = "1CD72B64-C9C7-4699-9B67-5D7A22C42D2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieDB/Scene/DetailMovie/DetailMovieViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getActors(movieId:closure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "211464FB-3397-4966-8617-45A4D91410F7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieDB/Scene/DetailMovie/DetailMovieViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "getOtherList()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
