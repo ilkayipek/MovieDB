@@ -14,6 +14,7 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     var movieId: Int?
     var footerModel = [(order: Int,data: DetailMovieCollectionModelProtocol?)]()
     var detailMovieModel: DetailMovieModel?
+    var reviewsModel: ReviewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,36 +27,48 @@ class DetailMovieViewController: BaseViewController<DetailMovieViewModel> {
     
     private func getOtherList() {
         
+        viewModel?.getReviewsMovie(movieId: movieId ?? 0 ) { [weak self] (data) in
+            guard let self else {return}
+            
+            self.reviewsModel = data
+        }
+        
+        
         viewModel?.getTrailers(movieId: movieId ?? 0) { [weak self] (data) in
             guard let self else {return}
-            if var result = data {
-                result.collectionTitle = NSLocalizedString("Trailers", comment: "")
-                self.footerModel.append((0,result))
-                
-            }
+            
+            var result = data
+            result?.collectionTitle = NSLocalizedString("Trailers", comment: "")
+            self.footerModel.append((0,result))
         }
+        
         
         viewModel?.getActors(movieId: movieId ?? 0) { [weak self] (data) in
             guard let self else {return}
-            if var result = data {
-                result.collectionTitle = NSLocalizedString("Actors", comment: "")
-                self.footerModel.append((1,result))
-            }
+            
+            var result = data
+            result?.collectionTitle = NSLocalizedString("Actors", comment: "")
+            self.footerModel.append((1,result))
         }
+        
         
         viewModel?.getSimilarMovie(movieId: movieId ?? 0) { [weak self] (data) in
             guard let self else {return}
-            if var result = data {
-                result.collectionTitle = NSLocalizedString("Similar Movies", comment: "")
-                self.footerModel.append((2,result))
-            }
+            
+            var result = data
+            result?.collectionTitle = NSLocalizedString("Similar Movies", comment: "")
+            self.footerModel.append((2,result))
+            
+            
         }
         
         viewModel?.closeDispatchGroup { [weak self] in
             guard let self else {return}
+            
             self.footerModel.sort(by: { $0.order < $1.order })
             self.tableView.reloadData()
         }
+        
     }
     
     private func configureTableView() {
@@ -143,6 +156,8 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieContentTableViewCell.self), for: indexPath) as! DetailMovieContentTableViewCell
             cell.overViewTextView.text = detailMovieModel?.overview
+            cell.reviewsModel = reviewsModel
+            cell.setReviews()
             return cell
         case 2,3,4:
             
