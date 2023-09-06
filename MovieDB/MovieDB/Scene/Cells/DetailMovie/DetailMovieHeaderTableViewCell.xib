@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailMovieHeaderTableViewCell" rowHeight="315" id="KGk-i7-Jjw" customClass="DetailMovieHeaderTableViewCell" customModule="MovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="315"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="443" height="315"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gfz-Tt-nEh">
+                        <rect key="frame" x="0.0" y="0.0" width="443" height="303.66666666666669"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hm-w4-YT8">
+                                <rect key="frame" x="0.0" y="0.0" width="443" height="125"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WAQ-Qn-shx">
+                                        <rect key="frame" x="100" y="0.0" width="343" height="122"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcj-nI-Irq" customClass="CustomLabel" customModule="MovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="115.66666666666667" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eId-K5-fka">
+                                                <rect key="frame" x="0.0" y="39" width="107.66666666666667" height="18"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mR8-8Z-Je3" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="18"/>
+                                                        <color key="backgroundColor" name="ContainerBackgroundColor"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                                        <color key="textColor" name="LabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="-1" height="-1"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="DetailContentBorderColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="runtime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRg-Bh-E4g" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
+                                                        <rect key="frame" x="45.333333333333343" y="0.0" width="62.333333333333343" height="18"/>
+                                                        <color key="backgroundColor" name="ContainerBackgroundColor"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                                        <color key="textColor" name="LabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="-1" height="-1"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="DetailContentBorderColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kl0-AX-S73">
+                                                <rect key="frame" x="0.0" y="72" width="343" height="50"/>
+                                                <subviews>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kjkhjgjhkjkhjj" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foH-gz-AhM" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="100.66666666666667" height="17"/>
+                                                        <color key="backgroundColor" name="ContainerBackgroundColor"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
+                                                        <color key="textColor" name="LabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="-1" height="-1"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="DetailContentBorderColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="foH-gz-AhM" firstAttribute="leading" secondItem="kl0-AX-S73" secondAttribute="leading" constant="5" id="1JW-nt-bjU"/>
+                                                    <constraint firstAttribute="height" constant="50" id="33A-Kw-fpP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="foH-gz-AhM" secondAttribute="bottom" constant="28" id="4eg-Qg-frF"/>
+                                                    <constraint firstItem="foH-gz-AhM" firstAttribute="top" secondItem="kl0-AX-S73" secondAttribute="top" constant="5" id="Lod-Ef-6U8"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="foH-gz-AhM" secondAttribute="trailing" constant="5" id="gv9-Td-EAa"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kl0-AX-S73" secondAttribute="trailing" id="9NK-mf-mNd"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eId-K5-fka" secondAttribute="trailing" constant="8" id="GQf-mz-3ci"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-mA-7Ob" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="wpj-KM-sjX"/>
+                                            <constraint firstAttribute="height" constant="120" id="xcF-ox-FPM"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CQU-Rm-nX0">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="XYf-Fr-KiN"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="WAQ-Qn-shx" firstAttribute="leading" secondItem="dPZ-mA-7Ob" secondAttribute="trailing" constant="10" id="32Z-2Q-6L1"/>
+                                    <constraint firstAttribute="trailing" secondItem="WAQ-Qn-shx" secondAttribute="trailing" id="5C3-GN-KQX"/>
+                                    <constraint firstAttribute="height" constant="125" id="A0b-ss-WGO"/>
+                                    <constraint firstItem="CQU-Rm-nX0" firstAttribute="leading" secondItem="7hm-w4-YT8" secondAttribute="leading" id="BFx-Bm-zk7"/>
+                                    <constraint firstItem="WAQ-Qn-shx" firstAttribute="leading" secondItem="CQU-Rm-nX0" secondAttribute="trailing" id="K0b-tf-P2q"/>
+                                    <constraint firstItem="dPZ-mA-7Ob" firstAttribute="leading" secondItem="7hm-w4-YT8" secondAttribute="leading" id="KDj-Q7-ldB"/>
+                                    <constraint firstItem="WAQ-Qn-shx" firstAttribute="top" secondItem="7hm-w4-YT8" secondAttribute="top" id="b4L-7Q-pbx"/>
+                                    <constraint firstItem="CQU-Rm-nX0" firstAttribute="top" secondItem="7hm-w4-YT8" secondAttribute="top" id="jy6-jM-GSn"/>
+                                    <constraint firstItem="dPZ-mA-7Ob" firstAttribute="top" secondItem="7hm-w4-YT8" secondAttribute="top" id="qSa-IX-pvH"/>
+                                    <constraint firstAttribute="bottom" secondItem="CQU-Rm-nX0" secondAttribute="bottom" id="zgG-uv-qlR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIy-W7-e0C">
+                                <rect key="frame" x="0.0" y="139" width="443" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-43-baN" customClass="ScoreIndicatorView" customModule="MovieDB" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="EXM-4f-pBR"/>
+                                            <constraint firstAttribute="height" constant="50" id="XFL-A8-ley"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNC-di-VRs">
+                                        <rect key="frame" x="155" y="0.0" width="80.666666666666686" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(..... votes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHB-Dh-d7n">
+                                        <rect key="frame" x="155" y="18" width="72" height="15.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VAE-43-baN" firstAttribute="top" secondItem="tIy-W7-e0C" secondAttribute="top" id="7B1-Jn-Mps"/>
+                                    <constraint firstAttribute="height" constant="50" id="Kkw-fV-Yyf"/>
+                                    <constraint firstItem="iHB-Dh-d7n" firstAttribute="leading" secondItem="VAE-43-baN" secondAttribute="trailing" constant="5" id="TFA-Oi-QCF"/>
+                                    <constraint firstItem="zNC-di-VRs" firstAttribute="top" secondItem="tIy-W7-e0C" secondAttribute="top" id="Wq6-kB-23e"/>
+                                    <constraint firstItem="zNC-di-VRs" firstAttribute="leading" secondItem="VAE-43-baN" secondAttribute="trailing" constant="5" id="g4J-fY-5DY"/>
+                                    <constraint firstItem="iHB-Dh-d7n" firstAttribute="top" secondItem="zNC-di-VRs" secondAttribute="bottom" id="iSh-lV-J0U"/>
+                                    <constraint firstItem="VAE-43-baN" firstAttribute="leading" secondItem="tIy-W7-e0C" secondAttribute="leading" constant="100" id="s2e-RX-u8f"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blaa bla bla blaaa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gd-cM-2jW">
+                                <rect key="frame" x="0.0" y="203" width="443" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1X-KB-9qQ" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="238.66666666666663" width="443" height="65"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="38u-Uy-AkI">
+                                        <rect key="frame" x="30" y="7" width="383" height="34.333333333333336"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrG-uS-8LG" userLabel="list" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.666666666666664" height="34.333333333333336"/>
+                                                <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="list.bullet" catalog="system" symbolScale="large" variableValue="0.0"/>
+                                                    <color key="baseForegroundColor" name="DetailButtonContentColor"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkH-Zw-IXD" userLabel="favorite" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="108.66666666666666" y="0.0" width="57" height="34.333333333333336"/>
+                                                <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system">
+                                                    <color key="baseForegroundColor" name="DetailButtonContentColor"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-bj-UPC" userLabel="watchList" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="217.66666666666666" y="0.0" width="56.666666666666657" height="34.333333333333336"/>
+                                                <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="bookmark.fill" catalog="system" symbolScale="large"/>
+                                                    <color key="baseForegroundColor" name="DetailButtonContentColor"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMJ-aA-pGZ" userLabel="star" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="326.33333333333331" y="0.0" width="56.666666666666686" height="34.333333333333336"/>
+                                                <color key="backgroundColor" name="DetailButtonBackgroundColor"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                                    <color key="baseForegroundColor" name="DetailButtonContentColor"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="ye0-cD-YzP">
+                                        <rect key="frame" x="15" y="46.333333333333343" width="413" height="12"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNr-j4-liM">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="textColor" name="ContentTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU5-Ud-QZn">
+                                                <rect key="frame" x="109" y="0.0" width="86" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="textColor" name="ContentTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WatchList" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUU-Zq-ipD">
+                                                <rect key="frame" x="218" y="0.0" width="86" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="textColor" name="ContentTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnP-LZ-gTg">
+                                                <rect key="frame" x="327" y="0.0" width="86" height="12"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="textColor" name="ContentTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="ContainerBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="38u-Uy-AkI" firstAttribute="leading" secondItem="U1X-KB-9qQ" secondAttribute="leading" constant="30" id="0bo-pg-fC1"/>
+                                    <constraint firstAttribute="trailing" secondItem="38u-Uy-AkI" secondAttribute="trailing" constant="30" id="3xJ-UI-VuL"/>
+                                    <constraint firstAttribute="height" constant="65" id="9mJ-ab-2Bd"/>
+                                    <constraint firstItem="38u-Uy-AkI" firstAttribute="top" secondItem="U1X-KB-9qQ" secondAttribute="top" constant="7" id="Yqc-P8-Hg2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ye0-cD-YzP" secondAttribute="trailing" constant="15" id="cKM-zA-j0z"/>
+                                    <constraint firstItem="ye0-cD-YzP" firstAttribute="leading" secondItem="U1X-KB-9qQ" secondAttribute="leading" constant="15" id="kYl-YI-rCd"/>
+                                    <constraint firstItem="ye0-cD-YzP" firstAttribute="top" secondItem="38u-Uy-AkI" secondAttribute="bottom" constant="5" id="x1f-IR-BKd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="ContainerBorderColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gfz-Tt-nEh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MhU-DX-QgT"/>
+                    <constraint firstItem="gfz-Tt-nEh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Pti-nZ-Mpu"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gfz-Tt-nEh" secondAttribute="bottom" constant="10" id="Vst-Gc-ZYR"/>
+                    <constraint firstAttribute="trailing" secondItem="gfz-Tt-nEh" secondAttribute="trailing" id="vqd-az-oIo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="genreExpampleLabel" destination="foH-gz-AhM" id="ZJt-Wn-5ND"/>
+                <outlet property="genreView" destination="kl0-AX-S73" id="eNy-Tr-zNu"/>
+                <outlet property="genreViewyConstraint" destination="33A-Kw-fpP" id="ZCH-3Z-9UK"/>
+                <outlet property="loadSpinner" destination="CQU-Rm-nX0" id="uZc-k5-2re"/>
+                <outlet property="movieName" destination="Kcj-nI-Irq" id="UUz-wm-A0z"/>
+                <outlet property="posterImage" destination="dPZ-mA-7Ob" id="cag-i0-Ox5"/>
+                <outlet property="releaseDateLabel" destination="mR8-8Z-Je3" id="T8i-OV-Ndg"/>
+                <outlet property="runtimeLabel" destination="lRg-Bh-E4g" id="haf-D7-zO9"/>
+                <outlet property="scoreIndicatorView" destination="VAE-43-baN" id="YfJ-N2-j7a"/>
+                <outlet property="tagLineLabel" destination="5gd-cM-2jW" id="0KN-fX-uah"/>
+                <outlet property="voteCountLabel" destination="iHB-Dh-d7n" id="BR5-MN-7ty"/>
+            </connections>
+            <point key="canvasLocation" x="275.57251908396944" y="-323.59154929577466"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="0WS-bj-UPC">
+            <size key="intrinsicContentSize" width="46.333333333333336" height="34.333333333333336"/>
+        </designable>
+        <designable name="dPZ-mA-7Ob">
+            <size key="intrinsicContentSize" width="185" height="133"/>
+        </designable>
+        <designable name="foH-gz-AhM">
+            <size key="intrinsicContentSize" width="100.66666666666667" height="17"/>
+        </designable>
+        <designable name="gMJ-aA-pGZ">
+            <size key="intrinsicContentSize" width="52" height="34.333333333333336"/>
+        </designable>
+        <designable name="lRg-Bh-E4g">
+            <size key="intrinsicContentSize" width="62.333333333333336" height="18"/>
+        </designable>
+        <designable name="mR8-8Z-Je3">
+            <size key="intrinsicContentSize" width="35.333333333333336" height="18"/>
+        </designable>
+        <designable name="rrG-uS-8LG">
+            <size key="intrinsicContentSize" width="51" height="34.333333333333336"/>
+        </designable>
+        <designable name="tkH-Zw-IXD">
+            <size key="intrinsicContentSize" width="50.666666666666664" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
+        <image name="default" width="185.03999328613281" height="133.39999389648438"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="ContainerBackgroundColor">
+            <color red="0.13699999451637268" green="0.14100000262260437" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ContainerBorderColor">
+            <color red="0.2199999988079071" green="0.23499999940395355" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ContentTextColor">
+            <color red="0.83899998664855957" green="0.84700000286102295" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="DetailButtonBackgroundColor">
+            <color red="0.12200000137090683" green="0.29800000786781311" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="DetailButtonContentColor">
+            <color red="0.77999997138977051" green="0.91399997472763062" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="DetailContentBorderColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LabelColor">
+            <color red="0.62400001287460327" green="0.6940000057220459" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

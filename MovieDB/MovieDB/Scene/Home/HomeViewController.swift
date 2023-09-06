@@ -64,6 +64,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = movieCollectionListTableView.dequeueReusableCell(withIdentifier: tableViewCell, for: indexPath) as! MovieCollectionTableViewCell
         cell.collectionTitle.text = collectionModels[indexPath.row].collectionTitle
         cell.model = collectionModels[indexPath.row].results
+        cell.delegate = self
         return cell
     }
     
@@ -71,6 +72,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: MovieTableViewCellDelegate {
     func selectedId(movieId: Int) {
-        print("seçilen id: \(movieId)")
+        let targetVc = DetailMovieViewController.loadFromNib()
+        targetVc.movieId = movieId
+        self.navigationController?.pushViewController(targetVc, animated: true)
     }
 }

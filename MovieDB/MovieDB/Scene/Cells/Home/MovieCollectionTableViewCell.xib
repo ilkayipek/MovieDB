@@ -73,8 +73,8 @@
             <viewLayoutGuide key="safeArea" id="GcG-r9-Q2j"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="collectionTitle" destination="BsI-A8-6pz" id="SaZ-Cc-eNr"/>
-                <outlet property="movieListCollectionView" destination="UIi-W3-iSl" id="Uwu-PR-pp3"/>
+                <outlet property="collectionTitle" destination="BsI-A8-6pz" id="p0l-DE-GGP"/>
+                <outlet property="movieListCollectionView" destination="UIi-W3-iSl" id="ScV-DI-AVz"/>
             </connections>
             <point key="canvasLocation" x="-183.20610687022901" y="-104.22535211267606"/>
         </tableViewCell>
