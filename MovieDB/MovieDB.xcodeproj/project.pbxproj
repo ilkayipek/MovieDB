@@ -44,6 +44,7 @@
 		FA6E3EF22A63F16400C0BE91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E3EF02A63F16400C0BE91 /* LaunchScreen.storyboard */; };
 		FA7160AA2AADF5330016ADEB /* PeopleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7160A92AADF5330016ADEB /* PeopleDetailModel.swift */; };
 		FA7160AC2AADF6C30016ADEB /* FetchResultStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7160AB2AADF6C30016ADEB /* FetchResultStatusProtocol.swift */; };
+		FA7160AE2AAE05B10016ADEB /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7160AD2AAE05B10016ADEB /* Gender.swift */; };
 		FA98A1B22A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA98A1B02A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib */; };
 		FA9BA4B62A83A36E006F6EFF /* CustomUIViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BA4B52A83A36E006F6EFF /* CustomUIViewContainer.swift */; };
 		FA9BA4B82A83A3C9006F6EFF /* CustomUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BA4B72A83A3C9006F6EFF /* CustomUIImageView.swift */; };
@@ -130,6 +131,7 @@
 		FA6E3EF32A63F16400C0BE91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA7160A92AADF5330016ADEB /* PeopleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailModel.swift; sourceTree = "<group>"; };
 		FA7160AB2AADF6C30016ADEB /* FetchResultStatusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResultStatusProtocol.swift; sourceTree = "<group>"; };
+		FA7160AD2AAE05B10016ADEB /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		FA98A1B02A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		FA9BA4B52A83A36E006F6EFF /* CustomUIViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViewContainer.swift; sourceTree = "<group>"; };
 		FA9BA4B72A83A3C9006F6EFF /* CustomUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIImageView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				FAB226A92A8D65B600E4F2DE /* AlertTitle.swift */,
 				FAB226AB2A8D65E900E4F2DE /* ActionTitle.swift */,
 				FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */,
+				FA7160AD2AAE05B10016ADEB /* Gender.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				FAB226AF2A8D697600E4F2DE /* TrailerCollectionViewCell.swift in Sources */,
 				FAB226AA2A8D65B600E4F2DE /* AlertTitle.swift in Sources */,
 				FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */,
+				FA7160AE2AAE05B10016ADEB /* Gender.swift in Sources */,
 				FAED83902A8D09F100328E0F /* Language.swift in Sources */,
 				FA45EA612A684AF40012791A /* BaseViewModel.swift in Sources */,
 				FA0BADF12A8BDAAD0066EE40 /* DetailMovieViewController.swift in Sources */,
