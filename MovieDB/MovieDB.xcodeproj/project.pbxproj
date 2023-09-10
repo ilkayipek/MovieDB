@@ -42,6 +42,8 @@
 		FA6E3EED2A63F16300C0BE91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E3EEB2A63F16300C0BE91 /* Main.storyboard */; };
 		FA6E3EEF2A63F16400C0BE91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6E3EEE2A63F16400C0BE91 /* Assets.xcassets */; };
 		FA6E3EF22A63F16400C0BE91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E3EF02A63F16400C0BE91 /* LaunchScreen.storyboard */; };
+		FA7160AA2AADF5330016ADEB /* PeopleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7160A92AADF5330016ADEB /* PeopleDetailModel.swift */; };
+		FA7160AC2AADF6C30016ADEB /* FetchResultStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7160AB2AADF6C30016ADEB /* FetchResultStatusProtocol.swift */; };
 		FA98A1B22A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA98A1B02A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib */; };
 		FA9BA4B62A83A36E006F6EFF /* CustomUIViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BA4B52A83A36E006F6EFF /* CustomUIViewContainer.swift */; };
 		FA9BA4B82A83A3C9006F6EFF /* CustomUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9BA4B72A83A3C9006F6EFF /* CustomUIImageView.swift */; };
@@ -126,6 +128,8 @@
 		FA6E3EEE2A63F16400C0BE91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6E3EF12A63F16400C0BE91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA6E3EF32A63F16400C0BE91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA7160A92AADF5330016ADEB /* PeopleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailModel.swift; sourceTree = "<group>"; };
+		FA7160AB2AADF6C30016ADEB /* FetchResultStatusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResultStatusProtocol.swift; sourceTree = "<group>"; };
 		FA98A1B02A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionTableViewCell.xib; sourceTree = "<group>"; };
 		FA9BA4B52A83A36E006F6EFF /* CustomUIViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViewContainer.swift; sourceTree = "<group>"; };
 		FA9BA4B72A83A3C9006F6EFF /* CustomUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIImageView.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				FA333C9F2A956ED300A78968 /* TrailerVideoDelegate.swift */,
 				FA136BDD2A9694380026ED5C /* CastDelegate.swift */,
 				FAD05D702A9E799E00DFC280 /* SimilarMovieDelegate.swift */,
+				FA7160AB2AADF6C30016ADEB /* FetchResultStatusProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 		FA7160A82AADEB7B0016ADEB /* Cast */ = {
 			isa = PBXGroup;
 			children = (
+				FA7160A92AADF5330016ADEB /* PeopleDetailModel.swift */,
 			);
 			path = Cast;
 			sourceTree = "<group>";
@@ -598,6 +604,7 @@
 				FA45EA5F2A684ADD0012791A /* BaseViewController.swift in Sources */,
 				FAED838C2A8D079100328E0F /* SpokenLanguage.swift in Sources */,
 				FA333C942A929AAB00A78968 /* MovieActorsModel.swift in Sources */,
+				FA7160AA2AADF5330016ADEB /* PeopleDetailModel.swift in Sources */,
 				FA6E3EE62A63F16300C0BE91 /* AppDelegate.swift in Sources */,
 				FAED83942A8D0D2400328E0F /* CustomUIButton.swift in Sources */,
 				FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */,
@@ -605,6 +612,7 @@
 				FA4FED8A2A9A6EC50087CD61 /* DetailMovieFooterTableViewCell.swift in Sources */,
 				FAB99A712A7A5AAB00EB5307 /* UIImageView+Extension.swift in Sources */,
 				FAED838A2A8D075F00328E0F /* ProductionCountry.swift in Sources */,
+				FA7160AC2AADF6C30016ADEB /* FetchResultStatusProtocol.swift in Sources */,
 				FA136BDE2A9694380026ED5C /* CastDelegate.swift in Sources */,
 				FA6E3EE82A63F16300C0BE91 /* SceneDelegate.swift in Sources */,
 				FAB226A62A8D4B9600E4F2DE /* IconeColor.swift in Sources */,
