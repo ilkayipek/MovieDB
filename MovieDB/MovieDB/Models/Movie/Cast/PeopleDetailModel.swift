@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - PeopleDetailModel
-struct PeopleDetailModel: Codable, FetchResultStatusProtocol {
+struct PeopleDetailModel: Decodable, FetchResultStatusProtocol {
     let adult: Bool?
     let alsoKnownAs: [String]?
     let biography, birthday: String?
