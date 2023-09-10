@@ -12,6 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CastDetailViewController" customModule="MovieDB" customModuleProvider="target">
             <connections>
+                <outlet property="avatarImageView" destination="001-cx-ZuR" id="fyZ-sw-HMd"/>
+                <outlet property="biography" destination="i98-3G-FUB" id="qfS-pu-zh9"/>
+                <outlet property="biographyContainterHeightConstraint" destination="fvP-zR-CNR" id="I4V-qT-If4"/>
+                <outlet property="birthday" destination="okW-3I-nUU" id="Ote-F1-UCz"/>
+                <outlet property="gender" destination="llR-Cl-eKp" id="n3P-r5-4Sn"/>
+                <outlet property="knownFor" destination="KZo-PS-nlR" id="WGa-Ig-3vs"/>
+                <outlet property="nameLabel" destination="m10-bm-yNw" id="WHv-pM-HeJ"/>
+                <outlet property="placeOfBirth" destination="Rzp-94-uWU" id="F0i-y0-tGM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -234,14 +242,6 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MI5-Ip-tGQ">
-                                            <rect key="frame" x="5" y="28.000000000000028" width="363.66666666666669" height="57"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</string>
-                                            <color key="textColor" name="ContentTextColor"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
                                         <button opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-6G-e5f">
                                             <rect key="frame" x="0.0" y="85.000000000000028" width="373.66666666666669" height="10"/>
                                             <constraints>
@@ -253,18 +253,25 @@
                                                 <color key="baseForegroundColor" name="LabelColor"/>
                                             </buttonConfiguration>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i98-3G-FUB">
+                                            <rect key="frame" x="0.0" y="28.000000000000028" width="373.66666666666669" height="52"/>
+                                            <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label v Label Label Label Label v Label Label Label Label Label Label Label Label v Label Label Label Label v LabelLabel Label</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" name="ContainerBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="Z2J-dh-Chf" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" constant="7" id="1Re-1i-7bV"/>
                                         <constraint firstAttribute="bottom" secondItem="8o9-6G-e5f" secondAttribute="bottom" constant="5" id="E7v-hm-ysV"/>
                                         <constraint firstItem="Z2J-dh-Chf" firstAttribute="top" secondItem="Wlo-ea-aFQ" secondAttribute="top" constant="5" id="FDP-oy-QH5"/>
-                                        <constraint firstItem="MI5-Ip-tGQ" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" constant="5" id="Fxt-li-H22"/>
                                         <constraint firstAttribute="trailing" secondItem="8o9-6G-e5f" secondAttribute="trailing" id="H98-cV-LYm"/>
-                                        <constraint firstItem="MI5-Ip-tGQ" firstAttribute="top" secondItem="Z2J-dh-Chf" secondAttribute="bottom" constant="5" id="LJd-KE-wxv"/>
+                                        <constraint firstAttribute="trailing" secondItem="i98-3G-FUB" secondAttribute="trailing" id="JdG-SI-3as"/>
+                                        <constraint firstItem="i98-3G-FUB" firstAttribute="top" secondItem="Z2J-dh-Chf" secondAttribute="bottom" constant="5" id="cDE-zF-qQE"/>
                                         <constraint firstAttribute="height" constant="100" id="fvP-zR-CNR"/>
-                                        <constraint firstAttribute="trailing" secondItem="MI5-Ip-tGQ" secondAttribute="trailing" constant="5" id="g5I-w8-oqC"/>
-                                        <constraint firstItem="8o9-6G-e5f" firstAttribute="top" secondItem="MI5-Ip-tGQ" secondAttribute="bottom" id="l2z-sU-pg0"/>
+                                        <constraint firstItem="i98-3G-FUB" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" id="t7D-gg-mok"/>
+                                        <constraint firstItem="8o9-6G-e5f" firstAttribute="top" secondItem="i98-3G-FUB" secondAttribute="bottom" constant="5" id="yZW-2m-ulQ"/>
                                         <constraint firstItem="8o9-6G-e5f" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" id="yf2-Cr-AHU"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -457,9 +464,6 @@
         </namedColor>
         <namedColor name="ContainerBorderColor">
             <color red="0.2199999988079071" green="0.23499999940395355" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="ContentTextColor">
-            <color red="0.83899998664855957" green="0.84700000286102295" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="DetailButtonBackgroundColor">
             <color red="0.12200000137090683" green="0.29800000786781311" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
