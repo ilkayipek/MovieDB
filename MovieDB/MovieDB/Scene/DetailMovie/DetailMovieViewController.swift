@@ -211,7 +211,9 @@ extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate, Similar
     }
     
     func selectedCast(id: Int) {
-        //redirect to actor page
+        let targetVc = CastDetailViewController.loadFromNib()
+        targetVc.castId = id
+        self.navigationController?.pushViewController(targetVc, animated: true)
     }
     
     func selectedVideo(videoKey: String) {
