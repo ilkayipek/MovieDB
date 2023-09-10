@@ -8,7 +8,7 @@
 // MARK: - MovieActorsModel
 struct MovieActorsModel: Decodable, DetailMovieCollectionModelProtocol {
     let id: Int?
-    let cast, crew: [Cast]?
+    let cast, crew: [CastModel]?
     var collectionTitle: String?
     let statusCode: Int?
     let statusMessage: String?
