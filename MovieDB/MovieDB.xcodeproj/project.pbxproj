@@ -381,6 +381,13 @@
 			path = MovieDB;
 			sourceTree = "<group>";
 		};
+		FA7160A82AADEB7B0016ADEB /* Cast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cast;
+			sourceTree = "<group>";
+		};
 		FA9BA4B42A83A347006F6EFF /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +413,7 @@
 		FAB99A5F2A796D3400EB5307 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
+				FA7160A82AADEB7B0016ADEB /* Cast */,
 				FAED83822A8D06D800328E0F /* Detail */,
 				FAB99A602A796D3E00EB5307 /* MovieResult.swift */,
 				FAB99A622A796E3C00EB5307 /* PopularMoviesModel.swift */,
