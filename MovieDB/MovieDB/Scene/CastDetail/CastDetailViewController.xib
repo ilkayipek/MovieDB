@@ -37,7 +37,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rQH-bn-hvO">
                                     <rect key="frame" x="0.0" y="0.0" width="373.66666666666669" height="233.66666666666666"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="001-cx-ZuR" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="001-cx-ZuR" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="120" id="C94-3T-5dY"/>
@@ -188,8 +188,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Known For input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZo-PS-nlR">
-                                                    <rect key="frame" x="0.0" y="84.666666666666671" width="119.33333333333333" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="0.0" y="84.666666666666671" width="116.33333333333333" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -200,8 +200,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender Input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llR-Cl-eKp">
-                                                    <rect key="frame" x="0.0" y="128.33333333333334" width="96" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="0.0" y="128.33333333333334" width="93.666666666666671" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -212,8 +212,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okW-3I-nUU">
-                                                    <rect key="frame" x="0.0" y="172" width="104.33333333333333" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="0.0" y="172" width="101.33333333333333" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -224,8 +224,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Of Birth input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzp-94-uWU">
-                                                    <rect key="frame" x="0.0" y="215.66666666666666" width="142.33333333333334" height="18"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="0.0" y="215.66666666666666" width="139" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -254,7 +254,7 @@
                                             </buttonConfiguration>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i98-3G-FUB">
-                                            <rect key="frame" x="0.0" y="28.000000000000028" width="373.66666666666669" height="52"/>
+                                            <rect key="frame" x="5" y="28.000000000000028" width="363.66666666666669" height="52"/>
                                             <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label v Label Label Label Label v Label Label Label Label Label Label Label Label v Label Label Label Label v LabelLabel Label</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -267,10 +267,10 @@
                                         <constraint firstAttribute="bottom" secondItem="8o9-6G-e5f" secondAttribute="bottom" constant="5" id="E7v-hm-ysV"/>
                                         <constraint firstItem="Z2J-dh-Chf" firstAttribute="top" secondItem="Wlo-ea-aFQ" secondAttribute="top" constant="5" id="FDP-oy-QH5"/>
                                         <constraint firstAttribute="trailing" secondItem="8o9-6G-e5f" secondAttribute="trailing" id="H98-cV-LYm"/>
-                                        <constraint firstAttribute="trailing" secondItem="i98-3G-FUB" secondAttribute="trailing" id="JdG-SI-3as"/>
+                                        <constraint firstAttribute="trailing" secondItem="i98-3G-FUB" secondAttribute="trailing" constant="5" id="JdG-SI-3as"/>
                                         <constraint firstItem="i98-3G-FUB" firstAttribute="top" secondItem="Z2J-dh-Chf" secondAttribute="bottom" constant="5" id="cDE-zF-qQE"/>
                                         <constraint firstAttribute="height" constant="100" id="fvP-zR-CNR"/>
-                                        <constraint firstItem="i98-3G-FUB" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" id="t7D-gg-mok"/>
+                                        <constraint firstItem="i98-3G-FUB" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" constant="5" id="t7D-gg-mok"/>
                                         <constraint firstItem="8o9-6G-e5f" firstAttribute="top" secondItem="i98-3G-FUB" secondAttribute="bottom" constant="5" id="yZW-2m-ulQ"/>
                                         <constraint firstItem="8o9-6G-e5f" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" id="yf2-Cr-AHU"/>
                                     </constraints>
@@ -293,16 +293,16 @@
                                             <rect key="frame" x="5" y="5" width="363.66666666666669" height="173"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Profiles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-oo-pTF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="18"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="68"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-Nm-hEC">
-                                                    <rect key="frame" x="0.0" y="23" width="363.66666666666669" height="150"/>
+                                                    <rect key="frame" x="0.0" y="73" width="363.66666666666669" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="R5t-jd-vu4"/>
+                                                        <constraint firstAttribute="height" constant="100" id="R5t-jd-vu4"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vmg-PU-oxR">
                                                         <size key="itemSize" width="128" height="128"/>
