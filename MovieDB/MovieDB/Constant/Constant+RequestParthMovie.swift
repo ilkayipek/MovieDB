@@ -3,6 +3,7 @@
 //  MovieDB
 //
 //  Created by MacBook on 1.08.2023.
+// https://api.themoviedb.org/3/person/{person_id}
 
 import Foundation
 
@@ -22,6 +23,7 @@ extension Constant {
         case vieos = "/videos"
         case similar = "/similar"
         case reviews = "/reviews"
+        case personDetail = "/3/person/"
         
         static func popularMoviesPath() -> String {
             return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
@@ -77,6 +79,10 @@ extension Constant {
         
         static func reviewsMoviePath(movieId: Int) -> String {
             return "\(movieDetail.rawValue)\(movieId)\(reviews.rawValue)"
+        }
+        
+        static func personDetailPath(personId: Int) -> String {
+            return "\(personDetail.rawValue)\(personId)"
         }
     }
 }
