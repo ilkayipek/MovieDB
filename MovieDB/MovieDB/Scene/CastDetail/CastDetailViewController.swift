@@ -17,6 +17,12 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
     @IBOutlet weak var biography: UILabel!
     @IBOutlet weak var biographyContainerView: CustomContainerUIView!
     @IBOutlet weak var biographyContainterHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imdbButton: CustomUIButton!
+    @IBOutlet weak var facebookButton: CustomUIButton!
+    @IBOutlet weak var twitterButton: CustomUIButton!
+    @IBOutlet weak var instagramButton: CustomUIButton!
+    @IBOutlet weak var webButton: CustomUIButton!
+    @IBOutlet weak var webVerticalLineView: UIView!
     
     var castId: Int?
     
@@ -24,11 +30,12 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         super.viewDidLoad()
         viewModel = CastDetailViewModel()
         setDetailInfos()
+        setExternalIdButtons()
     }
     
     private func setDetailInfos(){
         if let castId {
-            viewModel?.getPeopleDetail(peopleId: castId) { [weak self] data in
+            viewModel?.getPersonDetail(personId: castId) { [weak self] data in
                 guard let self else {return}
                 if let data {
                     if let avatarPath = data.profilePath {
@@ -37,6 +44,11 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
                                 // animating stop
                             }
                         }
+                    }
+                    
+                    if let homePageWebUrl = data.homepage {
+                        self.webButton.isHidden = false
+                        self.webVerticalLineView.isHidden = false
                     }
                     
                     if let biography = data.biography {
@@ -56,6 +68,30 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
             }
         } else {
             errorStatus()
+        }
+    }
+    
+    private func setExternalIdButtons() {
+        if let castId {
+            viewModel?.getPersonExternalIds(personId: castId) { [weak self] data in
+                guard let self else {return}
+                
+                if let imdb = data?.imdbid {
+                    self.imdbButton.isHidden = false
+                }
+                
+                if let twitter = data?.twitterid {
+                    self.twitterButton.isHidden = false
+                }
+                
+                if let facebook = data?.facebookid {
+                    self.facebookButton.isHidden = false
+                }
+                
+                if let instagram = data?.instagramid {
+                    self.instagramButton.isHidden = false
+                }
+            }
         }
     }
     
