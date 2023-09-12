@@ -43,21 +43,26 @@ class DetailMovieContentTableViewCell: UITableViewCell {
         overViewTextView.becomeFirstResponder()
         let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
         if !isExpanded {
+            let heightOutsideOverView = overViewContainerHeightConstraint.constant - overViewTextView.frame.size.height
             let fixedWidth = overViewTextView.frame.size.width
-            let newSize = overViewTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+            let overViewNewSize = overViewTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+            let newHeightContainer = overViewNewSize.height + heightOutsideOverView
             
-            if overViewContainerHeightConstraint.constant < newSize.height + 40 {
-                overViewContainerHeightConstraint.constant = newSize.height + 40
+            if overViewContainerHeightConstraint.constant < newHeightContainer {
+                overViewContainerHeightConstraint.constant = newHeightContainer
+                
                 overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                
                 if let tableView = self.superview as? UITableView {
                     tableView.beginUpdates()
                     tableView.endUpdates()
                 }
-                
             }
         } else {
             overViewContainerHeightConstraint.constant = 100
+            
             overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+            
             if let tableView = self.superview as? UITableView {
                 tableView.beginUpdates()
                 tableView.endUpdates()
