@@ -75,6 +75,10 @@
 		FAB99A712A7A5AAB00EB5307 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */; };
 		FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */; };
 		FAB99A752A7A665000EB5307 /* MovieTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */; };
+		FAC889682AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC889662AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift */; };
+		FAC889692AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC889672AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib */; };
+		FAC8896B2AAF9B65001F08F9 /* PersonImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8896A2AAF9B65001F08F9 /* PersonImagesModel.swift */; };
+		FAC8896D2AAF9C62001F08F9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8896C2AAF9C62001F08F9 /* Profile.swift */; };
 		FACFC3452AA8CA9200C51895 /* CastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFC3432AA8CA9200C51895 /* CastDetailViewController.swift */; };
 		FACFC3462AA8CA9200C51895 /* CastDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACFC3442AA8CA9200C51895 /* CastDetailViewController.xib */; };
 		FACFC3482AA8CAB800C51895 /* CastDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFC3472AA8CAB800C51895 /* CastDetailViewModel.swift */; };
@@ -161,6 +165,10 @@
 		FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeSections.swift; sourceTree = "<group>"; };
 		FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		FAC889662AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastProfilesCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAC889672AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastProfilesCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAC8896A2AAF9B65001F08F9 /* PersonImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImagesModel.swift; sourceTree = "<group>"; };
+		FAC8896C2AAF9C62001F08F9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		FACFC3432AA8CA9200C51895 /* CastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailViewController.swift; sourceTree = "<group>"; };
 		FACFC3442AA8CA9200C51895 /* CastDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastDetailViewController.xib; sourceTree = "<group>"; };
 		FACFC3472AA8CAB800C51895 /* CastDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailViewModel.swift; sourceTree = "<group>"; };
@@ -396,6 +404,8 @@
 			children = (
 				FA7160A92AADF5330016ADEB /* PeopleDetailModel.swift */,
 				FA7160AF2AAE26A80016ADEB /* ExternalIDModel.swift */,
+				FAC8896A2AAF9B65001F08F9 /* PersonImagesModel.swift */,
+				FAC8896C2AAF9C62001F08F9 /* Profile.swift */,
 			);
 			path = Cast;
 			sourceTree = "<group>";
@@ -416,6 +426,7 @@
 		FAB99A482A793FC900EB5307 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FAC889652AAF92C4001F08F9 /* Cast */,
 				FA4FED8C2A9AADAE0087CD61 /* Home */,
 				FA4FED832A9A6E620087CD61 /* DetailMovie */,
 			);
@@ -442,6 +453,15 @@
 				FAB226A32A8D4B5000E4F2DE /* UILabel+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAC889652AAF92C4001F08F9 /* Cast */ = {
+			isa = PBXGroup;
+			children = (
+				FAC889662AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift */,
+				FAC889672AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib */,
+			);
+			path = Cast;
 			sourceTree = "<group>";
 		};
 		FACFC3422AA8CA5D00C51895 /* CastDetail */ = {
@@ -554,6 +574,7 @@
 				FAB99A592A79436600EB5307 /* MovieListCollectionViewCell.xib in Resources */,
 				FA6E3EED2A63F16300C0BE91 /* Main.storyboard in Resources */,
 				FAD05D692A9BEC1F00DFC280 /* SimilarCollectionViewCell.xib in Resources */,
+				FAC889692AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib in Resources */,
 				FA42FB8E2A79315A00076879 /* HomeViewController.xib in Resources */,
 				FACFC3462AA8CA9200C51895 /* CastDetailViewController.xib in Resources */,
 			);
@@ -574,6 +595,7 @@
 				FAB99A652A796E6D00EB5307 /* TrendMoviesModel.swift in Sources */,
 				FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */,
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
+				FAC8896B2AAF9B65001F08F9 /* PersonImagesModel.swift in Sources */,
 				FACFC3452AA8CA9200C51895 /* CastDetailViewController.swift in Sources */,
 				FA333CA72A957A7B00A78968 /* TrailerWebViewViewModel.swift in Sources */,
 				FAD05D712A9E799E00DFC280 /* SimilarMovieDelegate.swift in Sources */,
@@ -614,10 +636,12 @@
 				FA333C942A929AAB00A78968 /* MovieActorsModel.swift in Sources */,
 				FA7160AA2AADF5330016ADEB /* PeopleDetailModel.swift in Sources */,
 				FA6E3EE62A63F16300C0BE91 /* AppDelegate.swift in Sources */,
+				FAC8896D2AAF9C62001F08F9 /* Profile.swift in Sources */,
 				FAED83942A8D0D2400328E0F /* CustomUIButton.swift in Sources */,
 				FA42FB8D2A79315A00076879 /* HomeViewController.swift in Sources */,
 				FA333C9C2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift in Sources */,
 				FA4FED8A2A9A6EC50087CD61 /* DetailMovieFooterTableViewCell.swift in Sources */,
+				FAC889682AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift in Sources */,
 				FAB99A712A7A5AAB00EB5307 /* UIImageView+Extension.swift in Sources */,
 				FAED838A2A8D075F00328E0F /* ProductionCountry.swift in Sources */,
 				FA7160AC2AADF6C30016ADEB /* FetchResultStatusProtocol.swift in Sources */,
