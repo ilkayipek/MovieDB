@@ -24,6 +24,7 @@
                 <outlet property="knownFor" destination="KZo-PS-nlR" id="WGa-Ig-3vs"/>
                 <outlet property="nameLabel" destination="m10-bm-yNw" id="WHv-pM-HeJ"/>
                 <outlet property="placeOfBirth" destination="Rzp-94-uWU" id="F0i-y0-tGM"/>
+                <outlet property="profilesCollectionView" destination="DAh-Nm-hEC" id="mur-mF-9kl"/>
                 <outlet property="twitterButton" destination="9hK-7J-909" id="Ud0-4x-q0h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webButton" destination="SYt-s5-oOc" id="LAo-dC-Krb"/>
@@ -305,13 +306,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-Nm-hEC">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-Nm-hEC">
                                                     <rect key="frame" x="0.0" y="73.000000000000028" width="363.66666666666669" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="R5t-jd-vu4"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vmg-PU-oxR">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vmg-PU-oxR">
                                                         <size key="itemSize" width="128" height="128"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
