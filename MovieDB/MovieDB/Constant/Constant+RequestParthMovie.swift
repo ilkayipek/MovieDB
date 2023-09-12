@@ -3,8 +3,9 @@
 //  MovieDB
 //
 //  Created by MacBook on 1.08.2023.
-// https://api.themoviedb.org/3/person/{person_id}
+//https://api.themoviedb.org/3/person/{person_id}
 //https://api.themoviedb.org/3/person/{person_id}/external_ids
+//https://api.themoviedb.org/3/person/{person_id}/images
 
 import Foundation
 
@@ -26,6 +27,7 @@ extension Constant {
         case reviews = "/reviews"
         case personDetail = "/3/person/"
         case personExternalIDsPath = "/external_ids"
+        case personImages = "/images"
         
         static func popularMoviesPath() -> String {
             return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
@@ -89,6 +91,10 @@ extension Constant {
         
         static func externalIDsPath(personId: Int) -> String {
             return "\(personDetail.rawValue)\(personId)\(personExternalIDsPath.rawValue)"
+        }
+        
+        static func personImagesPath(personId: Int) -> String {
+            return "\(personDetail.rawValue)\(personId)\(personImages.rawValue)"
         }
     }
 }
