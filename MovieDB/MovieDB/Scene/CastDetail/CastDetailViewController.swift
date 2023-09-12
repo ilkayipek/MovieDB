@@ -23,14 +23,66 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
     @IBOutlet weak var instagramButton: CustomUIButton!
     @IBOutlet weak var webButton: CustomUIButton!
     @IBOutlet weak var webVerticalLineView: UIView!
+    @IBOutlet weak var profilesCollectionView: UICollectionView!
     
+    var images = [Profile]()
     var castId: Int?
+    var isExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CastDetailViewModel()
         setDetailInfos()
         setExternalIdButtons()
+        configureCollectionView()
+        setPersonImages()
+        
+    }
+    
+    private func setBiographyHeight() {
+        let tabGesture = UITapGestureRecognizer(target: self, action: #selector(touchedBiography))
+        biographyContainerView.addGestureRecognizer(tabGesture)
+        
+    }
+    
+    @objc func touchedBiography() {
+        biography.becomeFirstResponder()
+        if !isExpanded {
+            let heightOutsideOverView = biographyContainterHeightConstraint.constant - biography.frame.size.height
+            let fixedWidth = biography.frame.size.width
+            let overViewNewSize = biography.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+            let newHeightContainer = overViewNewSize.height + heightOutsideOverView
+            print("yeni yükseklikk: \(newHeightContainer)")
+            
+            if biographyContainterHeightConstraint.constant < newHeightContainer {
+                biographyContainterHeightConstraint.constant = newHeightContainer
+                
+                //biographyArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+            }
+        } else {
+            biographyContainterHeightConstraint.constant = 100
+            
+            //biographyArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+        }
+        isExpanded = !isExpanded
+        
+    }
+    
+    private func setPersonImages() {
+        viewModel?.getPersonImages(personId: castId ?? 0) { [weak self] data in
+            guard let self else {return}
+            guard let profiles = data?.profiles else {return}
+            images = profiles
+            profilesCollectionView.reloadData()
+        }
+    }
+    
+    private func configureCollectionView() {
+        profilesCollectionView.delegate = self
+        profilesCollectionView.dataSource = self
+        
+        let profilesCellString = String(describing: CastProfilesCollectionViewCell.self)
+        profilesCollectionView.register(UINib(nibName: profilesCellString, bundle: nil), forCellWithReuseIdentifier: profilesCellString)
     }
     
     private func setDetailInfos(){
@@ -54,6 +106,7 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
                     if let biography = data.biography {
                         self.biographyContainerView.isHidden = false
                         self.biography.text = data.biography
+                        self.setBiographyHeight()
                     }
                     
                     self.nameLabel.text = data.name
@@ -102,4 +155,26 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         }
     }
     
+}
+
+extension CastDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = profilesCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CastProfilesCollectionViewCell.self), for: indexPath) as! CastProfilesCollectionViewCell
+        
+        if let url = Constant.RequestPathMovie.imageUrl(imageSize: .w200, path: images[indexPath.row].filePath) {
+            cell.profileImage.loadImage(url: url, placeHolderImage: nil) { _, _, _, _ in
+                // stop animation
+            }
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 100)
+   }
 }
