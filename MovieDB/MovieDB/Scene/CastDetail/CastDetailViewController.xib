@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="avatarImageView" destination="001-cx-ZuR" id="fyZ-sw-HMd"/>
                 <outlet property="biography" destination="i98-3G-FUB" id="qfS-pu-zh9"/>
+                <outlet property="biographyArrowButton" destination="8o9-6G-e5f" id="is5-Bm-7Ku"/>
                 <outlet property="biographyContainerView" destination="Wlo-ea-aFQ" id="jdf-Lp-8f5"/>
                 <outlet property="biographyContainterHeightConstraint" destination="fvP-zR-CNR" id="I4V-qT-If4"/>
                 <outlet property="birthday" destination="okW-3I-nUU" id="Ote-F1-UCz"/>
