@@ -24,6 +24,8 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
     @IBOutlet weak var webButton: CustomUIButton!
     @IBOutlet weak var webVerticalLineView: UIView!
     @IBOutlet weak var profilesCollectionView: UICollectionView!
+    @IBOutlet weak var biographyArrowButton: UIButton!
+    
     
     var images = [Profile]()
     var castId: Int?
@@ -44,25 +46,25 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         biographyContainerView.addGestureRecognizer(tabGesture)
         
     }
-    
+    //An algorithm was written to lengthen and shorten the BiographyContainerView based on the size of the BiographyLabel
     @objc func touchedBiography() {
         biography.becomeFirstResponder()
+        let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
         if !isExpanded {
             let heightOutsideOverView = biographyContainterHeightConstraint.constant - biography.frame.size.height
             let fixedWidth = biography.frame.size.width
             let overViewNewSize = biography.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
             let newHeightContainer = overViewNewSize.height + heightOutsideOverView
-            print("yeni yükseklikk: \(newHeightContainer)")
             
             if biographyContainterHeightConstraint.constant < newHeightContainer {
                 biographyContainterHeightConstraint.constant = newHeightContainer
                 
-                //biographyArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
             }
         } else {
             biographyContainterHeightConstraint.constant = 100
             
-            //biographyArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+            biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
         }
         isExpanded = !isExpanded
         
