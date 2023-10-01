@@ -13,18 +13,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CastDetailViewController" customModule="MovieDB" customModuleProvider="target">
             <connections>
                 <outlet property="avatarImageView" destination="001-cx-ZuR" id="fyZ-sw-HMd"/>
-                <outlet property="biography" destination="i98-3G-FUB" id="qfS-pu-zh9"/>
                 <outlet property="biographyArrowButton" destination="8o9-6G-e5f" id="is5-Bm-7Ku"/>
                 <outlet property="biographyContainerView" destination="Wlo-ea-aFQ" id="jdf-Lp-8f5"/>
-                <outlet property="biographyContainterHeightConstraint" destination="fvP-zR-CNR" id="I4V-qT-If4"/>
-                <outlet property="birthday" destination="okW-3I-nUU" id="Ote-F1-UCz"/>
+                <outlet property="biographyLabel" destination="i98-3G-FUB" id="qfS-pu-zh9"/>
+                <outlet property="birthdayLabel" destination="okW-3I-nUU" id="Ote-F1-UCz"/>
                 <outlet property="facebookButton" destination="8Pb-iH-VSw" id="cD5-5B-4ek"/>
-                <outlet property="gender" destination="llR-Cl-eKp" id="n3P-r5-4Sn"/>
+                <outlet property="genderLabel" destination="llR-Cl-eKp" id="n3P-r5-4Sn"/>
                 <outlet property="imdbButton" destination="xkb-AZ-fCX" id="sss-TY-2Bh"/>
                 <outlet property="instagramButton" destination="VEl-5L-pr0" id="9uI-ca-Dkz"/>
-                <outlet property="knownFor" destination="KZo-PS-nlR" id="WGa-Ig-3vs"/>
+                <outlet property="knownForLabel" destination="KZo-PS-nlR" id="WGa-Ig-3vs"/>
                 <outlet property="nameLabel" destination="m10-bm-yNw" id="WHv-pM-HeJ"/>
-                <outlet property="placeOfBirth" destination="Rzp-94-uWU" id="F0i-y0-tGM"/>
+                <outlet property="placeOfBirthLabel" destination="Rzp-94-uWU" id="F0i-y0-tGM"/>
                 <outlet property="profilesCollectionView" destination="DAh-Nm-hEC" id="mur-mF-9kl"/>
                 <outlet property="twitterButton" destination="9hK-7J-909" id="Ud0-4x-q0h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,7 +40,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xhk-dn-m5W">
-                            <rect key="frame" x="9.6666666666666572" y="0.0" width="373.66666666666674" height="519.66666666666663"/>
+                            <rect key="frame" x="9.6666666666666572" y="0.0" width="373.66666666666674" height="579.66666666666663"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rQH-bn-hvO">
                                     <rect key="frame" x="0.0" y="0.0" width="373.66666666666669" height="233.66666666666666"/>
@@ -242,11 +241,11 @@
                                         </stackView>
                                     </subviews>
                                 </stackView>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlo-ea-aFQ" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="238.66666666666663" width="373.66666666666669" height="100"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlo-ea-aFQ" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="243.66666666666663" width="373.66666666666669" height="100"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-dh-Chf">
-                                            <rect key="frame" x="7" y="5" width="73" height="18"/>
+                                            <rect key="frame" x="7" y="4.9999999999999982" width="73" height="23.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -262,8 +261,8 @@
                                                 <color key="baseForegroundColor" name="LabelColor"/>
                                             </buttonConfiguration>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i98-3G-FUB">
-                                            <rect key="frame" x="5" y="28.000000000000028" width="363.66666666666669" height="52"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i98-3G-FUB">
+                                            <rect key="frame" x="5" y="33.333333333333343" width="363.66666666666669" height="46.666666666666657"/>
                                             <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label v Label Label Label Label v Label Label Label Label Label Label Label Label v Label Label Label Label v LabelLabel Label</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,7 +277,7 @@
                                         <constraint firstAttribute="trailing" secondItem="8o9-6G-e5f" secondAttribute="trailing" id="H98-cV-LYm"/>
                                         <constraint firstAttribute="trailing" secondItem="i98-3G-FUB" secondAttribute="trailing" constant="5" id="JdG-SI-3as"/>
                                         <constraint firstItem="i98-3G-FUB" firstAttribute="top" secondItem="Z2J-dh-Chf" secondAttribute="bottom" constant="5" id="cDE-zF-qQE"/>
-                                        <constraint firstAttribute="height" constant="100" id="fvP-zR-CNR"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z2J-dh-Chf" secondAttribute="trailing" constant="10" id="dfG-7f-4QK"/>
                                         <constraint firstItem="i98-3G-FUB" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" constant="5" id="t7D-gg-mok"/>
                                         <constraint firstItem="8o9-6G-e5f" firstAttribute="top" secondItem="i98-3G-FUB" secondAttribute="bottom" constant="5" id="yZW-2m-ulQ"/>
                                         <constraint firstItem="8o9-6G-e5f" firstAttribute="leading" secondItem="Wlo-ea-aFQ" secondAttribute="leading" id="yf2-Cr-AHU"/>
@@ -296,19 +295,19 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYv-XM-V06" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="243.66666666666663" width="373.66666666666669" height="183"/>
+                                    <rect key="frame" x="0.0" y="353.66666666666669" width="373.66666666666669" height="133"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UHL-e4-PVD">
-                                            <rect key="frame" x="5" y="5" width="363.66666666666669" height="173"/>
+                                            <rect key="frame" x="5" y="5" width="363.66666666666669" height="123"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Profiles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-oo-pTF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="68"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DAh-Nm-hEC">
-                                                    <rect key="frame" x="0.0" y="73.000000000000028" width="363.66666666666669" height="100"/>
+                                                    <rect key="frame" x="0.0" y="23" width="363.66666666666669" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="R5t-jd-vu4"/>
@@ -343,7 +342,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDF-8w-fiC" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="436.66666666666669" width="373.66666666666669" height="83.000000000000057"/>
+                                    <rect key="frame" x="0.0" y="496.66666666666674" width="373.66666666666669" height="83"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Known For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYp-Pp-lOi">
                                             <rect key="frame" x="5" y="5" width="363.66666666666669" height="18"/>
@@ -352,7 +351,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="y1L-Bv-hPo">
-                                            <rect key="frame" x="5" y="28" width="363.66666666666669" height="50"/>
+                                            <rect key="frame" x="5" y="27.999999999999943" width="363.66666666666669" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc3-4U-aKE" userLabel="favorite" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="50"/>
