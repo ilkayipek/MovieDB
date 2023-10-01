@@ -10,11 +10,11 @@ import UIKit
 class CastDetailViewController: BaseViewController<CastDetailViewModel> {
     @IBOutlet weak var avatarImageView: CustomUIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var knownFor: UILabel!
-    @IBOutlet weak var gender: UILabel!
-    @IBOutlet weak var birthday: UILabel!
-    @IBOutlet weak var placeOfBirth: UILabel!
-    @IBOutlet weak var biography: UILabel!
+    @IBOutlet weak var knownForLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var placeOfBirthLabel: UILabel!
+    @IBOutlet weak var biographyLabel: UILabel!
     @IBOutlet weak var biographyContainerView: CustomContainerUIView!
     @IBOutlet weak var biographyContainterHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imdbButton: CustomUIButton!
@@ -46,27 +46,22 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         biographyContainerView.addGestureRecognizer(tabGesture)
         
     }
-    //An algorithm was written to lengthen and shorten the BiographyContainerView based on the size of the BiographyLabel
+    
+    //row count control and row count setting when clicked
     @objc func touchedBiography() {
-        biography.becomeFirstResponder()
+        var currentNumberOfLines = biographyLabel.numberOfLinesRequired()
         let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
-        if !isExpanded {
-            let heightOutsideOverView = biographyContainterHeightConstraint.constant - biography.frame.size.height
-            let fixedWidth = biography.frame.size.width
-            let overViewNewSize = biography.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-            let newHeightContainer = overViewNewSize.height + heightOutsideOverView
-            
-            if biographyContainterHeightConstraint.constant < newHeightContainer {
-                biographyContainterHeightConstraint.constant = newHeightContainer
-                
+        
+        if currentNumberOfLines != 3 {
+            if !isExpanded {
+                biographyLabel.numberOfLines = 0
                 biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+            } else {
+                biographyLabel.numberOfLines = 3
+                biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
             }
-        } else {
-            biographyContainterHeightConstraint.constant = 100
-            
-            biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+            isExpanded = !isExpanded
         }
-        isExpanded = !isExpanded
         
     }
     
@@ -107,16 +102,16 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
                     
                     if let biography = data.biography {
                         self.biographyContainerView.isHidden = false
-                        self.biography.text = data.biography
+                        self.biographyLabel.text = data.biography
                         self.setBiographyHeight()
                     }
                     
                     self.nameLabel.text = data.name
-                    self.knownFor.text = data.knownForDepartment
+                    self.knownForLabel.text = data.knownForDepartment
                     let gender = Gender(rawValue: data.gender ?? 0)
-                    self.gender.text = gender?.description
-                    self.birthday.text = data.birthday
-                    self.placeOfBirth.text = data.placeOfBirth
+                    self.genderLabel.text = gender?.description
+                    self.birthdayLabel.text = data.birthday
+                    self.placeOfBirthLabel.text = data.placeOfBirth
                 } else {
                     self.errorStatus()
                 }
