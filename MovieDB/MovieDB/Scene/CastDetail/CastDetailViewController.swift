@@ -27,7 +27,7 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
     @IBOutlet weak var biographyArrowButton: UIButton!
     
     
-    var images = [Profile]()
+    var profiles = [Profile]()
     var castId: Int?
     var isExpanded = false
     
@@ -74,8 +74,8 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         viewModel?.getPersonImages(personId: castId ?? 0) { [weak self] data in
             guard let self else {return}
             guard let profiles = data?.profiles else {return}
-            images = profiles
-            profilesCollectionView.reloadData()
+            self.profiles = profiles
+            self.profilesCollectionView.reloadData()
         }
     }
     
@@ -161,18 +161,17 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
 
 extension CastDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return profiles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = profilesCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CastProfilesCollectionViewCell.self), for: indexPath) as! CastProfilesCollectionViewCell
         
-        if let url = Constant.RequestPathMovie.imageUrl(imageSize: .w200, path: images[indexPath.row].filePath) {
+        if let url = Constant.RequestPathMovie.imageUrl(imageSize: .w200, path: profiles[indexPath.row].filePath) {
             cell.profileImage.loadImage(url: url, placeHolderImage: nil) { _, _, _, _ in
                 // stop animation
             }
         }
-        
         return cell
     }
     
