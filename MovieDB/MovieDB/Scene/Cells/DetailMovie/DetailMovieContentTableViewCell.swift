@@ -39,6 +39,7 @@ class DetailMovieContentTableViewCell: UITableViewCell {
         overViewLabel.addGestureRecognizer(tapGesture)
     }
     
+    //row count control and row count setting when clicked
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
         let currentNumberOfLines = overViewLabel.numberOfLinesRequired()
@@ -58,7 +59,7 @@ class DetailMovieContentTableViewCell: UITableViewCell {
                 tableView.endUpdates()
             }
             isExpanded = !isExpanded
-        }
+        } 
     }
     
     func setReviews() {
