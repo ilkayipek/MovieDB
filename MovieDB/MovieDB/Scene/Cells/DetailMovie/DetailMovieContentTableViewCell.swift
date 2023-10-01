@@ -10,7 +10,7 @@ import UIKit
 class DetailMovieContentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var overViewArrowButon: UIButton!
-    @IBOutlet weak var overViewTextView: UITextView!
+    @IBOutlet weak var overViewLabel: UILabel!
     @IBOutlet weak var overViewContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var createdAtReviewLabel: UILabel!
     @IBOutlet weak var contentReviewLabel: UILabel!
@@ -36,39 +36,29 @@ class DetailMovieContentTableViewCell: UITableViewCell {
     
     private func setOverView(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        overViewTextView.addGestureRecognizer(tapGesture)
+        overViewLabel.addGestureRecognizer(tapGesture)
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        overViewTextView.becomeFirstResponder()
+        
+        let currentNumberOfLines = overViewLabel.numberOfLinesRequired()
         let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
-        if !isExpanded {
-            let heightOutsideOverView = overViewContainerHeightConstraint.constant - overViewTextView.frame.size.height
-            let fixedWidth = overViewTextView.frame.size.width
-            let overViewNewSize = overViewTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
-            let newHeightContainer = overViewNewSize.height + heightOutsideOverView
-            
-            if overViewContainerHeightConstraint.constant < newHeightContainer {
-                overViewContainerHeightConstraint.constant = newHeightContainer
-                
+        
+        if currentNumberOfLines != 3 {
+            if !isExpanded {
+                overViewLabel.numberOfLines = 0
                 overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
                 
-                if let tableView = self.superview as? UITableView {
-                    tableView.beginUpdates()
-                    tableView.endUpdates()
-                }
+            } else {
+                overViewLabel.numberOfLines = 3
+                overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
             }
-        } else {
-            overViewContainerHeightConstraint.constant = 100
-            
-            overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
-            
             if let tableView = self.superview as? UITableView {
                 tableView.beginUpdates()
                 tableView.endUpdates()
             }
+            isExpanded = !isExpanded
         }
-        isExpanded = !isExpanded
     }
     
     func setReviews() {
