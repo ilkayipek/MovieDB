@@ -155,7 +155,7 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieContentTableViewCell.self), for: indexPath) as! DetailMovieContentTableViewCell
-            cell.overViewTextView.text = detailMovieModel?.overview
+            cell.overViewLabel.text = detailMovieModel?.overview
             cell.reviewsModel = reviewsModel
             cell.setReviews()
             return cell
