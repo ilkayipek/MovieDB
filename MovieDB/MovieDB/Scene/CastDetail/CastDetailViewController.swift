@@ -30,6 +30,7 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
     var profiles = [Profile]()
     var castId: Int?
     var isExpanded = false
+    var castImages = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +122,7 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         }
     }
     
+    //Social media buttons were made visible according to incoming data
     private func setExternalIdButtons() {
         if let castId {
             viewModel?.getPersonExternalIds(personId: castId) { [weak self] data in
@@ -162,9 +164,14 @@ extension CastDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = profilesCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CastProfilesCollectionViewCell.self), for: indexPath) as! CastProfilesCollectionViewCell
         
+        //downloaded images append in castImages
         if let url = Constant.RequestPathMovie.imageUrl(imageSize: .w200, path: profiles[indexPath.row].filePath) {
-            cell.profileImage.loadImage(url: url, placeHolderImage: nil) { _, _, _, _ in
-                // stop animation
+            cell.profileImage.loadImage(url: url, placeHolderImage: nil) { [weak self] (image, _, _, _) in
+                guard let self else {return}
+                guard let image else {return}
+                if !castImages.contains(image) {
+                    castImages.append(image)
+                }
             }
         }
         return cell
@@ -173,4 +180,12 @@ extension CastDetailViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 100)
    }
+    
+    //selected image index and castImages transferred to FullScreenViewController.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let targetVc = FullScreenPhotoPageViewController()
+        targetVc.images = castImages
+        targetVc.selectedImageIndex = indexPath.row
+        present(targetVc, animated: true)
+    }
 }
