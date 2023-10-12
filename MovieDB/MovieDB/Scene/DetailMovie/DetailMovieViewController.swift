@@ -155,7 +155,7 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieContentTableViewCell.self), for: indexPath) as! DetailMovieContentTableViewCell
-            cell.overViewTextView.text = detailMovieModel?.overview
+            cell.overViewLabel.text = detailMovieModel?.overview
             cell.reviewsModel = reviewsModel
             cell.setReviews()
             return cell
@@ -211,7 +211,9 @@ extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate, Similar
     }
     
     func selectedCast(id: Int) {
-        //redirect to actor page
+        let targetVc = CastDetailViewController.loadFromNib()
+        targetVc.castId = id
+        self.navigationController?.pushViewController(targetVc, animated: true)
     }
     
     func selectedVideo(videoKey: String) {

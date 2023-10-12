@@ -6,7 +6,7 @@
 //
 
 // MARK: - Cast
-struct Cast: Codable {
+struct CastModel: Codable {
     let adult: Bool?
     let gender, id: Int?
     let name, originalName, knownForDepartment: String?

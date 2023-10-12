@@ -9,7 +9,4 @@ protocol MovieModelProtocol {
     var collectionTitle: String? {get}
     var page: Int? { get }
     var results: [MovieResult]? { get }
-    var statusCode: Int? { get }
-    var statusMessage: String? { get }
-    var success: Bool? { get }
 }

@@ -27,3 +27,21 @@ extension UILabel {
         self.attributedText = fullString
     }
 }
+
+extension UILabel {
+    func numberOfLinesRequired() -> Int {
+        guard let labelText = self.text else {
+            return 0
+        }
+        
+        let font = self.font!
+        let labelWidth = self.frame.size.width
+        
+        let maxSize = CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude)
+        let labelRect = (labelText as NSString).boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        
+        let numberOfLines = Int(ceil(labelRect.size.height / font.lineHeight))
+        
+        return numberOfLines
+    }
+}

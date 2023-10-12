@@ -6,14 +6,14 @@
 //
 
 // MARK: - TrendMoviesModel
-struct TrendMoviesModel: Decodable, MovieModelProtocol {
+struct TrendMoviesModel: Decodable, MovieModelProtocol, FetchResultStatusProtocol {
     var collectionTitle: String?
     let page: Int?
     let results: [MovieResult]?
     let totalPages, totalResults: Int?
-    let statusCode: Int?
-    let statusMessage: String?
-    let success: Bool?
+    var statusCode: Int?
+    var statusMessage: String?
+    var success: Bool?
 
     enum CodingKeys: String, CodingKey {
         case page, results, success
