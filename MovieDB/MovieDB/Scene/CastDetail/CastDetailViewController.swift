@@ -165,7 +165,7 @@ extension CastDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = profilesCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CastProfilesCollectionViewCell.self), for: indexPath) as! CastProfilesCollectionViewCell
         
         //downloaded images append in castImages
-        if let url = Constant.RequestPathMovie.imageUrl(imageSize: .w200, path: profiles[indexPath.row].filePath) {
+        if let url = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: profiles[indexPath.row].filePath) {
             cell.profileImage.loadImage(url: url, placeHolderImage: nil) { [weak self] (image, _, _, _) in
                 guard let self else {return}
                 guard let image else {return}
@@ -186,6 +186,6 @@ extension CastDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         let targetVc = FullScreenPhotoPageViewController()
         targetVc.images = castImages
         targetVc.selectedImageIndex = indexPath.row
-        present(targetVc, animated: true)
+        self.navigationController?.pushViewController(targetVc, animated: true)
     }
 }
