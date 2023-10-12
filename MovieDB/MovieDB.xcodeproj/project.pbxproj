@@ -76,6 +76,8 @@
 		FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */; };
 		FAB99A752A7A665000EB5307 /* MovieTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */; };
 		FAC640CA2AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC640C82AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift */; };
+		FAC640CE2AD7150F00EDC94C /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC640CC2AD7150F00EDC94C /* FullScreenImageViewController.swift */; };
+		FAC640CF2AD7150F00EDC94C /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC640CD2AD7150F00EDC94C /* FullScreenImageViewController.xib */; };
 		FAC889682AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC889662AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift */; };
 		FAC889692AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC889672AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib */; };
 		FAC8896B2AAF9B65001F08F9 /* PersonImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8896A2AAF9B65001F08F9 /* PersonImagesModel.swift */; };
@@ -167,6 +169,8 @@
 		FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeSections.swift; sourceTree = "<group>"; };
 		FAB99A742A7A665000EB5307 /* MovieTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		FAC640C82AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoPageViewController.swift; sourceTree = "<group>"; };
+		FAC640CC2AD7150F00EDC94C /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
+		FAC640CD2AD7150F00EDC94C /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
 		FAC889662AAF932B001F08F9 /* CastProfilesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastProfilesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAC889672AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastProfilesCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAC8896A2AAF9B65001F08F9 /* PersonImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonImagesModel.swift; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 				FACFC3442AA8CA9200C51895 /* CastDetailViewController.xib */,
 				FACFC3472AA8CAB800C51895 /* CastDetailViewModel.swift */,
 				FAC640C82AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift */,
+				FAC640CC2AD7150F00EDC94C /* FullScreenImageViewController.swift */,
+				FAC640CD2AD7150F00EDC94C /* FullScreenImageViewController.xib */,
 			);
 			path = CastDetail;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				FAD05D692A9BEC1F00DFC280 /* SimilarCollectionViewCell.xib in Resources */,
 				FAC889692AAF932B001F08F9 /* CastProfilesCollectionViewCell.xib in Resources */,
 				FA42FB8E2A79315A00076879 /* HomeViewController.xib in Resources */,
+				FAC640CF2AD7150F00EDC94C /* FullScreenImageViewController.xib in Resources */,
 				FACFC3462AA8CA9200C51895 /* CastDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +631,7 @@
 				FAA7E6AD2A9F927400813D01 /* ReviewModel.swift in Sources */,
 				FA333CA02A956ED300A78968 /* TrailerVideoDelegate.swift in Sources */,
 				FAB226A42A8D4B5000E4F2DE /* UILabel+Extension.swift in Sources */,
+				FAC640CE2AD7150F00EDC94C /* FullScreenImageViewController.swift in Sources */,
 				FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */,
 				FA333C9E2A94E3BE00A78968 /* AuthV4Headers.swift in Sources */,
 				FA42FB902A79316A00076879 /* HomeViewModel.swift in Sources */,
