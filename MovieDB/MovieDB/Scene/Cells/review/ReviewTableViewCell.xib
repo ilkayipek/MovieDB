@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="287" id="KGk-i7-Jjw" customClass="ReviewTableViewCell" customModule="MovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="287"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMq-Nm-xS2" customClass="CustomContainerUIView" customModule="MovieDB" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="413" height="287"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HfU-Lo-NN9">
+                                <rect key="frame" x="5" y="30.333333333333329" width="403" height="221.66666666666669"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="Jg5-On-1Oh" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="IDN-q5-6Vm"/>
+                                            <constraint firstAttribute="width" constant="60" id="tJE-z7-Sab"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="g1C-in-xMn">
+                                        <rect key="frame" x="65" y="0.0" width="338" height="221.66666666666666"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="JsT-dw-p6j">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="15"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="A Reviews by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-qJ-TxB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="15"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                                        <color key="textColor" name="ContentTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWG-Zy-VNJ">
+                                                        <rect key="frame" x="88.666666666666657" y="0.0" width="14.666666666666671" height="15"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                                        <color key="textColor" name="ContentTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRP-fm-nWD" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
+                                                        <rect key="frame" x="103.33333333333334" y="0.0" width="0.0" height="15"/>
+                                                        <color key="backgroundColor" name="RatingBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="15" id="0hG-Yh-r6w"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                            <imageReference key="image" image="star.fill" catalog="system" symbolScale="small"/>
+                                                            <fontDescription key="titleFontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="8"/>
+                                                            <color key="baseForegroundColor" name="ContentTextColor"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="30.08.2023" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUe-5c-LWX">
+                                                <rect key="frame" x="0.0" y="18.000000000000004" width="65.666666666666671" height="14.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                                <color key="textColor" name="ContentTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z3-x0-xvD">
+                                                <rect key="frame" x="0.0" y="35.333333333333329" width="336.33333333333331" height="186.33333333333337"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</string>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                <color key="textColor" name="ContentTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-kW-c90">
+                                <rect key="frame" x="5" y="5" width="65.333333333333329" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" name="LabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g2d-XN-oet"/>
+                        <color key="backgroundColor" name="ContainerBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dv8-kW-c90" firstAttribute="top" secondItem="dMq-Nm-xS2" secondAttribute="top" constant="5" id="KeH-EC-BK3"/>
+                            <constraint firstItem="Dv8-kW-c90" firstAttribute="leading" secondItem="dMq-Nm-xS2" secondAttribute="leading" constant="5" id="bcT-mj-CRE"/>
+                            <constraint firstAttribute="trailing" secondItem="HfU-Lo-NN9" secondAttribute="trailing" constant="5" id="gcG-H1-vos"/>
+                            <constraint firstItem="HfU-Lo-NN9" firstAttribute="leading" secondItem="dMq-Nm-xS2" secondAttribute="leading" constant="5" id="lsV-QS-57i"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dv8-kW-c90" secondAttribute="trailing" constant="5" id="szd-WH-YCx"/>
+                            <constraint firstItem="HfU-Lo-NN9" firstAttribute="top" secondItem="Dv8-kW-c90" secondAttribute="bottom" constant="5" id="xrK-Ou-trc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dMq-Nm-xS2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FmA-xl-acM"/>
+                    <constraint firstAttribute="bottom" secondItem="dMq-Nm-xS2" secondAttribute="bottom" id="Goj-fU-y1D"/>
+                    <constraint firstItem="dMq-Nm-xS2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YVV-18-UaQ"/>
+                    <constraint firstAttribute="trailing" secondItem="dMq-Nm-xS2" secondAttribute="trailing" id="ixf-T6-uII"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorAvatarImageView" destination="Jg5-On-1Oh" id="17u-Kg-CfQ"/>
+                <outlet property="authorReviewLabel" destination="vWG-Zy-VNJ" id="Mqm-JK-UKM"/>
+                <outlet property="contentReviewLabel" destination="5z3-x0-xvD" id="MGe-CC-96q"/>
+                <outlet property="createdAtReviewLabel" destination="cUe-5c-LWX" id="f70-pT-ZdS"/>
+                <outlet property="ratingReviewButton" destination="oRP-fm-nWD" id="jDX-RM-jpB"/>
+            </connections>
+            <point key="canvasLocation" x="162.59541984732823" y="105.28169014084507"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="Jg5-On-1Oh">
+            <size key="intrinsicContentSize" width="94" height="94"/>
+        </designable>
+        <designable name="oRP-fm-nWD">
+            <size key="intrinsicContentSize" width="43.666666666666664" height="34.333333333333336"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="person" width="94" height="94"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="ContainerBackgroundColor">
+            <color red="0.13699999451637268" green="0.14100000262260437" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ContentTextColor">
+            <color red="0.83899998664855957" green="0.84700000286102295" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LabelColor">
+            <color red="0.62400001287460327" green="0.6940000057220459" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RatingBackgroundColor">
+            <color red="0.11800000071525574" green="0.27099999785423279" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
