@@ -21,5 +21,22 @@ class ReviewDetailViewController: UIViewController {
        
     }
     
-    
+    func setReview(review: ReviewResultModel) {
+        contentReviewLabel.text = review.content
+        createdAtReviewLabel.text = review.createdAt
+        authorReviewLabel.text = review.author
+        
+        if let rating = review.authorDetails?.rating {
+            ratingReviewButton.isHidden = false
+            ratingReviewButton.setTitle("\(rating).0", for: .normal)
+        }
+        
+        if let imagePath = review.authorDetails?.avatarPath {
+            if let url = Constant.RequestPathMovie.imageUrl(imageSize: .w200, path: imagePath) {
+                authorAvatarImageView.loadImage(url: url, placeHolderImage: nil, nil)
+            }
+        }
+
+    }
+
 }
