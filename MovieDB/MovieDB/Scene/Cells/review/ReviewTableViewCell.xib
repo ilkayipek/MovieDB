@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="413" height="287"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HfU-Lo-NN9">
-                                <rect key="frame" x="5" y="30.333333333333329" width="403" height="221.66666666666669"/>
+                                <rect key="frame" x="5" y="30.333333333333329" width="403" height="106.99999999999999"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="Jg5-On-1Oh" customClass="CustomUIImageView" customModule="MovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -41,7 +41,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="g1C-in-xMn">
-                                        <rect key="frame" x="65" y="0.0" width="338" height="221.66666666666666"/>
+                                        <rect key="frame" x="65" y="0.0" width="338" height="107"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="JsT-dw-p6j">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="15"/>
@@ -79,8 +79,8 @@
                                                 <color key="textColor" name="ContentTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z3-x0-xvD">
-                                                <rect key="frame" x="0.0" y="35.333333333333329" width="336.33333333333331" height="186.33333333333337"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z3-x0-xvD">
+                                                <rect key="frame" x="0.0" y="35.33333333333335" width="338" height="71.666666666666686"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</string>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <color key="textColor" name="ContentTextColor"/>
