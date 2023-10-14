@@ -157,6 +157,7 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailMovieContentTableViewCell.self), for: indexPath) as! DetailMovieContentTableViewCell
             cell.overViewLabel.text = detailMovieModel?.overview
             cell.reviewsModel = reviewsModel
+            cell.reviewTransitionDelegate = self
             cell.setReviews()
             return cell
         case 2,3,4:
@@ -203,7 +204,13 @@ extension DetailMovieViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 // MARK: Selected cells are processed with the help of delegate.
-extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate, SimilarMovieDelegate {
+extension DetailMovieViewController: TrailerVideoDelegate, CastDelegate, SimilarMovieDelegate, ReviewListTransitionDelegate {
+    func reviewListTransition(reviws: ReviewModel) {
+        let targetVc = ReviewListViewController.loadFromNib()
+        targetVc.reviewList = reviws
+        self.navigationController?.pushViewController(targetVc, animated: true)
+    }
+    
     func selectedMovie(movieId: Int) {
         let targetVc = DetailMovieViewController.loadFromNib()
         targetVc.movieId = movieId
