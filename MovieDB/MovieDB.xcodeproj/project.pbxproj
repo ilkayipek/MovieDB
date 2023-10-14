@@ -320,7 +320,7 @@
 		FA45EA5B2A68443D0012791A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				FAEA61A12ADA8A4300CF52D0 /* Reviews */,
+				FAEA61A12ADA8A4300CF52D0 /* ReviewList */,
 				FACFC3422AA8CA5D00C51895 /* CastDetail */,
 				FA333CA12A95788200A78968 /* TrailerWebView */,
 				FA0BADEE2A8BDA8E0066EE40 /* DetailMovie */,
@@ -496,13 +496,13 @@
 			path = CastDetail;
 			sourceTree = "<group>";
 		};
-		FAEA61A12ADA8A4300CF52D0 /* Reviews */ = {
+		FAEA61A12ADA8A4300CF52D0 /* ReviewList */ = {
 			isa = PBXGroup;
 			children = (
 				FAEA61A72ADA8CCB00CF52D0 /* ReviewListViewController.swift */,
 				FAEA61A82ADA8CCB00CF52D0 /* ReviewListViewController.xib */,
 			);
-			path = Reviews;
+			path = ReviewList;
 			sourceTree = "<group>";
 		};
 		FAEA61AB2ADA8D3300CF52D0 /* review */ = {
