@@ -5,6 +5,6 @@
 //  Created by MacBook on 16.08.2023.
 //
 
-enum IconeColor: String{
+enum IconColor: String{
     case labelColor = "LabelColor"
 }
