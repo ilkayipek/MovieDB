@@ -96,8 +96,8 @@
 		FAEA61B12ADAA58600CF52D0 /* ReviewListTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA61B02ADAA58600CF52D0 /* ReviewListTransitionDelegate.swift */; };
 		FAEA61B52ADACFBC00CF52D0 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA61B32ADACFBC00CF52D0 /* ReviewDetailViewController.swift */; };
 		FAEA61B62ADACFBC00CF52D0 /* ReviewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEA61B42ADACFBC00CF52D0 /* ReviewDetailViewController.xib */; };
-		FAEA61BA2ADC29BB00CF52D0 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA61B82ADC29BB00CF52D0 /* CustomTabBarViewController.swift */; };
-		FAEA61BB2ADC29BB00CF52D0 /* CustomTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEA61B92ADC29BB00CF52D0 /* CustomTabBarViewController.xib */; };
+		FAEA61BE2ADC2A4F00CF52D0 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA61BC2ADC2A4F00CF52D0 /* CustomTabBarController.swift */; };
+		FAEA61BF2ADC2A4F00CF52D0 /* CustomTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEA61BD2ADC2A4F00CF52D0 /* CustomTabBarController.xib */; };
 		FAED83812A8BEE1000328E0F /* CustomContainerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED83802A8BEE1000328E0F /* CustomContainerUIView.swift */; };
 		FAED83842A8D06EB00328E0F /* DetailMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED83832A8D06EB00328E0F /* DetailMovieModel.swift */; };
 		FAED83862A8D070400328E0F /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED83852A8D070400328E0F /* ProductionCompany.swift */; };
@@ -198,8 +198,8 @@
 		FAEA61B02ADAA58600CF52D0 /* ReviewListTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListTransitionDelegate.swift; sourceTree = "<group>"; };
 		FAEA61B32ADACFBC00CF52D0 /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		FAEA61B42ADACFBC00CF52D0 /* ReviewDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewDetailViewController.xib; sourceTree = "<group>"; };
-		FAEA61B82ADC29BB00CF52D0 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		FAEA61B92ADC29BB00CF52D0 /* CustomTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarViewController.xib; sourceTree = "<group>"; };
+		FAEA61BC2ADC2A4F00CF52D0 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		FAEA61BD2ADC2A4F00CF52D0 /* CustomTabBarController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarController.xib; sourceTree = "<group>"; };
 		FAED83802A8BEE1000328E0F /* CustomContainerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContainerUIView.swift; sourceTree = "<group>"; };
 		FAED83832A8D06EB00328E0F /* DetailMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieModel.swift; sourceTree = "<group>"; };
 		FAED83852A8D070400328E0F /* ProductionCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
@@ -536,8 +536,8 @@
 		FAEA61B72ADC286E00CF52D0 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				FAEA61B82ADC29BB00CF52D0 /* CustomTabBarViewController.swift */,
-				FAEA61B92ADC29BB00CF52D0 /* CustomTabBarViewController.xib */,
+				FAEA61BC2ADC2A4F00CF52D0 /* CustomTabBarController.swift */,
+				FAEA61BD2ADC2A4F00CF52D0 /* CustomTabBarController.xib */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -638,7 +638,7 @@
 				FAB226B42A8D698B00E4F2DE /* ActorsCollectionViewCell.xib in Resources */,
 				FA0BADF22A8BDAAD0066EE40 /* DetailMovieViewController.xib in Resources */,
 				FA6E3EEF2A63F16400C0BE91 /* Assets.xcassets in Resources */,
-				FAEA61BB2ADC29BB00CF52D0 /* CustomTabBarViewController.xib in Resources */,
+				FAEA61BF2ADC2A4F00CF52D0 /* CustomTabBarController.xib in Resources */,
 				FA4FED0D2A9A10400087CD61 /* DetailMovieHeaderTableViewCell.xib in Resources */,
 				FA98A1B22A9AAFA20002DD8E /* MovieCollectionTableViewCell.xib in Resources */,
 				FA4FED8B2A9A6EC50087CD61 /* DetailMovieFooterTableViewCell.xib in Resources */,
@@ -662,6 +662,7 @@
 			files = (
 				FACFC3482AA8CAB800C51895 /* CastDetailViewModel.swift in Sources */,
 				FAEA61B12ADAA58600CF52D0 /* ReviewListTransitionDelegate.swift in Sources */,
+				FAEA61BE2ADC2A4F00CF52D0 /* CustomTabBarController.swift in Sources */,
 				FAB99A692A79733000EB5307 /* Constant+RequestParthMovie.swift in Sources */,
 				FA4FED862A9A6EA80087CD61 /* DetailMovieContentTableViewCell.swift in Sources */,
 				FA7160B02AAE26A80016ADEB /* ExternalIDModel.swift in Sources */,
@@ -686,7 +687,6 @@
 				FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */,
 				FA7160AE2AAE05B10016ADEB /* Gender.swift in Sources */,
 				FAED83902A8D09F100328E0F /* Language.swift in Sources */,
-				FAEA61BA2ADC29BB00CF52D0 /* CustomTabBarViewController.swift in Sources */,
 				FA45EA612A684AF40012791A /* BaseViewModel.swift in Sources */,
 				FA0BADF12A8BDAAD0066EE40 /* DetailMovieViewController.swift in Sources */,
 				FAC640CA2AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift in Sources */,
