@@ -53,8 +53,8 @@
 		FAA7E6AF2A9F92CA00813D01 /* ReviewResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E6AE2A9F92CA00813D01 /* ReviewResultModel.swift */; };
 		FAA7E6B12A9F92F200813D01 /* AuthorDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E6B02A9F92F200813D01 /* AuthorDetailsModel.swift */; };
 		FAB226A42A8D4B5000E4F2DE /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226A32A8D4B5000E4F2DE /* UILabel+Extension.swift */; };
-		FAB226A62A8D4B9600E4F2DE /* IconeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226A52A8D4B9600E4F2DE /* IconeColor.swift */; };
-		FAB226A82A8D4BBD00E4F2DE /* IconeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226A72A8D4BBD00E4F2DE /* IconeName.swift */; };
+		FAB226A62A8D4B9600E4F2DE /* IconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226A52A8D4B9600E4F2DE /* IconColor.swift */; };
+		FAB226A82A8D4BBD00E4F2DE /* IconName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226A72A8D4BBD00E4F2DE /* IconName.swift */; };
 		FAB226AA2A8D65B600E4F2DE /* AlertTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226A92A8D65B600E4F2DE /* AlertTitle.swift */; };
 		FAB226AC2A8D65E900E4F2DE /* ActionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226AB2A8D65E900E4F2DE /* ActionTitle.swift */; };
 		FAB226AF2A8D697600E4F2DE /* TrailerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB226AD2A8D697600E4F2DE /* TrailerCollectionViewCell.swift */; };
@@ -158,8 +158,8 @@
 		FAA7E6AE2A9F92CA00813D01 /* ReviewResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResultModel.swift; sourceTree = "<group>"; };
 		FAA7E6B02A9F92F200813D01 /* AuthorDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailsModel.swift; sourceTree = "<group>"; };
 		FAB226A32A8D4B5000E4F2DE /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		FAB226A52A8D4B9600E4F2DE /* IconeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconeColor.swift; sourceTree = "<group>"; };
-		FAB226A72A8D4BBD00E4F2DE /* IconeName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconeName.swift; sourceTree = "<group>"; };
+		FAB226A52A8D4B9600E4F2DE /* IconColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconColor.swift; sourceTree = "<group>"; };
+		FAB226A72A8D4BBD00E4F2DE /* IconName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconName.swift; sourceTree = "<group>"; };
 		FAB226A92A8D65B600E4F2DE /* AlertTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTitle.swift; sourceTree = "<group>"; };
 		FAB226AB2A8D65E900E4F2DE /* ActionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTitle.swift; sourceTree = "<group>"; };
 		FAB226AD2A8D697600E4F2DE /* TrailerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 			children = (
 				FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */,
 				FAED838F2A8D09F100328E0F /* Language.swift */,
-				FAB226A52A8D4B9600E4F2DE /* IconeColor.swift */,
-				FAB226A72A8D4BBD00E4F2DE /* IconeName.swift */,
+				FAB226A52A8D4B9600E4F2DE /* IconColor.swift */,
+				FAB226A72A8D4BBD00E4F2DE /* IconName.swift */,
 				FAB226A92A8D65B600E4F2DE /* AlertTitle.swift */,
 				FAB226AB2A8D65E900E4F2DE /* ActionTitle.swift */,
 				FA333C9D2A94E3BE00A78968 /* AuthV4Headers.swift */,
@@ -731,8 +731,8 @@
 				FA136BDE2A9694380026ED5C /* CastDelegate.swift in Sources */,
 				FA6E3EE82A63F16300C0BE91 /* SceneDelegate.swift in Sources */,
 				FAEA61AE2ADA8D7500CF52D0 /* ReviewTableViewCell.swift in Sources */,
-				FAB226A62A8D4B9600E4F2DE /* IconeColor.swift in Sources */,
-				FAB226A82A8D4BBD00E4F2DE /* IconeName.swift in Sources */,
+				FAB226A62A8D4B9600E4F2DE /* IconColor.swift in Sources */,
+				FAB226A82A8D4BBD00E4F2DE /* IconName.swift in Sources */,
 				FAD05D682A9BEC1F00DFC280 /* SimilarCollectionViewCell.swift in Sources */,
 				FA4FED0C2A9A10400087CD61 /* DetailMovieHeaderTableViewCell.swift in Sources */,
 				FAB99A752A7A665000EB5307 /* MovieTableViewCellDelegate.swift in Sources */,
