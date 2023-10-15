@@ -43,5 +43,11 @@ extension ReviewListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let targetVc = ReviewDetailViewController.loadFromNib()
+        if let review = reviewList?.results?[indexPath.row] {
+            targetVc.review = review
+        }
+        self.navigationController?.pushViewController(targetVc, animated: true)
+    }
 }
