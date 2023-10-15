@@ -8,7 +8,7 @@
 import UIKit.UILabel
 
 extension UILabel {
-    func setIcon(iconName: IconeName, colorName: IconeColor, scale: CGFloat, startText: String?, andText: String?) {
+    func setIcon(iconName: IconName, colorName: IconColor, scale: CGFloat, startText: String?, andText: String?) {
         let imageAttachment = NSTextAttachment()
 
         if let iconImage = UIImage(systemName: iconName.rawValue)?.withTintColor(UIColor(named: colorName.rawValue) ?? .gray) {
