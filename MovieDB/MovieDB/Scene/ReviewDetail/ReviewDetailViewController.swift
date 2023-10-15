@@ -14,14 +14,15 @@ class ReviewDetailViewController: UIViewController {
     @IBOutlet weak var authorReviewLabel: UILabel!
     @IBOutlet weak var authorAvatarImageView: CustomUIImageView!
     @IBOutlet weak var ratingReviewButton: CustomUIButton!
+    
+    var review: ReviewResultModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+       setReview()
     }
     
-    func setReview(review: ReviewResultModel) {
+    func setReview() {
         contentReviewLabel.text = review.content
         createdAtReviewLabel.text = review.createdAt
         authorReviewLabel.text = review.author
