@@ -23,6 +23,7 @@ class DetailMovieContentTableViewCell: UITableViewCell {
     
     var reviewsModel: ReviewModel?
     var isExpanded = false
+    var reviewTransitionDelegate: ReviewListTransitionDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -106,5 +107,10 @@ class DetailMovieContentTableViewCell: UITableViewCell {
         if let review = reviewsModel?.results?[0] {
             //transition Detail review
         }
+    }
+    
+    @IBAction func clickedMoreReviewsButton(_ sender: Any) {
+        guard let reviewsModel else {return}
+        reviewTransitionDelegate?.reviewListTransition(reviws: reviewsModel)
     }
 }

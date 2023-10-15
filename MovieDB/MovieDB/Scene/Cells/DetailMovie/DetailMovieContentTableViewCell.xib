@@ -170,6 +170,9 @@
                                                 <color key="value" name="DetailButtonContentColor"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickedMoreReviewsButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eHb-ba-YVW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="ContainerBackgroundColor"/>
