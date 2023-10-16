@@ -28,27 +28,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private func getCollectionMovies() {
-        viewModel?.getTrendMovies() { [weak self] (data) in
-            guard let self else {return}
-            if var result = data {
-                result.collectionTitle = "Trend Movies"
-                self.collectionModels.append(result)
-                self.movieCollectionListTableView.reloadData()
-            } else {
-                print("NOT GET TREND MOVİES")
-            }
-        }
         
-        viewModel?.getPopularMovies(){ [weak self] (data) in
-            guard let self else {return}
-            if var result = data {
-                result.collectionTitle = "Popular Movies"
-                self.collectionModels.append(result)
-                self.movieCollectionListTableView.reloadData()
-            } else {
-                print("NOT GET POPULAR MOVİES")
-            }
-        }
     }
 }
 
