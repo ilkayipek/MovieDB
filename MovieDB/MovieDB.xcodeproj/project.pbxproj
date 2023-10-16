@@ -66,8 +66,6 @@
 		FAB99A592A79436600EB5307 /* MovieListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB99A572A79436600EB5307 /* MovieListCollectionViewCell.xib */; };
 		FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A5D2A796CEE00EB5307 /* MovieModelProtocol.swift */; };
 		FAB99A612A796D3E00EB5307 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A602A796D3E00EB5307 /* MovieResult.swift */; };
-		FAB99A632A796E3C00EB5307 /* PopularMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A622A796E3C00EB5307 /* PopularMoviesModel.swift */; };
-		FAB99A652A796E6D00EB5307 /* TrendMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A642A796E6D00EB5307 /* TrendMoviesModel.swift */; };
 		FAB99A672A7972EC00EB5307 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A662A7972EC00EB5307 /* Constant.swift */; };
 		FAB99A692A79733000EB5307 /* Constant+RequestParthMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A682A79733000EB5307 /* Constant+RequestParthMovie.swift */; };
 		FAB99A6C2A7A59F300EB5307 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FAB99A6B2A7A59F300EB5307 /* SDWebImage */; };
@@ -171,8 +169,6 @@
 		FAB99A572A79436600EB5307 /* MovieListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAB99A5D2A796CEE00EB5307 /* MovieModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelProtocol.swift; sourceTree = "<group>"; };
 		FAB99A602A796D3E00EB5307 /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
-		FAB99A622A796E3C00EB5307 /* PopularMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesModel.swift; sourceTree = "<group>"; };
-		FAB99A642A796E6D00EB5307 /* TrendMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMoviesModel.swift; sourceTree = "<group>"; };
 		FAB99A662A7972EC00EB5307 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FAB99A682A79733000EB5307 /* Constant+RequestParthMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+RequestParthMovie.swift"; sourceTree = "<group>"; };
 		FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -471,8 +467,6 @@
 				FA7160A82AADEB7B0016ADEB /* Cast */,
 				FAED83822A8D06D800328E0F /* Detail */,
 				FAB99A602A796D3E00EB5307 /* MovieResult.swift */,
-				FAB99A622A796E3C00EB5307 /* PopularMoviesModel.swift */,
-				FAB99A642A796E6D00EB5307 /* TrendMoviesModel.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -670,7 +664,6 @@
 				FA4FED862A9A6EA80087CD61 /* DetailMovieContentTableViewCell.swift in Sources */,
 				FA7160B02AAE26A80016ADEB /* ExternalIDModel.swift in Sources */,
 				FA9BA4B62A83A36E006F6EFF /* CustomUIViewContainer.swift in Sources */,
-				FAB99A652A796E6D00EB5307 /* TrendMoviesModel.swift in Sources */,
 				FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */,
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
 				FAC8896B2AAF9B65001F08F9 /* PersonImagesModel.swift in Sources */,
@@ -710,7 +703,6 @@
 				FAB99A612A796D3E00EB5307 /* MovieResult.swift in Sources */,
 				FAED83812A8BEE1000328E0F /* CustomContainerUIView.swift in Sources */,
 				FAEA61B52ADACFBC00CF52D0 /* ReviewDetailViewController.swift in Sources */,
-				FAB99A632A796E3C00EB5307 /* PopularMoviesModel.swift in Sources */,
 				FAEA61C12ADC398600CF52D0 /* SceneControllers.swift in Sources */,
 				FAB226B32A8D698B00E4F2DE /* ActorsCollectionViewCell.swift in Sources */,
 				FAED83922A8D0C1500328E0F /* CustomUILabel.swift in Sources */,
