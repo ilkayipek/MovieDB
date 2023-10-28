@@ -6,6 +6,7 @@
 //https://api.themoviedb.org/3/person/{person_id}
 //https://api.themoviedb.org/3/person/{person_id}/external_ids
 //https://api.themoviedb.org/3/person/{person_id}/images
+//https://api.themoviedb.org/3/trending/all/{time_window}
 
 import Foundation
 
@@ -28,6 +29,11 @@ extension Constant {
         case personDetail = "/3/person/"
         case personExternalIDsPath = "/external_ids"
         case personImages = "/images"
+        case trendingAll = "/3/trending/all/"
+        
+        static func trendingAll(dayOrWeek: DayOrWeek) -> String {
+            return "\(trendingAll.rawValue + dayOrWeek.rawValue)"
+        }
         
         static func popularMoviesPath() -> String {
             return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
