@@ -8,27 +8,45 @@
 import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
-    @IBOutlet weak var movieCollectionListTableView: UITableView!
+    @IBOutlet weak var collectionListTableView: UITableView!
     
-    var collectionModels = [MovieModelProtocol]()
+    var collectionModels = [(order: Int, data: MovieAndTVShowModel?)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = HomeViewModel()
         configureTableView()
-        getCollectionMovies()
+        getCollectionsMediaData()
     }
     
     private func configureTableView() {
-        movieCollectionListTableView.delegate = self
-        movieCollectionListTableView.dataSource = self
+        collectionListTableView.delegate = self
+        collectionListTableView.dataSource = self
         
-        let tableViewCell = String(describing: MovieCollectionTableViewCell.self)
-        movieCollectionListTableView.register(UINib(nibName: tableViewCell, bundle: nil), forCellReuseIdentifier: tableViewCell)
+        let trendingAll = String(describing: HomeTrendAllTableViewCell.self)
+        collectionListTableView.register(UINib(nibName: trendingAll, bundle: nil), forCellReuseIdentifier: trendingAll)
+        
+        let movieOrTvShow = String(describing: MovieAndTVShowTableViewCell.self)
+        collectionListTableView.register(UINib(nibName: movieOrTvShow, bundle: nil), forCellReuseIdentifier: movieOrTvShow)
     }
     
-    private func getCollectionMovies() {
-        
+    private func getCollectionsMediaData() {
+        viewModel?.getTrendingAll(dayOrWeek: .day) { [weak self] (data) in
+            guard let self else {return}
+            
+            var result = data
+            result?.collectionTitle = NSLocalizedString("Trending", comment: "")
+            self.collectionModels.append((0,result))
+            collectionListTableView.reloadData()
+        }
+        viewModel?.getTrendingAll(dayOrWeek: .week) { [weak self] (data) in
+            guard let self else {return}
+            
+            var result = data
+            result?.collectionTitle = NSLocalizedString("Trending", comment: "")
+            self.collectionModels.append((1,result))
+            collectionListTableView.reloadData()
+        }
     }
 }
 
@@ -36,21 +54,47 @@ class HomeViewController: BaseViewController<HomeViewModel> {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collectionModels.count
+        return collectionModels.count - 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableViewCell = String(describing: MovieCollectionTableViewCell.self)
-        let cell = movieCollectionListTableView.dequeueReusableCell(withIdentifier: tableViewCell, for: indexPath) as! MovieCollectionTableViewCell
-        cell.collectionTitle.text = collectionModels[indexPath.row].collectionTitle
-        cell.model = collectionModels[indexPath.row].results
-        cell.delegate = self
-        return cell
+        switch indexPath.row {
+        case 0:
+            
+            
+            let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: HomeTrendAllTableViewCell.self)) as! HomeTrendAllTableViewCell
+            
+            let resultTuday = collectionModels[0].data?.results
+            let resultWeek = collectionModels[1].data?.results
+            
+            cell.currentModel = resultTuday
+            cell.models.append(resultTuday)
+            cell.models.append(resultWeek)
+            cell.collectionTitle.text = collectionModels[0].data?.collectionTitle
+            cell.selectedIndexDelegate = self
+            cell.cellBackgroundImageLoad()
+            
+            return cell
+            
+        case 2:
+            let (_, data) = collectionModels[indexPath.row]
+            
+            if let result = data?.results {
+                let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: MovieAndTVShowTableViewCell.self)) as! MovieAndTVShowTableViewCell
+                cell.model = result
+                cell.collectionTitle.text = data?.collectionTitle
+                return cell
+            } else {
+                return UITableViewCell()
+            }
+        default:
+            return UITableViewCell()
+        }
     }
     
 }
 
-extension HomeViewController: MovieTableViewCellDelegate {
+extension HomeViewController: SelectedIndexDelegate {
     func selectedId(movieId: Int) {
         let targetVc = DetailMovieViewController.loadFromNib()
         targetVc.movieId = movieId
