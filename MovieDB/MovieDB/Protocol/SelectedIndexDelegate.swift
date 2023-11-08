@@ -6,5 +6,5 @@
 //
 
 protocol SelectedIndexDelegate: AnyObject {
-    func selectedId(movieId: Int)
+    func selectedId(movieId: Int, mediaType: MediaType)
 }
