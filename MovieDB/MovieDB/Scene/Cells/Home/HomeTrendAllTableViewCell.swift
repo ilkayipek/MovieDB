@@ -47,6 +47,10 @@ class HomeTrendAllTableViewCell: UITableViewCell {
             currentModel = nil
             collectionView.reloadData()
         }
+        
+        //used when segment triggered.
+        let zeroIndexPath = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: zeroIndexPath, at: .left, animated: true)
     }
     
     //MARK: segmentControl text set color
@@ -86,8 +90,6 @@ class HomeTrendAllTableViewCell: UITableViewCell {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         
-        backgroungImage.layer.borderWidth = 0
-        backgroungImage.layer.borderColor = UIColor.clear.cgColor
         backgroungImage.layer.addSublayer(gradientLayer)
     }
 
@@ -115,10 +117,8 @@ extension HomeTrendAllTableViewCell: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let id = currentModel?[indexPath.row].id {
-            selectedIndexDelegate?.selectedId(movieId: id)
+        if let id = currentModel?[indexPath.row].id, let mediaType = currentModel?[indexPath.row].mediaType  {
+            selectedIndexDelegate?.selectedId(movieId: id, mediaType: mediaType)
         }
     }
-    
-    
 }
