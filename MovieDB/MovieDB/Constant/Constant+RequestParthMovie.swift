@@ -7,6 +7,7 @@
 //https://api.themoviedb.org/3/person/{person_id}/external_ids
 //https://api.themoviedb.org/3/person/{person_id}/images
 //https://api.themoviedb.org/3/trending/all/{time_window}
+//https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&with_watch_monetization_types=free
 
 import Foundation
 
@@ -30,6 +31,17 @@ extension Constant {
         case personExternalIDsPath = "/external_ids"
         case personImages = "/images"
         case trendingAll = "/3/trending/all/"
+        case freeToWatchMovie = "/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&with_watch_monetization_types=free"
+        case freeToWatchTvShow = "/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&without_watch_providers=free"
+        
+        static func freeToWatchPath(mediaType: MediaType) -> String {
+            switch mediaType {
+            case .movie:
+                return freeToWatchMovie.rawValue
+            case .tv:
+                return freeToWatchTvShow.rawValue
+            }
+        }
         
         static func trendingAll(dayOrWeek: DayOrWeek) -> String {
             return "\(trendingAll.rawValue + dayOrWeek.rawValue)"
