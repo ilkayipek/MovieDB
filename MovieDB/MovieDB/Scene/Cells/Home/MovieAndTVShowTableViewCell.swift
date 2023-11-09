@@ -7,12 +7,13 @@
 
 import UIKit
 
-class MovieCollectionTableViewCell: UITableViewCell {
-    @IBOutlet weak var movieListCollectionView: UICollectionView!
+class MovieAndTVShowTableViewCell: UITableViewCell {
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionTitle: UILabel!
     
-    weak var delegate: MovieTableViewCellDelegate?
-    var model: [MovieResult]?
+    weak var selectedIndexDelegate: SelectedIndexDelegate?
+    var model = [MovieAndTVShowsModelResult]()
+    var mediaType: MediaType!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,11 +22,11 @@ class MovieCollectionTableViewCell: UITableViewCell {
     }
     
     private func configureCollectionView() {
-        movieListCollectionView.delegate = self
-        movieListCollectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
-        let collectionCellString = String(describing: MovieListCollectionViewCell.self)
-        movieListCollectionView.register(UINib(nibName: collectionCellString, bundle: nil), forCellWithReuseIdentifier: collectionCellString)
+        let collectionCellString = String(describing: MovieAndTVShowCollectionViewCell.self)
+        collectionView.register(UINib(nibName: collectionCellString, bundle: nil), forCellWithReuseIdentifier: collectionCellString)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,17 +36,15 @@ class MovieCollectionTableViewCell: UITableViewCell {
     
 }
 
-extension MovieCollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model?.count ?? 5
+        return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = movieListCollectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieListCollectionViewCell.self), for: indexPath) as! MovieListCollectionViewCell
-        guard let model else {return cell}
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieAndTVShowCollectionViewCell.self), for: indexPath) as! MovieAndTVShowCollectionViewCell
         
-        cell.movieName.text = model[indexPath.row].title
-        cell.movieDate.text = model[indexPath.row].releaseDate
+        cell.loadCell(model: model[indexPath.row])
         
         if let imagePath = model[indexPath.row].posterPath {
             if let url = Constant.RequestPathMovie.imageUrl(imageSize: .original, path: imagePath) {
@@ -58,10 +57,8 @@ extension MovieCollectionTableViewCell: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let id = model?[indexPath.row].id {
-            delegate?.selectedId(movieId: id)
-        } else {
-            print("seçim yapılamadı")
+        if let id = model[indexPath.row].id {
+            selectedIndexDelegate?.selectedId(movieId: id, mediaType: mediaType)
         }
     }
 }

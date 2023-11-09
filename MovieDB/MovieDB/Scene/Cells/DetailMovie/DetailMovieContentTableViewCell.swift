@@ -49,11 +49,11 @@ class DetailMovieContentTableViewCell: UITableViewCell {
         if currentNumberOfLines != 3 {
             if !isExpanded {
                 overViewLabel.numberOfLines = 0
-                overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                overViewArrowButon.setImage(UIImage(systemName: IconName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
                 
             } else {
                 overViewLabel.numberOfLines = 3
-                overViewArrowButon.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                overViewArrowButon.setImage(UIImage(systemName: IconName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
             }
             if let tableView = self.superview as? UITableView {
                 tableView.beginUpdates()

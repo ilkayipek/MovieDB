@@ -8,46 +8,54 @@
 import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
-    @IBOutlet weak var movieCollectionListTableView: UITableView!
+    @IBOutlet weak var collectionListTableView: UITableView!
     
-    var collectionModels = [MovieModelProtocol]()
+    var freeToWatchModel = [(order: Int, data: MovieAndTVShowModel?)]()
+    var trendingAllModel = [(dayOrWeek: DayOrWeek, data: MovieAndTVShowModel?)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = HomeViewModel()
         configureTableView()
-        getCollectionMovies()
+        getCollectionsMediaData()
     }
     
     private func configureTableView() {
-        movieCollectionListTableView.delegate = self
-        movieCollectionListTableView.dataSource = self
+        collectionListTableView.delegate = self
+        collectionListTableView.dataSource = self
         
-        let tableViewCell = String(describing: MovieCollectionTableViewCell.self)
-        movieCollectionListTableView.register(UINib(nibName: tableViewCell, bundle: nil), forCellReuseIdentifier: tableViewCell)
+        let trendingAll = String(describing: HomeTrendAllTableViewCell.self)
+        collectionListTableView.register(UINib(nibName: trendingAll, bundle: nil), forCellReuseIdentifier: trendingAll)
+        
+        let movieOrTvShow = String(describing: MovieAndTVShowTableViewCell.self)
+        collectionListTableView.register(UINib(nibName: movieOrTvShow, bundle: nil), forCellReuseIdentifier: movieOrTvShow)
     }
     
-    private func getCollectionMovies() {
-        viewModel?.getTrendMovies() { [weak self] (data) in
+    private func getCollectionsMediaData() {
+        viewModel?.getTrendingAll(dayOrWeek: .day) { [weak self] (data) in
             guard let self else {return}
-            if var result = data {
-                result.collectionTitle = "Trend Movies"
-                self.collectionModels.append(result)
-                self.movieCollectionListTableView.reloadData()
-            } else {
-                print("NOT GET TREND MOVİES")
-            }
+            self.trendingAllModel.append((.day,data))
+        }
+        viewModel?.getTrendingAll(dayOrWeek: .week) { [weak self] (data) in
+            guard let self else {return}
+            self.trendingAllModel.append((.week,data))
         }
         
-        viewModel?.getPopularMovies(){ [weak self] (data) in
+        viewModel?.getFreeToWatch(.movie) { [weak self] (data) in
             guard let self else {return}
-            if var result = data {
-                result.collectionTitle = "Popular Movies"
-                self.collectionModels.append(result)
-                self.movieCollectionListTableView.reloadData()
-            } else {
-                print("NOT GET POPULAR MOVİES")
-            }
+            self.freeToWatchModel.append((1,data))
+        }
+        
+        viewModel?.getFreeToWatch(.tv) { [weak self] (data) in
+            guard let self else {return}
+            self.freeToWatchModel.append((2,data))
+        }
+        
+        viewModel?.closeDispatchGroup { [weak self] in
+            guard let self else {return}
+            
+            self.freeToWatchModel.sort(by: { $0.order < $1.order })
+            self.collectionListTableView.reloadData()
         }
     }
 }
@@ -55,23 +63,56 @@ class HomeViewController: BaseViewController<HomeViewModel> {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
+    //freeToWatchModel + trendingModel
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collectionModels.count
+        return freeToWatchModel.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableViewCell = String(describing: MovieCollectionTableViewCell.self)
-        let cell = movieCollectionListTableView.dequeueReusableCell(withIdentifier: tableViewCell, for: indexPath) as! MovieCollectionTableViewCell
-        cell.collectionTitle.text = collectionModels[indexPath.row].collectionTitle
-        cell.model = collectionModels[indexPath.row].results
-        cell.delegate = self
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: HomeTrendAllTableViewCell.self)) as! HomeTrendAllTableViewCell
+            guard !trendingAllModel.isEmpty else {return UITableViewCell()}
+            
+            for model in trendingAllModel {
+                let (dayOrWeek,data) = model
+                switch dayOrWeek {
+                case .day:
+                    cell.currentModel = data?.results
+                    cell.models.append(data?.results)
+                case .week:
+                    cell.models.append(data?.results)
+                }
+                cell.collectionTitle.text = data?.collectionTitle
+            }
+            
+            cell.selectedIndexDelegate = self
+            cell.cellBackgroundImageLoad()
+            
+            return cell
+        case 1,2:
+            let tableViewIndex = indexPath.row
+            let (_, data) = freeToWatchModel[tableViewIndex - 1]
+            
+            if let result = data?.results {
+                let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: MovieAndTVShowTableViewCell.self)) as! MovieAndTVShowTableViewCell
+                cell.model = result
+                cell.mediaType = data!.mediaType
+                cell.selectedIndexDelegate = self
+                cell.collectionTitle.text = data?.collectionTitle
+                return cell
+            } else {
+                return UITableViewCell()
+            }
+        default:
+            return UITableViewCell()
+        }
     }
     
 }
 
-extension HomeViewController: MovieTableViewCellDelegate {
-    func selectedId(movieId: Int) {
+extension HomeViewController: SelectedIndexDelegate {
+    func selectedId(movieId: Int, mediaType: MediaType) {
         let targetVc = DetailMovieViewController.loadFromNib()
         targetVc.movieId = movieId
         self.navigationController?.pushViewController(targetVc, animated: true)

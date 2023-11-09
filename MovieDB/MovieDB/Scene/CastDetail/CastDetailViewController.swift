@@ -56,10 +56,10 @@ class CastDetailViewController: BaseViewController<CastDetailViewModel> {
         if currentNumberOfLines != 3 {
             if !isExpanded {
                 biographyLabel.numberOfLines = 0
-                biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                biographyArrowButton.setImage(UIImage(systemName: IconName.arrowChevronUp.rawValue,withConfiguration: symbolConfiguration), for: .normal)
             } else {
                 biographyLabel.numberOfLines = 3
-                biographyArrowButton.setImage(UIImage(systemName: IconeName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
+                biographyArrowButton.setImage(UIImage(systemName: IconName.arrowChevronDown.rawValue,withConfiguration: symbolConfiguration), for: .normal)
             }
             isExpanded = !isExpanded
         }
