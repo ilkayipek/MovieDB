@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeTrendAllTableViewCell: UITableViewCell {
+class TrendAllTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentController: UISegmentedControl!
@@ -123,7 +123,7 @@ class HomeTrendAllTableViewCell: UITableViewCell {
     }
 }
 
-extension HomeTrendAllTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TrendAllTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentModel?.count ?? 0
     }

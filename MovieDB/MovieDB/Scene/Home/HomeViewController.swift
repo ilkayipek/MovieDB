@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         collectionListTableView.delegate = self
         collectionListTableView.dataSource = self
         
-        let trendingAll = String(describing: HomeTrendAllTableViewCell.self)
+        let trendingAll = String(describing: TrendAllTableViewCell.self)
         collectionListTableView.register(UINib(nibName: trendingAll, bundle: nil), forCellReuseIdentifier: trendingAll)
         
         let movieOrTvShow = String(describing: MovieAndTVShowTableViewCell.self)
@@ -71,7 +71,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: HomeTrendAllTableViewCell.self)) as! HomeTrendAllTableViewCell
+            let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: TrendAllTableViewCell.self)) as! TrendAllTableViewCell
             guard !trendingAllModel.isEmpty else {return UITableViewCell()}
             
             cell.setModels(models: trendingAllModel)
