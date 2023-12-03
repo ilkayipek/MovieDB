@@ -11,7 +11,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     @IBOutlet weak var collectionListTableView: UITableView!
     
     var freeToWatchModel = [(order: Int, data: MovieAndTVShowModel?)]()
-    var trendingAllModel = [(dayOrWeek: DayOrWeek, data: MovieAndTVShowModel?)]()
+    var trendingAllModel = [(dayOrWeek: DayOrWeek, data: [MovieAndTVShowsModelResult]?)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,17 +74,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: HomeTrendAllTableViewCell.self)) as! HomeTrendAllTableViewCell
             guard !trendingAllModel.isEmpty else {return UITableViewCell()}
             
-            for model in trendingAllModel {
-                let (dayOrWeek,data) = model
-                switch dayOrWeek {
-                case .day:
-                    cell.currentModel = data?.results
-                    cell.models.append(data?.results)
-                case .week:
-                    cell.models.append(data?.results)
-                }
-                cell.collectionTitle.text = data?.collectionTitle
-            }
+            cell.setModels(models: trendingAllModel)
             
             cell.selectedIndexDelegate = self
             cell.cellBackgroundImageLoad()
