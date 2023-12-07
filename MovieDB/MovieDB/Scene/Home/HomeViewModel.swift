@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel: BaseViewModel {
     let dispatchGroup = DispatchGroup()
     
-    func getTrendingAll(dayOrWeek: DayOrWeek, _ closure: @escaping(MovieAndTVShowModel?) -> Void) {
+    func getTrendingAll(dayOrWeek: DayOrWeek, _ closure: @escaping([MovieAndTVShowsModelResult]?) -> Void) {
         dispatchGroup.enter()
         
         let trendAllPath = Constant.RequestPathMovie.trendingAll(dayOrWeek: dayOrWeek)
@@ -22,7 +22,7 @@ class HomeViewModel: BaseViewModel {
             case .success(let data):
                 if var data = data, !(data.results?.isEmpty ?? true) {
                     data.collectionTitle = NSLocalizedString("Trending", comment: "")
-                    closure(data)
+                    closure(data.results)
                 } else {
                     closure(nil)
                 }
