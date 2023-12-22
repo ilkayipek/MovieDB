@@ -7,4 +7,5 @@
 
 enum SceneControllers {
     case home
+    case movies
 }
