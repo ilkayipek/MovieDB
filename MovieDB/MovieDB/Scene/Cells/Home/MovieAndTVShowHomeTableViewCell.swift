@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieAndTVShowTableViewCell: UITableViewCell {
+class MovieAndTVShowHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionTitle: UILabel!
     
@@ -36,7 +36,7 @@ class MovieAndTVShowTableViewCell: UITableViewCell {
     
 }
 
-extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MovieAndTVShowHomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.count
     }

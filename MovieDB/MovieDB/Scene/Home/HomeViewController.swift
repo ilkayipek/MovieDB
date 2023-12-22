@@ -27,7 +27,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         let trendingAll = String(describing: TrendAllTableViewCell.self)
         collectionListTableView.register(UINib(nibName: trendingAll, bundle: nil), forCellReuseIdentifier: trendingAll)
         
-        let movieOrTvShow = String(describing: MovieAndTVShowTableViewCell.self)
+        let movieOrTvShow = String(describing: MovieAndTVShowHomeTableViewCell.self)
         collectionListTableView.register(UINib(nibName: movieOrTvShow, bundle: nil), forCellReuseIdentifier: movieOrTvShow)
     }
     
@@ -85,7 +85,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let (_, data) = freeToWatchModel[tableViewIndex - 1]
             
             if let result = data?.results {
-                let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: MovieAndTVShowTableViewCell.self)) as! MovieAndTVShowTableViewCell
+                let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: MovieAndTVShowHomeTableViewCell.self)) as! MovieAndTVShowHomeTableViewCell
                 cell.model = result
                 cell.mediaType = data!.mediaType
                 cell.selectedIndexDelegate = self
