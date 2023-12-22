@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let rootViewController = CustomTabBarController()
         let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.tintColor = .gray
+        navigationController.navigationBar.barTintColor = .DefaultBackgroundColor
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
