@@ -13,7 +13,6 @@ import Foundation
 
 extension Constant {
     enum RequestPathMovie: String {
-        case popularMovie = "/3/movie/popular?api_key="
         case trendDayMovie = "/3/trending/movie/day?api_key="
         case imageBaseUrlPath = "https://image.tmdb.org/t/p/"
         case movieDetail = "/3/movie/"
@@ -33,6 +32,22 @@ extension Constant {
         case trendingAll = "/3/trending/all/"
         case freeToWatchMovie = "/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&with_watch_monetization_types=free"
         case freeToWatchTvShow = "/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&without_watch_providers=free"
+        case nowPlayingNMovie = "/3/movie/now_playing"
+        case popularMovie = "/3/movie/popular"
+        case topRatedMovie = "/3/movie/top_rated"
+        case upcomingMovie = "/3/movie/upcoming"
+        
+        static func upcomingMoviePath() -> String {
+            return upcomingMovie.rawValue
+        }
+        
+        static func topRatedMoviePath() -> String {
+            return topRatedMovie.rawValue
+        }
+        
+        static func nowPlayingMoviePath() -> String {
+            return nowPlayingNMovie.rawValue
+        }
         
         static func freeToWatchPath(mediaType: MediaType) -> String {
             switch mediaType {
@@ -48,7 +63,7 @@ extension Constant {
         }
         
         static func popularMoviesPath() -> String {
-            return "\(popularMovie.rawValue)\(Constant.shared.apiKey)"
+            return "\(popularMovie.rawValue)"
         }
         
         static func trendDayMoviesPath() -> String {
