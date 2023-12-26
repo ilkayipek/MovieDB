@@ -9,11 +9,40 @@ import UIKit
 
 class MoviesViewController: BaseViewController<MoviesViewModel> {
     @IBOutlet weak var collectionListTableView: UITableView!
+    var movieCollectionsData = [MovieAndTVShowModel?]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MoviesViewModel()
         collectionListTableViewConfigure()
+        getMovieCollections()
+    }
+    
+    //fetching movies
+    func getMovieCollections() {
+        viewModel?.fetchNowPlaying{ [weak self] data in
+            guard let self else {return}
+            self.movieCollectionsData.append(data)
+            self.collectionListTableView.reloadData()
+        }
+        
+        viewModel?.fetchPopular{ [weak self] data in
+            guard let self else {return}
+            self.movieCollectionsData.append(data)
+            self.collectionListTableView.reloadData()
+        }
+        
+        viewModel?.fetchTopRated{ [weak self] data in
+            guard let self else {return}
+            self.movieCollectionsData.append(data)
+            self.collectionListTableView.reloadData()
+        }
+        
+        viewModel?.fetchUpcoming{ [weak self] data in
+            guard let self else {return}
+            self.movieCollectionsData.append(data)
+            self.collectionListTableView.reloadData()
+        }
     }
     
     func collectionListTableViewConfigure() {
@@ -31,7 +60,7 @@ class MoviesViewController: BaseViewController<MoviesViewModel> {
 
 extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return movieCollectionsData.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +72,16 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
             
         case 1,2,3,4:
             let cell = collectionListTableView.dequeueReusableCell(withIdentifier: String(describing: MovieAndTVShowTableViewCell.self), for: indexPath) as! MovieAndTVShowTableViewCell
+            
+            let data = movieCollectionsData[indexPath.row - 1]
+            cell.collectionTitle.text = data?.collectionTitle
+            
+            if let result = data?.results {
+                cell.model = result
+            }
+            cell.collectionView.reloadData()
             return cell
+            
             
         default:
             return UITableViewCell()
