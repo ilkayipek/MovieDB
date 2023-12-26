@@ -36,6 +36,11 @@ extension Constant {
         case popularMovie = "/3/movie/popular"
         case topRatedMovie = "/3/movie/top_rated"
         case upcomingMovie = "/3/movie/upcoming"
+        case trendingMovies = "/3/trending/movie/"
+        
+        static func trendingMoviesPath(dayOrWeek: DayOrWeek) -> String {
+            return trendingMovies.rawValue + dayOrWeek.rawValue
+        }
         
         static func upcomingMoviePath() -> String {
             return upcomingMovie.rawValue
