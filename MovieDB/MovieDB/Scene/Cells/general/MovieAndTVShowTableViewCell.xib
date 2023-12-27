@@ -25,20 +25,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-Um-4XI">
                                 <rect key="frame" x="5" y="5" width="582" height="66"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykb-Gn-F0x">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykb-Gn-F0x" userLabel="containerHeaderView">
                                         <rect key="frame" x="0.0" y="0.0" width="582" height="66"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-dD-mzA">
-                                                <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="66"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="231" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skZ-v1-UAm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="129" height="66"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="177.33333333333334" height="66"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="23"/>
                                                         <color key="textColor" name="ContentTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vi-9o-Qpx" userLabel="Toggle">
-                                                        <rect key="frame" x="139" y="0.0" width="43.666666666666657" height="66"/>
+                                                        <rect key="frame" x="187.33333333333334" y="0.0" width="43.666666666666657" height="66"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title=" ">
                                                             <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small"/>
@@ -134,7 +134,7 @@
                 <outlet property="allButton" destination="gHi-4N-8bb" id="8Bj-sQ-4J1"/>
                 <outlet property="collectionTitle" destination="skZ-v1-UAm" id="Niw-YT-qRU"/>
                 <outlet property="collectionView" destination="ctl-64-2BK" id="dbH-ga-FJw"/>
-                <outlet property="containerView" destination="R35-T9-Xjo" id="fSM-1X-m9x"/>
+                <outlet property="containerHeaderView" destination="Ykb-Gn-F0x" id="QXh-eQ-PBx"/>
                 <outlet property="toggleButton" destination="5vi-9o-Qpx" id="D0J-13-fao"/>
             </connections>
             <point key="canvasLocation" x="-519.08396946564881" y="-451.4084507042254"/>
