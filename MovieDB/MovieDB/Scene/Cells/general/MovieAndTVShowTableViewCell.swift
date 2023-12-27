@@ -9,7 +9,7 @@ import UIKit
 
 class MovieAndTVShowTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var containerView: CustomUIViewContainer!
+    @IBOutlet weak var containerHeaderView: UIView!
     @IBOutlet weak var toggleButton: UIButton!
     @IBOutlet weak var allButton: CustomUIButton!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -35,7 +35,7 @@ class MovieAndTVShowTableViewCell: UITableViewCell {
     
     func setContainerViewTabGesture(){
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(containerViewControl))
-        containerView.addGestureRecognizer(gestureRecognizer)
+        containerHeaderView.addGestureRecognizer(gestureRecognizer)
     }
     
     //ContainerView hide control
@@ -89,6 +89,12 @@ extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionVie
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let id = model[indexPath.row].id {
+            selectedIndexDelegate?.selectedId(movieId: id, mediaType: .movie)
+        }
     }
     
     
