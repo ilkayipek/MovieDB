@@ -9,9 +9,14 @@ import Foundation
 class MoviesViewModel: BaseViewModel {
     let dispetchGroup = DispatchGroup()
     
-    func fetchTrending(dayOrWeek: DayOrWeek, _ closure: @escaping([MovieAndTVShowsModelResult]?) -> Void) -> Void {
+    func startDispatchGroup() {
         dispetchGroup.enter()
+        gradientLoagingTabAnimation?.startAnimations()
+    }
+    
+    func fetchTrending(dayOrWeek: DayOrWeek, _ closure: @escaping([MovieAndTVShowsModelResult]?) -> Void) -> Void {
         let  path = Constant.RequestPathMovie.trendingMoviesPath(dayOrWeek: dayOrWeek)
+        startDispatchGroup()
         
         Network.shared.getRequestV3(urlPath: path) {[weak self] (result:Result<MovieAndTVShowModel, Error>) in
             guard let self else {return}
@@ -131,8 +136,10 @@ class MoviesViewModel: BaseViewModel {
     
     //grouping closed
     func closeDispetchGroup(_ closure: @escaping()->Void) -> Void {
-        dispetchGroup.notify(queue: .main) {
+        dispetchGroup.notify(queue: .main) { [weak self] in
+            guard let self else {return}
             closure()
+            self.gradientLoagingTabAnimation?.stopAnimations()
         }
     }
 }
