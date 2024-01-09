@@ -13,6 +13,7 @@
 		FA0BADF62A8BDCB60066EE40 /* ScoreIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADF52A8BDCB60066EE40 /* ScoreIndicatorView.swift */; };
 		FA0BADF82A8BDFAE0066EE40 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BADF72A8BDFAE0066EE40 /* UIViewController+Extension.swift */; };
 		FA136BDE2A9694380026ED5C /* CastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA136BDD2A9694380026ED5C /* CastDelegate.swift */; };
+		FA2184722B48816C00F26DCB /* CustomGradientLayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2184712B48816C00F26DCB /* CustomGradientLayerAnimation.swift */; };
 		FA312BB72A6FEAEE007FFB98 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA312BB62A6FEAEE007FFB98 /* Network.swift */; };
 		FA312BBA2A6FEBA6007FFB98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FA312BB92A6FEBA6007FFB98 /* Alamofire */; };
 		FA333C942A929AAB00A78968 /* MovieActorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA333C932A929AAB00A78968 /* MovieActorsModel.swift */; };
@@ -127,6 +128,7 @@
 		FA0BADF52A8BDCB60066EE40 /* ScoreIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreIndicatorView.swift; sourceTree = "<group>"; };
 		FA0BADF72A8BDFAE0066EE40 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FA136BDD2A9694380026ED5C /* CastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDelegate.swift; sourceTree = "<group>"; };
+		FA2184712B48816C00F26DCB /* CustomGradientLayerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGradientLayerAnimation.swift; sourceTree = "<group>"; };
 		FA312BB62A6FEAEE007FFB98 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FA333C932A929AAB00A78968 /* MovieActorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorsModel.swift; sourceTree = "<group>"; };
 		FA333C952A929AED00A78968 /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				FAED83802A8BEE1000328E0F /* CustomContainerUIView.swift */,
 				FAED83912A8D0C1500328E0F /* CustomUILabel.swift */,
 				FAED83932A8D0D2400328E0F /* CustomUIButton.swift */,
+				FA2184712B48816C00F26DCB /* CustomGradientLayerAnimation.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				FAEA61A92ADA8CCB00CF52D0 /* ReviewListViewController.swift in Sources */,
 				FA0BADF82A8BDFAE0066EE40 /* UIViewController+Extension.swift in Sources */,
 				FAA7E6AD2A9F927400813D01 /* ReviewModel.swift in Sources */,
+				FA2184722B48816C00F26DCB /* CustomGradientLayerAnimation.swift in Sources */,
 				FA333CA02A956ED300A78968 /* TrailerVideoDelegate.swift in Sources */,
 				FAB226A42A8D4B5000E4F2DE /* UILabel+Extension.swift in Sources */,
 				FAC640CE2AD7150F00EDC94C /* FullScreenImageViewController.swift in Sources */,
