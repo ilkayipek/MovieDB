@@ -7,4 +7,5 @@
 
 enum Language: String {
     case tr = "tr-TR"
+    case en = "en-US"
 }
