@@ -15,7 +15,7 @@ extension Constant.RequestPathMovie {
         case upcomingMovie = "upcoming"
         case trendingMovies = "/3/trending/movie/"
         
-        init(collection: Collections) {
+        init(collection: MovieCollections) {
             switch collection {
             case .nowPlaying:
                 self = .nowPlayingMovie

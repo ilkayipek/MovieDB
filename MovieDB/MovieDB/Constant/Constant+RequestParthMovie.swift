@@ -36,7 +36,7 @@ extension Constant {
         case defaultLanguage = "?language"
         case pagePath = "&page="
         
-        static func movieCollectionPath(collection: Collections, page: Int?) -> String {
+        static func movieCollectionPath(collection: MovieCollections, page: Int?) -> String {
             let collectionPath = MovieCollectionsPath(collection: collection).rawValue
             let language = Constant.shared.defaultLanguage
             
