@@ -15,7 +15,7 @@ extension Constant {
     enum RequestPathMovie: String {
         case trendDayMovie = "/3/trending/movie/day?api_key="
         case imageBaseUrlPath = "https://image.tmdb.org/t/p/"
-        case movieDetail = "/3/movie/"
+        case movie = "/3/movie/"
         case translationMaviePath = "/3/movie"
         case languagePath = "&language="
         case apiKeyPath = "?api_key="
@@ -32,27 +32,21 @@ extension Constant {
         case trendingAll = "/3/trending/all/"
         case freeToWatchMovie = "/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&with_watch_monetization_types=free"
         case freeToWatchTvShow = "/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&without_watch_providers=free"
-        case nowPlayingNMovie = "/3/movie/now_playing"
-        case popularMovie = "/3/movie/popular"
-        case topRatedMovie = "/3/movie/top_rated"
-        case upcomingMovie = "/3/movie/upcoming"
         case trendingMovies = "/3/trending/movie/"
+        case defaultLanguage = "?language"
+        case pagePath = "&page="
+        
+        static func movieCollectionPath(collection: Collections, page: Int?) -> String {
+            let collectionPath = MovieCollectionsPath(collection: collection).rawValue
+            let language = Constant.shared.defaultLanguage
+            
+            return "\(movie.rawValue)\(collectionPath)\(defaultLanguage.rawValue)\(language)\(pagePath.rawValue)\(page ?? 1)"
+        }
         
         static func trendingMoviesPath(dayOrWeek: DayOrWeek) -> String {
             return trendingMovies.rawValue + dayOrWeek.rawValue
         }
         
-        static func upcomingMoviePath() -> String {
-            return upcomingMovie.rawValue
-        }
-        
-        static func topRatedMoviePath() -> String {
-            return topRatedMovie.rawValue
-        }
-        
-        static func nowPlayingMoviePath() -> String {
-            return nowPlayingNMovie.rawValue
-        }
         
         static func freeToWatchPath(mediaType: MediaType) -> String {
             switch mediaType {
@@ -67,14 +61,6 @@ extension Constant {
             return "\(trendingAll.rawValue + dayOrWeek.rawValue)"
         }
         
-        static func popularMoviesPath() -> String {
-            return "\(popularMovie.rawValue)"
-        }
-        
-        static func trendDayMoviesPath() -> String {
-            return "\(trendDayMovie.rawValue)\(Constant.shared.apiKey)"
-        }
-        
         static func imageUrl(imageSize: ImageSizeSections, path: String?) -> URL? {
             guard let path else { return nil }
             if let url = URL(string: "\(imageBaseUrlPath.rawValue)\(imageSize.rawValue)\(path)") {
@@ -83,7 +69,7 @@ extension Constant {
         }
         
         static func detailOriginalMoviePath(movieId: Int) -> String {
-            return "\(movieDetail.rawValue)\(movieId)\(apiKeyPath.rawValue)\(Constant.shared.apiKey)"
+            return "\(movie.rawValue)\(movieId)\(apiKeyPath.rawValue)\(Constant.shared.apiKey)"
         }
         
         static func translationMoviePath(movieId: Int, language: Language) -> String {
@@ -92,7 +78,7 @@ extension Constant {
         }
         
         static func castPath(movieId: Int) -> String {
-            return "\(movieDetail.rawValue)\(movieId)\(credits.rawValue)"
+            return "\(movie.rawValue)\(movieId)\(credits.rawValue)"
         }
         
         static func trailerVideoUrlWeb(key: String) -> String {
@@ -112,15 +98,15 @@ extension Constant {
         }
         
         static func trailerPath(movieId: Int) -> String {
-            return "\(movieDetail.rawValue)\(movieId)\(vieos.rawValue)"
+            return "\(movie.rawValue)\(movieId)\(vieos.rawValue)"
         }
         
         static func similarMovies(movieId: Int) -> String {
-            return "\(movieDetail.rawValue)\(movieId)\(similar.rawValue)"
+            return "\(movie.rawValue)\(movieId)\(similar.rawValue)"
         }
         
         static func reviewsMoviePath(movieId: Int) -> String {
-            return "\(movieDetail.rawValue)\(movieId)\(reviews.rawValue)"
+            return "\(movie.rawValue)\(movieId)\(reviews.rawValue)"
         }
         
         static func personDetailPath(personId: Int) -> String {
@@ -134,5 +120,6 @@ extension Constant {
         static func personImagesPath(personId: Int) -> String {
             return "\(personDetail.rawValue)\(personId)\(personImages.rawValue)"
         }
+        
     }
 }
