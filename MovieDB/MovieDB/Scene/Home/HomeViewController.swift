@@ -101,10 +101,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension HomeViewController: SelectedIndexDelegate {
-    func selectedId(movieId: Int, mediaType: MediaType) {
+extension HomeViewController: SelectedCellIndexDelegate {
+    func selectedId(id: Int, mediaType: MediaType) {
         let targetVc = DetailMovieViewController.loadFromNib()
-        targetVc.movieId = movieId
+        targetVc.movieId = id
         self.navigationController?.pushViewController(targetVc, animated: true)
     }
 }
