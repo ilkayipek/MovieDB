@@ -11,6 +11,8 @@ class CustomTabBarController: UITabBarController {
     
     var selectedImages = [String]()
     var unselectedImages = [String]()
+    let selectedColor: UIColor = .selectedColor
+    let unselectedColor: UIColor = .gray
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,16 @@ class CustomTabBarController: UITabBarController {
         
         //Assigning images to controllers
         for item in 0..<items!.count {
-            items![item].selectedImage = UIImage(systemName: selectedImages[item])?.withRenderingMode(.alwaysOriginal)
-            items![item].image = UIImage(systemName: unselectedImages[item])?.withRenderingMode(.alwaysOriginal)
+            items![item].selectedImage = UIImage(systemName: selectedImages[item])?.withRenderingMode(.alwaysOriginal).withTintColor(selectedColor)
+            items![item].image = UIImage(systemName: unselectedImages[item])?.withRenderingMode(.alwaysOriginal).withTintColor(unselectedColor)
+            items![item].setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: unselectedColor,
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
+            ], for: .normal)
+            items![item].setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: selectedColor,
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
+            ], for: .selected)
         }
         
         
@@ -40,10 +50,6 @@ class CustomTabBarController: UITabBarController {
     
     //loads the selected controller
     private func loadController(selectedScene: SceneControllers) -> UIViewController {
-        let titleAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
-        ]
-        
         switch selectedScene {
         case .home:
             let homeVc = HomeViewController.loadFromNib()
@@ -52,7 +58,6 @@ class CustomTabBarController: UITabBarController {
             selectedImages.append(IconName.houseFill.rawValue)
             unselectedImages.append(IconName.house.rawValue)
             
-            homeVc.tabBarItem.setTitleTextAttributes(titleAttributes, for: .normal)
             return homeVc
         case .movies:
             let movies = MoviesViewController.loadFromNib()
@@ -61,7 +66,6 @@ class CustomTabBarController: UITabBarController {
             selectedImages.append(IconName.movieFill.rawValue)
             unselectedImages.append(IconName.movie.rawValue)
             
-            movies.tabBarItem.setTitleTextAttributes(titleAttributes, for: .normal)
             return movies
         }
     }
