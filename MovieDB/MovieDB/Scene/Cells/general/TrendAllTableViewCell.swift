@@ -13,7 +13,7 @@ class TrendAllTableViewCell: UITableViewCell {
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var backgroungImage: UIImageView!
     
-    var selectedIndexDelegate: SelectedIndexDelegate?
+    var selectedIndexDelegate: SelectedCellIndexDelegate?
     
     private var dayModel: [MovieAndTVShowsModelResult]?
     private var weekModel: [MovieAndTVShowsModelResult]?
@@ -142,7 +142,7 @@ extension TrendAllTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let id = currentModel?[indexPath.row].id, let mediaType = currentModel?[indexPath.row].mediaType  {
-            selectedIndexDelegate?.selectedId(movieId: id, mediaType: mediaType)
+            selectedIndexDelegate?.selectedId(id: id, mediaType: mediaType)
         }
     }
 }
