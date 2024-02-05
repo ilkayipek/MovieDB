@@ -40,7 +40,7 @@ class MoviesViewModel: BaseViewModel {
     
     func fetchNowPlaying(_ closure: @escaping(MovieAndTVShowModel?)-> Void) -> Void {
         dispetchGroup.enter()
-        let path = Constant.RequestPathMovie.nowPlayingMoviePath()
+        let path = Constant.RequestPathMovie.movieCollectionPath(collection: .nowPlaying, page: nil)
         
         Network.shared.getRequestV3(urlPath: path) {[weak self] (result:Result<MovieAndTVShowModel, Error>) in
             guard let self else {return}
@@ -48,6 +48,8 @@ class MoviesViewModel: BaseViewModel {
             switch result {
             case .success(var data):
                 data.collectionTitle = "Now Playing"
+                data.collection = .nowPlaying
+                
                 if let result = data.results, !result.isEmpty {
                     closure(data)
                 } else {
@@ -64,7 +66,7 @@ class MoviesViewModel: BaseViewModel {
     
     func fetchUpcoming(_ closure: @escaping(MovieAndTVShowModel?)-> Void) -> Void {
         dispetchGroup.enter()
-        let path = Constant.RequestPathMovie.upcomingMoviePath()
+        let path = Constant.RequestPathMovie.movieCollectionPath(collection: .upcoming, page: nil)
         
         Network.shared.getRequestV3(urlPath: path) { [weak self] (result:Result<MovieAndTVShowModel, Error>) in
             guard let self else {return}
@@ -72,6 +74,8 @@ class MoviesViewModel: BaseViewModel {
             switch result {
             case .success(var data):
                 data.collectionTitle = "Upcoming"
+                data.collection = .upcoming
+                
                 if let result = data.results, !result.isEmpty {
                     closure(data)
                 } else {
@@ -88,7 +92,7 @@ class MoviesViewModel: BaseViewModel {
     
     func fetchPopular(_ closure: @escaping(MovieAndTVShowModel?)-> Void) -> Void {
         dispetchGroup.enter()
-        let path = Constant.RequestPathMovie.popularMoviesPath()
+        let path = Constant.RequestPathMovie.movieCollectionPath(collection: .popular, page: nil)
         
         Network.shared.getRequestV3(urlPath: path) { [weak self] (result:Result<MovieAndTVShowModel, Error>) in
             guard let self else {return}
@@ -96,6 +100,8 @@ class MoviesViewModel: BaseViewModel {
             switch result {
             case .success(var data):
                 data.collectionTitle = "Popular"
+                data.collection = .popular
+                
                 if let result = data.results, !result.isEmpty {
                     closure(data)
                 } else {
@@ -112,7 +118,7 @@ class MoviesViewModel: BaseViewModel {
     
     func fetchTopRated(_ closure: @escaping(MovieAndTVShowModel?)-> Void) -> Void {
         dispetchGroup.enter()
-        let path = Constant.RequestPathMovie.topRatedMoviePath()
+        let path = Constant.RequestPathMovie.movieCollectionPath(collection: .topRated, page: nil)
         
         Network.shared.getRequestV3(urlPath: path) {[weak self] (result:Result<MovieAndTVShowModel, Error>) in
             guard let self else {return}
@@ -120,6 +126,8 @@ class MoviesViewModel: BaseViewModel {
             switch result {
             case .success(var data):
                 data.collectionTitle = "Top Rated"
+                data.collection = .topRated
+                
                 if let result = data.results, !result.isEmpty {
                     closure(data)
                 } else {
