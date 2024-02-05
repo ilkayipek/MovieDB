@@ -21,6 +21,10 @@ class BaseViewController<V: BaseViewModel>: UIViewController {
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        gradientLoagingTabAnimation?.stopAnimations()
+    }
+    
     func alertMessageDefault(alertTitle: AlertTitle, alertMessage: String, actionTitle: ActionTitle) {
         let alertTitle = NSLocalizedString(alertTitle.rawValue, comment: "")
         let alertMessage = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
