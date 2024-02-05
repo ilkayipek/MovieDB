@@ -16,13 +16,23 @@ class MovieAndTVShowTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionTitle: UILabel!
     
     var toggleSwitch = false
-    weak var selectedIndexDelegate: SelectedIndexDelegate?
-    var model = [MovieAndTVShowsModelResult]()
+    weak var selectedMovieIndexDelegate: SelectedCellIndexDelegate?
+    weak var selectedCollectionDelegate: MovieAndTVShowCollectionDelegate?
+    private var modelResults = [MovieAndTVShowsModelResult]()
+    private var model: MovieAndTVShowModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         configurationCollectionView()
         setContainerViewTabGesture()
+    }
+    
+    func setmodel(data: MovieAndTVShowModel?) {
+        if let result = data?.results {
+            self.model = data
+            self.modelResults = result
+        }
+        
     }
 
     private func configurationCollectionView() {
@@ -38,9 +48,14 @@ class MovieAndTVShowTableViewCell: UITableViewCell {
         containerHeaderView.addGestureRecognizer(gestureRecognizer)
     }
     
+    @IBAction func allButtonTapped(_ sender: Any) {
+        guard let model else {return}
+        selectedCollectionDelegate?.allButtonOperation(data: model)
+    }
+    
     //ContainerView hide control
     @objc func containerViewControl() {
-        guard !model.isEmpty else{return}
+        guard !modelResults.isEmpty else{return}
         let symbolConfiguration = UIImage.SymbolConfiguration(scale: .small)
         
         if !toggleSwitch {
@@ -73,12 +88,12 @@ class MovieAndTVShowTableViewCell: UITableViewCell {
 
 extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
+        return modelResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieAndTVShowCollectionViewCell.self), for: indexPath) as! MovieAndTVShowCollectionViewCell
-        let data = model[indexPath.row]
+        let data = modelResults[indexPath.row]
         cell.name.text = data.title
         cell.date.text = data.releaseDate
         
@@ -92,8 +107,8 @@ extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let id = model[indexPath.row].id {
-            selectedIndexDelegate?.selectedId(movieId: id, mediaType: .movie)
+        if let id = modelResults[indexPath.row].id {
+            selectedMovieIndexDelegate?.selectedId(id: id, mediaType: .movie)
         }
     }
     
