@@ -73,7 +73,7 @@ class MoviesViewController: BaseViewController<MoviesViewModel> {
     }
 }
 
-extension MoviesViewController: UITableViewDelegate, UITableViewDataSource,SelectedIndexDelegate {
+extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieCollectionsData.count + 1
     }
@@ -95,10 +95,9 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource,Selec
             let (_,data) = movieCollectionsData[indexPath.row - 1]
             cell.collectionTitle.text = data?.collectionTitle
             
-            if let result = data?.results {
-                cell.model = result
-                cell.selectedIndexDelegate = self
-            }
+            cell.setmodel(data: data)
+            cell.selectedMovieIndexDelegate = self
+            cell.selectedCollectionDelegate = self
             return cell
             
             
@@ -108,9 +107,21 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource,Selec
         
     }
     
-    func selectedId(movieId: Int, mediaType: MediaType) {
+}
+
+extension MoviesViewController: SelectedCellIndexDelegate, MovieAndTVShowCollectionDelegate {
+    func allButtonOperation(data: MovieAndTVShowModel) {
+        guard let collection = data.collection else {return}
+        
+        let targetVc = AllListCollectionViewController.loadFromNib()
+        targetVc.setData(mediaType: .movie, collection: collection)
+        
+        self.navigationController?.pushViewController(targetVc, animated: true)
+    }
+    
+    func selectedId(id: Int, mediaType: MediaType) {
         let targetVc = DetailMovieViewController.loadFromNib()
-        targetVc.movieId = movieId
+        targetVc.movieId = id
         self.navigationController?.pushViewController(targetVc, animated: true)
     }
 }
