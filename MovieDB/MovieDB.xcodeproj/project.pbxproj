@@ -82,7 +82,7 @@
 		FAB99A6E2A7A59F400EB5307 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAB99A6D2A7A59F300EB5307 /* SDWebImageMapKit */; };
 		FAB99A712A7A5AAB00EB5307 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */; };
 		FAB99A732A7A5C0000EB5307 /* ImageSizeSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */; };
-		FAB99A752A7A665000EB5307 /* SelectedIndexDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A742A7A665000EB5307 /* SelectedIndexDelegate.swift */; };
+		FAB99A752A7A665000EB5307 /* SelectedCellIndexDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB99A742A7A665000EB5307 /* SelectedCellIndexDelegate.swift */; };
 		FAC640CA2AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC640C82AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift */; };
 		FAC640CE2AD7150F00EDC94C /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC640CC2AD7150F00EDC94C /* FullScreenImageViewController.swift */; };
 		FAC640CF2AD7150F00EDC94C /* FullScreenImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC640CD2AD7150F00EDC94C /* FullScreenImageViewController.xib */; };
@@ -202,7 +202,7 @@
 		FAB99A682A79733000EB5307 /* Constant+RequestParthMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+RequestParthMovie.swift"; sourceTree = "<group>"; };
 		FAB99A702A7A5AAB00EB5307 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		FAB99A722A7A5C0000EB5307 /* ImageSizeSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSizeSections.swift; sourceTree = "<group>"; };
-		FAB99A742A7A665000EB5307 /* SelectedIndexDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedIndexDelegate.swift; sourceTree = "<group>"; };
+		FAB99A742A7A665000EB5307 /* SelectedCellIndexDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCellIndexDelegate.swift; sourceTree = "<group>"; };
 		FAC640C82AD6CECF00EDC94C /* FullScreenPhotoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoPageViewController.swift; sourceTree = "<group>"; };
 		FAC640CC2AD7150F00EDC94C /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
 		FAC640CD2AD7150F00EDC94C /* FullScreenImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenImageViewController.xib; sourceTree = "<group>"; };
@@ -331,7 +331,7 @@
 			children = (
 				FA9BCB062B66F9A800332FE2 /* MovieAndTvShowCollectionDelegate.swift */,
 				FAB99A5D2A796CEE00EB5307 /* MovieModelProtocol.swift */,
-				FAB99A742A7A665000EB5307 /* SelectedIndexDelegate.swift */,
+				FAB99A742A7A665000EB5307 /* SelectedCellIndexDelegate.swift */,
 				FA333C9B2A929B8800A78968 /* DetailMovieCollectionModelProtocol.swift */,
 				FA333C9F2A956ED300A78968 /* TrailerVideoDelegate.swift */,
 				FA136BDD2A9694380026ED5C /* CastDelegate.swift */,
@@ -826,7 +826,7 @@
 				FAB226A82A8D4BBD00E4F2DE /* IconName.swift in Sources */,
 				FAD05D682A9BEC1F00DFC280 /* SimilarCollectionViewCell.swift in Sources */,
 				FA4FED0C2A9A10400087CD61 /* DetailMovieHeaderTableViewCell.swift in Sources */,
-				FAB99A752A7A665000EB5307 /* SelectedIndexDelegate.swift in Sources */,
+				FAB99A752A7A665000EB5307 /* SelectedCellIndexDelegate.swift in Sources */,
 				FAED83862A8D070400328E0F /* ProductionCompany.swift in Sources */,
 				FA5980412B34430900891D8B /* UIColor+Extension.swift in Sources */,
 				FA9BA4B82A83A3C9006F6EFF /* CustomUIImageView.swift in Sources */,
