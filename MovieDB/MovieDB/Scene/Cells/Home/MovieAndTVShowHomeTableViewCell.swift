@@ -11,7 +11,7 @@ class MovieAndTVShowHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionTitle: UILabel!
     
-    weak var selectedIndexDelegate: SelectedIndexDelegate?
+    weak var selectedIndexDelegate: SelectedCellIndexDelegate?
     var model = [MovieAndTVShowsModelResult]()
     var mediaType: MediaType!
 
@@ -58,7 +58,7 @@ extension MovieAndTVShowHomeTableViewCell: UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let id = model[indexPath.row].id {
-            selectedIndexDelegate?.selectedId(movieId: id, mediaType: mediaType)
+            selectedIndexDelegate?.selectedId(id: id, mediaType: mediaType)
         }
     }
 }
