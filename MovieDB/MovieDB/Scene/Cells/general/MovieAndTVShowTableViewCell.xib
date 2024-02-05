@@ -73,6 +73,9 @@
                                                         <color key="value" name="ContainerBorderColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="allButtonTapped:" destination="mns-Xo-WCW" eventType="touchUpInside" id="rR8-qZ-RC6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,7 +140,7 @@
                 <outlet property="containerHeaderView" destination="Ykb-Gn-F0x" id="QXh-eQ-PBx"/>
                 <outlet property="toggleButton" destination="5vi-9o-Qpx" id="D0J-13-fao"/>
             </connections>
-            <point key="canvasLocation" x="-519.08396946564881" y="-451.4084507042254"/>
+            <point key="canvasLocation" x="-641" y="-561"/>
         </tableViewCell>
     </objects>
     <designables>
