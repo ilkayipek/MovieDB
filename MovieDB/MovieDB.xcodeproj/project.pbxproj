@@ -125,6 +125,9 @@
 		FAED83902A8D09F100328E0F /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED838F2A8D09F100328E0F /* Language.swift */; };
 		FAED83922A8D0C1500328E0F /* CustomUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED83912A8D0C1500328E0F /* CustomUILabel.swift */; };
 		FAED83942A8D0D2400328E0F /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED83932A8D0D2400328E0F /* CustomUIButton.swift */; };
+		FAEF6B442B724E8900257669 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF6B422B724E8900257669 /* SearchViewController.swift */; };
+		FAEF6B452B724E8900257669 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEF6B432B724E8900257669 /* SearchViewController.xib */; };
+		FAEF6B472B724E9F00257669 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF6B462B724E9F00257669 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +248,9 @@
 		FAED838F2A8D09F100328E0F /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FAED83912A8D0C1500328E0F /* CustomUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUILabel.swift; sourceTree = "<group>"; };
 		FAED83932A8D0D2400328E0F /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		FAEF6B422B724E8900257669 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FAEF6B432B724E8900257669 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		FAEF6B462B724E9F00257669 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +378,7 @@
 		FA45EA5B2A68443D0012791A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FAEF6B412B724E7700257669 /* Search */,
 				FA9BCAFF2B64110700332FE2 /* AllListCollection */,
 				FAEA3C1B2B21D86600765B09 /* Movies */,
 				FAEA61B72ADC286E00CF52D0 /* TabBar */,
@@ -640,6 +647,16 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		FAEF6B412B724E7700257669 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF6B422B724E8900257669 /* SearchViewController.swift */,
+				FAEF6B432B724E8900257669 /* SearchViewController.xib */,
+				FAEF6B462B724E9F00257669 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -719,6 +736,7 @@
 				FAB226B42A8D698B00E4F2DE /* ActorsCollectionViewCell.xib in Resources */,
 				FA0BADF22A8BDAAD0066EE40 /* DetailMovieViewController.xib in Resources */,
 				FA6E3EEF2A63F16400C0BE91 /* Assets.xcassets in Resources */,
+				FAEF6B452B724E8900257669 /* SearchViewController.xib in Resources */,
 				FAEA61BF2ADC2A4F00CF52D0 /* CustomTabBarController.xib in Resources */,
 				FA4FED0D2A9A10400087CD61 /* DetailMovieHeaderTableViewCell.xib in Resources */,
 				FA98A1B22A9AAFA20002DD8E /* MovieAndTVShowHomeTableViewCell.xib in Resources */,
@@ -750,11 +768,13 @@
 				FA4FED862A9A6EA80087CD61 /* DetailMovieContentTableViewCell.swift in Sources */,
 				FA7160B02AAE26A80016ADEB /* ExternalIDModel.swift in Sources */,
 				FA9BA4B62A83A36E006F6EFF /* CustomUIViewContainer.swift in Sources */,
+				FAEF6B442B724E8900257669 /* SearchViewController.swift in Sources */,
 				FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */,
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
 				FAC8896B2AAF9B65001F08F9 /* PersonImagesModel.swift in Sources */,
 				FACFC3452AA8CA9200C51895 /* CastDetailViewController.swift in Sources */,
 				FAEA61CC2AE1418700CF52D0 /* TrendAllTableViewCell.swift in Sources */,
+				FAEF6B472B724E9F00257669 /* SearchViewModel.swift in Sources */,
 				FA333CA72A957A7B00A78968 /* TrailerWebViewViewModel.swift in Sources */,
 				FAD05D712A9E799E00DFC280 /* SimilarMovieDelegate.swift in Sources */,
 				FAB99A672A7972EC00EB5307 /* Constant.swift in Sources */,
