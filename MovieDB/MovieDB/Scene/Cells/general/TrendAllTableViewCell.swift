@@ -13,7 +13,7 @@ class TrendAllTableViewCell: UITableViewCell {
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var backgroungImage: UIImageView!
     
-    var selectedIndexDelegate: SelectedIndexDelegate?
+    var selectedIndexDelegate: SelectedCellIndexDelegate?
     
     private var dayModel: [MovieAndTVShowsModelResult]?
     private var weekModel: [MovieAndTVShowsModelResult]?
@@ -34,22 +34,26 @@ class TrendAllTableViewCell: UITableViewCell {
         case 0:
             if let model = dayModel {
                 currentModel = model
+                
+                //used when segment triggered.
+                let zeroIndexPath = IndexPath(item: 0, section: 0)
+                collectionView.scrollToItem(at: zeroIndexPath, at: .left, animated: true)
             } else {
                 sender.selectedSegmentIndex = 1
             }
         case 1:
             if let model = weekModel {
                 currentModel = model
+                
+                //used when segment triggered.
+                let zeroIndexPath = IndexPath(item: 0, section: 0)
+                collectionView.scrollToItem(at: zeroIndexPath, at: .left, animated: true)
             } else {
                 sender.selectedSegmentIndex = 0
             }
         default:
             currentModel = nil
         }
-        
-        //used when segment triggered.
-        let zeroIndexPath = IndexPath(item: 0, section: 0)
-        collectionView.scrollToItem(at: zeroIndexPath, at: .left, animated: true)
         collectionView.reloadData()
     }
     
@@ -138,7 +142,7 @@ extension TrendAllTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let id = currentModel?[indexPath.row].id, let mediaType = currentModel?[indexPath.row].mediaType  {
-            selectedIndexDelegate?.selectedId(movieId: id, mediaType: mediaType)
+            selectedIndexDelegate?.selectedId(id: id, mediaType: mediaType)
         }
     }
 }

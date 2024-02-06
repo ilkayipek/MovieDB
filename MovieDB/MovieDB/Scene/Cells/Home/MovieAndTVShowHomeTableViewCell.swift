@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MovieAndTVShowTableViewCell: UITableViewCell {
+class MovieAndTVShowHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionTitle: UILabel!
     
-    weak var selectedIndexDelegate: SelectedIndexDelegate?
+    weak var selectedIndexDelegate: SelectedCellIndexDelegate?
     var model = [MovieAndTVShowsModelResult]()
     var mediaType: MediaType!
 
@@ -36,7 +36,7 @@ class MovieAndTVShowTableViewCell: UITableViewCell {
     
 }
 
-extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MovieAndTVShowHomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.count
     }
@@ -58,7 +58,7 @@ extension MovieAndTVShowTableViewCell: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let id = model[indexPath.row].id {
-            selectedIndexDelegate?.selectedId(movieId: id, mediaType: mediaType)
+            selectedIndexDelegate?.selectedId(id: id, mediaType: mediaType)
         }
     }
 }

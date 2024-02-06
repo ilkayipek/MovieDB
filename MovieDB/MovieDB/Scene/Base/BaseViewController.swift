@@ -8,15 +8,21 @@
 import UIKit
 
 class BaseViewController<V: BaseViewModel>: UIViewController {
+    var gradientLoagingTabAnimation: CustomGradientLoadingAnimation?
+
     var viewModel: V? {
         didSet {
             setViewModel()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        gradientLoagingTabAnimation?.stopAnimations()
     }
     
     func alertMessageDefault(alertTitle: AlertTitle, alertMessage: String, actionTitle: ActionTitle) {
@@ -46,6 +52,10 @@ class BaseViewController<V: BaseViewModel>: UIViewController {
             guard let self else {return}
             self.alertMessageDefaultCompletion(alertTitle: alertTitle, alertMessage: alertMessage, actionTitle: actionTitle, closure: closure)
         }
+        
+        self.gradientLoagingTabAnimation = CustomGradientLoadingAnimation(x: 0, y: 0, width: view.frame.width*0.8, height: 5, color: UIColor(named: "DetailButtonBackgroundColor") ?? .white)
+        viewModel?.gradientLoagingTabAnimation = self.gradientLoagingTabAnimation
+        self.navigationController?.navigationBar.addSubview(gradientLoagingTabAnimation!)
     }
     
 }

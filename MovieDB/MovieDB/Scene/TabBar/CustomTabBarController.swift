@@ -11,6 +11,8 @@ class CustomTabBarController: UITabBarController {
     
     var selectedImages = [String]()
     var unselectedImages = [String]()
+    let selectedColor: UIColor = .selectedColor
+    let unselectedColor: UIColor = .gray
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +20,32 @@ class CustomTabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        self.tabBar.tintColor = .gray
-        
+   
+        self.tabBar.barTintColor = .DefaultBackgroundColor
         //necessary controllers created and image icons added.
         let homeVc = loadController(selectedScene: .home)
+        let moviesVc = loadController(selectedScene: .movies)
         
-        selectedImages.append(IconName.houseFill.rawValue)
-        unselectedImages.append(IconName.house.rawValue)
-        
-        self.setViewControllers([homeVc], animated: false)
+        self.setViewControllers([homeVc,moviesVc], animated: false)
         
         self.selectedIndex = 0
         let items = self.tabBar.items
         
         //Assigning images to controllers
         for item in 0..<items!.count {
-            items![item].selectedImage = UIImage(systemName: selectedImages[item])?.withRenderingMode(.alwaysOriginal)
-            items![item].image = UIImage(systemName: unselectedImages[item])?.withRenderingMode(.alwaysOriginal)
+            items![item].selectedImage = UIImage(systemName: selectedImages[item])?.withRenderingMode(.alwaysOriginal).withTintColor(selectedColor)
+            items![item].image = UIImage(systemName: unselectedImages[item])?.withRenderingMode(.alwaysOriginal).withTintColor(unselectedColor)
+            items![item].setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: unselectedColor,
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
+            ], for: .normal)
+            items![item].setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: selectedColor,
+                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
+            ], for: .selected)
         }
+        
+        
     }
     
     //loads the selected controller
@@ -45,12 +55,22 @@ class CustomTabBarController: UITabBarController {
             let homeVc = HomeViewController.loadFromNib()
             homeVc.title = NSLocalizedString("Home", comment: "")
             
-            let titleAttributes: [NSAttributedString.Key: Any] = [
-                NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
-            ]
+            selectedImages.append(IconName.houseFill.rawValue)
+            unselectedImages.append(IconName.house.rawValue)
             
-            homeVc.tabBarItem.setTitleTextAttributes(titleAttributes, for: .normal)
             return homeVc
+        case .movies:
+            let movies = MoviesViewController.loadFromNib()
+            movies.title = NSLocalizedString("Movies", comment: "")
+            
+            selectedImages.append(IconName.movieFill.rawValue)
+            unselectedImages.append(IconName.movie.rawValue)
+            
+            return movies
         }
     }
+}
+
+extension CustomTabBarController: UITabBarControllerDelegate {
+    
 }
