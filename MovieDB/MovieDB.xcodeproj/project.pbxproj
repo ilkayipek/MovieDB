@@ -128,6 +128,8 @@
 		FAEF6B442B724E8900257669 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF6B422B724E8900257669 /* SearchViewController.swift */; };
 		FAEF6B452B724E8900257669 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEF6B432B724E8900257669 /* SearchViewController.xib */; };
 		FAEF6B472B724E9F00257669 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF6B462B724E9F00257669 /* SearchViewModel.swift */; };
+		FAEF6B492B726A1300257669 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF6B482B726A1300257669 /* CustomSearchBar.swift */; };
+		FAEF6B4B2B729AAA00257669 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF6B4A2B729AAA00257669 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +253,8 @@
 		FAEF6B422B724E8900257669 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FAEF6B432B724E8900257669 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		FAEF6B462B724E9F00257669 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		FAEF6B482B726A1300257669 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		FAEF6B4A2B729AAA00257669 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +516,7 @@
 				FAED83912A8D0C1500328E0F /* CustomUILabel.swift */,
 				FAED83932A8D0D2400328E0F /* CustomUIButton.swift */,
 				FA2184712B48816C00F26DCB /* CustomGradientLayerAnimation.swift */,
+				FAEF6B482B726A1300257669 /* CustomSearchBar.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				FA0BADF72A8BDFAE0066EE40 /* UIViewController+Extension.swift */,
 				FAB226A32A8D4B5000E4F2DE /* UILabel+Extension.swift */,
 				FA5980402B34430900891D8B /* UIColor+Extension.swift */,
+				FAEF6B4A2B729AAA00257669 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -771,6 +777,7 @@
 				FAEF6B442B724E8900257669 /* SearchViewController.swift in Sources */,
 				FA0BADF42A8BDAD80066EE40 /* DetailMovieViewModel.swift in Sources */,
 				FAB99A5E2A796CEE00EB5307 /* MovieModelProtocol.swift in Sources */,
+				FAEF6B492B726A1300257669 /* CustomSearchBar.swift in Sources */,
 				FAC8896B2AAF9B65001F08F9 /* PersonImagesModel.swift in Sources */,
 				FACFC3452AA8CA9200C51895 /* CastDetailViewController.swift in Sources */,
 				FAEA61CC2AE1418700CF52D0 /* TrendAllTableViewCell.swift in Sources */,
@@ -778,6 +785,7 @@
 				FA333CA72A957A7B00A78968 /* TrailerWebViewViewModel.swift in Sources */,
 				FAD05D712A9E799E00DFC280 /* SimilarMovieDelegate.swift in Sources */,
 				FAB99A672A7972EC00EB5307 /* Constant.swift in Sources */,
+				FAEF6B4B2B729AAA00257669 /* UIImage+Extension.swift in Sources */,
 				FA6E3EEA2A63F16300C0BE91 /* ViewController.swift in Sources */,
 				FA0BADF62A8BDCB60066EE40 /* ScoreIndicatorView.swift in Sources */,
 				FA9BCB022B64114700332FE2 /* AllListCollectionViewController.swift in Sources */,
