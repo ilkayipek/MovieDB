@@ -25,8 +25,9 @@ class CustomTabBarController: UITabBarController {
         //necessary controllers created and image icons added.
         let homeVc = loadController(selectedScene: .home)
         let moviesVc = loadController(selectedScene: .movies)
+        let searchVc = loadController(selectedScene: .search)
         
-        self.setViewControllers([homeVc,moviesVc], animated: false)
+        self.setViewControllers([homeVc,moviesVc,searchVc], animated: false)
         
         self.selectedIndex = 0
         let items = self.tabBar.items
@@ -35,6 +36,7 @@ class CustomTabBarController: UITabBarController {
         for item in 0..<items!.count {
             items![item].selectedImage = UIImage(systemName: selectedImages[item])?.withRenderingMode(.alwaysOriginal).withTintColor(selectedColor)
             items![item].image = UIImage(systemName: unselectedImages[item])?.withRenderingMode(.alwaysOriginal).withTintColor(unselectedColor)
+            
             items![item].setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: unselectedColor,
                 NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13.0)
@@ -62,11 +64,19 @@ class CustomTabBarController: UITabBarController {
         case .movies:
             let movies = MoviesViewController.loadFromNib()
             movies.title = NSLocalizedString("Movies", comment: "")
-            
+           
             selectedImages.append(IconName.movieFill.rawValue)
             unselectedImages.append(IconName.movie.rawValue)
             
             return movies
+        case .search:
+            let search = SearchViewController.loadFromNib()
+            search.title = NSLocalizedString("Search", comment: "")
+            
+            selectedImages.append(IconName.searchFill.rawValue)
+            unselectedImages.append(IconName.search.rawValue)
+            
+            return search
         }
     }
 }
