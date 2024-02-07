@@ -20,4 +20,5 @@ enum IconName: String {
     case peopleFill = "person.2.fill"
     case search = "magnifyingglass"
     case searchFill = "magnifyingglass.circle.fill"
+    case closeFill = "xmark.circle.fill"
 }
