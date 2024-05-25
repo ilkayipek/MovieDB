@@ -16,7 +16,8 @@ Bu uygulama, kullanıcıların sürdürülebilir yaşam tarzını benimsemelerin
 
 ## Demo
 
-Insert gif or link to demo
+[Gönderiler ve Etkinlikler Videosu](https://drive.google.com/file/d/1tvf3yV_lUI4ZFeuDg_3tWawJq1cGU0-T/view?usp=drive_link)
+
 
 
 ## Screenshots
