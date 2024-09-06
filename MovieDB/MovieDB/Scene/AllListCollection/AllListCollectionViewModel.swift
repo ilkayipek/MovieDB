@@ -30,13 +30,13 @@ class AllListCollectionViewModel: BaseViewModel {
                 case .success(let data):
                     if let result = data?.results, !result.isEmpty {
                         self.resultPages = resultPages + result
-                        self.dispatchGroup.leave()
-                        self.closeDispetchGroup()
                         closure(resultPages)
                     } else {
                         isLoadData = false
                     }
                     self.page = page + 1
+                    self.dispatchGroup.leave()
+                    self.closeDispetchGroup()
                 }
         }
         }

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieAndTvShowSearchTableViewCell" rowHeight="70" id="KGk-i7-Jjw" customClass="MovieAndTvShowSearchTableViewCell" customModule="MovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XM7-HE-WoM" customClass="CustomUIViewContainer" customModule="MovieDB" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="378" height="60"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gCQ-3t-ULn">
+                                <rect key="frame" x="5" y="5" width="368" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7SW-bz-53b" userLabel="containerHeaderView">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ymw-74-JqJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="238.66666666666666" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wC-Qv-iTp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="50"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                                        <color key="textColor" name="ContentTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzP-h8-XNL" customClass="CustomUILabel" customModule="MovieDB" customModuleProvider="target">
+                                                        <rect key="frame" x="164.33333333333334" y="0.0" width="20.666666666666657" height="50"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
+                                                        <color key="textColor" name="LabelColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-pg-AG5" userLabel="Toggle">
+                                                        <rect key="frame" x="195" y="0.0" width="43.666666666666657" height="50"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                            <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small"/>
+                                                            <color key="baseForegroundColor" name="LabelColor"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="fTF-pg-AG5" firstAttribute="height" secondItem="4wC-Qv-iTp" secondAttribute="height" id="Vcy-JS-rdC"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuv-AE-AVr" customClass="CustomUIButton" customModule="MovieDB" customModuleProvider="target">
+                                                <rect key="frame" x="313.66666666666669" y="10" width="49.333333333333314" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="7rz-ex-4xN"/>
+                                                </constraints>
+                                                <color key="tintColor" name="LabelColor"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="more">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="5" bottom="0.0" trailing="5"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="ContainerBorderColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="moreButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ola-Uj-2Qs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Ymw-74-JqJ" firstAttribute="top" secondItem="7SW-bz-53b" secondAttribute="top" id="Ggk-cp-BSz"/>
+                                            <constraint firstItem="Zuv-AE-AVr" firstAttribute="centerY" secondItem="7SW-bz-53b" secondAttribute="centerY" id="Q3I-TH-kac"/>
+                                            <constraint firstItem="Ymw-74-JqJ" firstAttribute="leading" secondItem="7SW-bz-53b" secondAttribute="leading" id="b5w-mA-ZJX"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zuv-AE-AVr" secondAttribute="trailing" constant="5" id="frk-yE-OR1"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ymw-74-JqJ" secondAttribute="bottom" id="kg5-ES-utS"/>
+                                            <constraint firstItem="Zuv-AE-AVr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ymw-74-JqJ" secondAttribute="trailing" constant="5" id="nVj-eS-ILd"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="t6L-YZ-j06">
+                                        <rect key="frame" x="0.0" y="50" width="368" height="180"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="A6h-XL-sZV"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Zh-hG-s8C">
+                                            <size key="itemSize" width="90" height="180"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="ContainerBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gCQ-3t-ULn" secondAttribute="trailing" constant="5" id="FIB-Ph-z4g"/>
+                            <constraint firstItem="gCQ-3t-ULn" firstAttribute="leading" secondItem="XM7-HE-WoM" secondAttribute="leading" constant="5" id="JGD-9P-alq"/>
+                            <constraint firstAttribute="bottom" secondItem="gCQ-3t-ULn" secondAttribute="bottom" constant="5" id="bqy-8Y-Y23"/>
+                            <constraint firstItem="gCQ-3t-ULn" firstAttribute="top" secondItem="XM7-HE-WoM" secondAttribute="top" constant="5" id="feQ-sW-4Io"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="ContainerBorderColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="XM7-HE-WoM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0u0-dg-WQB"/>
+                    <constraint firstItem="XM7-HE-WoM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="PuK-6a-pn2"/>
+                    <constraint firstAttribute="bottom" secondItem="XM7-HE-WoM" secondAttribute="bottom" id="kUy-dw-IAj"/>
+                    <constraint firstAttribute="trailing" secondItem="XM7-HE-WoM" secondAttribute="trailing" constant="10" id="p1m-kj-URQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="collectionTitle" destination="4wC-Qv-iTp" id="nCv-Cs-MTy"/>
+                <outlet property="collectionView" destination="t6L-YZ-j06" id="5k9-T8-ZfR"/>
+                <outlet property="containerHeaderView" destination="7SW-bz-53b" id="fnX-bA-x5N"/>
+                <outlet property="moreButton" destination="Zuv-AE-AVr" id="369-9J-B4j"/>
+                <outlet property="toggleButton" destination="fTF-pg-AG5" id="MEX-GT-qE6"/>
+                <outlet property="totalResultsTitle" destination="yzP-h8-XNL" id="5Nv-rK-HE3"/>
+            </connections>
+            <point key="canvasLocation" x="66" y="23"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="Zuv-AE-AVr">
+            <size key="intrinsicContentSize" width="49.333333333333336" height="18"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <namedColor name="ContainerBackgroundColor">
+            <color red="0.13699999451637268" green="0.14100000262260437" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ContainerBorderColor">
+            <color red="0.2199999988079071" green="0.23499999940395355" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ContentTextColor">
+            <color red="0.83899998664855957" green="0.84700000286102295" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="LabelColor">
+            <color red="0.62400001287460327" green="0.6940000057220459" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

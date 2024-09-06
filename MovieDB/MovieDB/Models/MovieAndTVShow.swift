@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - MovieAndTVShowModel
-struct MovieAndTVShowModel: Decodable{
+struct MovieAndTVShowModel: Decodable, SearchResultProtocol{
     let page: Int?
     let results: [MovieAndTVShowsModelResult]?
     let totalPages, totalResults: Int?

@@ -3,11 +3,9 @@
 //  MovieDB
 //
 //  Created by MacBook on 1.08.2023.
-//https://api.themoviedb.org/3/person/{person_id}
-//https://api.themoviedb.org/3/person/{person_id}/external_ids
-//https://api.themoviedb.org/3/person/{person_id}/images
-//https://api.themoviedb.org/3/trending/all/{time_window}
-//https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=TR&with_watch_monetization_types=free
+//https://api.themoviedb.org/3/search/movie?query=deQuery&include_adult=false&language=en-US&page=1
+//https://api.themoviedb.org/3/search/tv?query=de&include_adult=false&language=en-US&page=1
+//https://api.themoviedb.org/3/search/person?query=de&include_adult=false&language=en-US&page=1
 
 import Foundation
 
@@ -35,6 +33,16 @@ extension Constant {
         case trendingMovies = "/3/trending/movie/"
         case defaultLanguage = "?language"
         case pagePath = "&page="
+        case search = "/3/search/"
+        case query = "query="
+        case adult = "&include_adult="
+        
+        static func searchCollectionPath(collection: SearchCollection,querySting: String ,page: Int) -> String {
+            let collectionPath = SearchCollectionsPath(collection: collection).rawValue
+            let language = Constant.shared.defaultLanguage
+            
+            return "\(search.rawValue+collectionPath+query.rawValue+querySting+adult.rawValue+languagePath.rawValue+language+pagePath.rawValue)\(page)"
+        }
         
         static func movieCollectionPath(collection: MovieCollections, page: Int?) -> String {
             let collectionPath = MovieCollectionsPath(collection: collection).rawValue

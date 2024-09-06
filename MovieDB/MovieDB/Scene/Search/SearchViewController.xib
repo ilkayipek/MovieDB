@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="MovieDB" customModuleProvider="target">
             <connections>
+                <outlet property="resultsTableView" destination="a2C-5Z-Tgw" id="BT7-PL-dQP"/>
                 <outlet property="searchBar" destination="ptP-70-6eV" id="b5M-JC-0Aa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,12 +43,20 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a2C-5Z-Tgw">
+                    <rect key="frame" x="5" y="135" width="383" height="683"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="BackgroundColor"/>
             <constraints>
+                <constraint firstItem="a2C-5Z-Tgw" firstAttribute="top" secondItem="ptP-70-6eV" secondAttribute="bottom" constant="20" id="5Ba-2i-eJX"/>
                 <constraint firstItem="ptP-70-6eV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pnn-Eq-8db"/>
                 <constraint firstItem="ptP-70-6eV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Q43-0y-vxC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a2C-5Z-Tgw" secondAttribute="trailing" constant="5" id="Zz2-ze-4uE"/>
+                <constraint firstItem="a2C-5Z-Tgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="lb0-An-0Yi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="a2C-5Z-Tgw" secondAttribute="bottom" id="qzm-NN-K1A"/>
                 <constraint firstItem="ptP-70-6eV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="t9l-TX-tF0"/>
             </constraints>
             <point key="canvasLocation" x="8" y="-12"/>
