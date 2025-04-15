@@ -18,15 +18,11 @@ class SearchViewController: BaseViewController<SearchViewModel> {
         super.viewDidLoad()
         viewModel = SearchViewModel()
         tableViewConfiguration()
-        setKeyboardAppearance()
+        resultsTableView.keyboardDismissMode = .onDrag
     }
     
     override func viewWillAppear(_ animated: Bool) {
        searchBarConfiguration()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true) // Klavyeyi kapat
     }
     
     private func getSearchResults(queryString: String) {
@@ -56,6 +52,8 @@ class SearchViewController: BaseViewController<SearchViewModel> {
         searchBar.delegate = self
         searchBar.searchTextField.textColor = .white
         searchBar.searchTextField.font = UIFont.systemFont(ofSize: 15)
+        searchBar.searchBarStyle = .prominent
+        searchBar.searchTextField.backgroundColor = .clear
         
         if let originalImage = UIImage(systemName: IconName.search.rawValue) {
             let newSize = CGSize(width: originalImage.size.width * 1.5, height: originalImage.size.height * 1.5)
@@ -71,15 +69,6 @@ class SearchViewController: BaseViewController<SearchViewModel> {
             searchBar.setImage(resizedImage, for: .clear, state: .normal)
         }
         
-    }
-    
-    private func setKeyboardAppearance() {
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(gestureRecognizer)
-    }
-    
-    @objc func hideKeyboard() {
-        view.endEditing(true)
     }
     
     private func  tableViewConfiguration() {
